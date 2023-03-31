@@ -1,0 +1,90 @@
+:root {
+	--blue-opaco: rgba(0, 0, 31, 0.8);
+	--blue: #00001f;
+	--height-header: 150px;
+	--height-content: 1000px;
+}
+
+.header {
+	background-color: rgba(255, 255, 255, 0.5);
+	position: fixed;
+	display: grid;
+	align-items: center;
+
+	grid-template-columns: 1fr 2fr 2fr;
+
+	width: 100%;
+	height: var(--height-header);
+	top: 0;
+	left: 0;
+}
+
+.menu-container {
+	border-radius: 25px;
+	overflow: hidden; /* per far sì che il contenuto non esca dal bordo del container */
+	grid-column: 3 / 4; /* menu occupa la seconda colonna   <grid-column-start> / <grid-column-end> */
+	background-color: var(--blue-opaco);
+	display: grid;
+	align-items: center;
+
+
+	width: 500px;
+	height: 50px;
+}
+
+.logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-column: 1 / 2; /* logo occupa la prima colonna */
+	background-color: green;
+}
+
+.menu {
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.menu li {
+	flex: 1;
+	text-align: center;
+}
+
+.menu li a {
+	display: block;
+	padding: 10px;
+	color: #fff;
+	text-decoration: none; /* per togliere il sottolineato dal testo */
+
+	font-size: 16px;
+	font-family: Arial;
+}
+
+.menu li a:hover {
+	color: goldenrod;
+}
+
+.content {
+	background-color: aqua;
+	position: relative;
+	top: var(--height-header);
+}
+
+.section1 {
+	background-color: pink;
+}
+
+.section2 {
+	background-color: blue;
+}
+
+.footer {
+	position: relative;
+	background-color: yellow;
+	top: var(--height-header);
+}
