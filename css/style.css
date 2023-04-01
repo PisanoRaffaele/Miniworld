@@ -103,7 +103,7 @@ body {
 }
 
 .section1 {
-	background-color: pink;
+	background-color: var(--blue);
 	height: 200px;
 	top: 200px;
 }
