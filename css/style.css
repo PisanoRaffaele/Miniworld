@@ -4,6 +4,8 @@
 	--yellow: #ffec37;
 	--margin-top-header: 5%;
 	--height-content: 1000px;
+
+	--o: #1e0742;
 }
 
 body {
@@ -28,6 +30,21 @@ body {
 	grid-column: 2 / 3 !important; /* logo occupa la prima colonna */
 	background-color: var(--blue-opaco);
 	border-radius: 25px !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar-brand {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar-brand img {
+	/* 1556 x 240 */
+	width: 194.5px;
+	height: auto
 }
 
 .navbar {
