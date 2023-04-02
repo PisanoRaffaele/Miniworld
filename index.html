@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<script src="JavaScript/autenticazione.js"></script>
 	<title>Miniworld</title>
@@ -20,12 +20,20 @@
 		</div>
 
 		<nav class="navbar">
-			<ul class="nav">
-			  <li class="nav-item"><a href="#">About Us</a></li> <!-- Presentazione sito -->
-			  <li class="nav-item"><a href="#">Classifiche</a></li> <!-- Classifiche giochi-->
-			  <li class="nav-item"><a href="#">Supporto</a></li> <!-- Supporto -->
-			  <li class="nav-item"><a name="personal" href="#"></a></li> <!-- Registrazione e login -->
-			</ul>
+			<button class="navbar-toggler hamburger-button" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" onclick="Nav()" style="z-index: 2">
+				<div class="animated-icon"><span></span><span></span><span></span></div>
+			</button>
+			<!--<input type="checkbox" id="toggler">
+			<label for="toggler">-</label>-->
+
+			<div class ="menu">
+				<ul class="nav">
+				  <li class="nav-item"><a href="#">About Us</a></li> <!-- Presentazione sito -->
+				  <li class="nav-item"><a href="#">Classifiche</a></li> <!-- Classifiche giochi-->
+				  <li class="nav-item"><a href="#">Supporto</a></li> <!-- Supporto -->
+				  <li class="nav-item"><a name="personal" href="#"></a></li> <!-- Registrazione e login -->
+				</ul>
+			</div>
 		</nav>
 	</div>
 

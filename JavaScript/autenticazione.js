@@ -9,3 +9,7 @@ window.onload = function() {
 		document.getElementsByName("personal")[0].href = "/registrazione";
     }
 }
+
+function Nav() {
+    
+}
