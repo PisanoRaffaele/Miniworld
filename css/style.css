@@ -25,9 +25,14 @@ body {
 	z-index: 1;
 }
 
+.header button {
+	display: none;
+}
+
 .logo-container {
 	grid-column: 2 / 3 !important; /* logo occupa la prima colonna */
 	background-color: var(--blue-opaco);
+	backdrop-filter: blur(4px);
 	border-radius: 25px !important;
 	display: flex;
 	justify-content: center;
@@ -50,13 +55,10 @@ body {
 	border-radius: 25px !important;
 	grid-column: 4 / 5; /* menu occupa la seconda colonna   <grid-column-start> / <grid-column-end> */
 	background-color: var(--blue-opaco);
+	backdrop-filter: blur(4px);
 	display: grid;
 	align-items: center;
 	margin-bottom: 0 !important;
-}
-
-.navbar button {
-	display: none;
 }
 
 .nav {
@@ -72,6 +74,7 @@ body {
 .nav-item a{
 	color: #fff;
 	font-size: 16px;
+	text-align: center;
 }
 
 .nav-item a:hover {
@@ -93,9 +96,9 @@ body {
 .video-container img {
     position: absolute;
 	left: 0;
-	bottom: 0;
-    z-index: 2;
-    height: 300px;
+	bottom: -5px;
+    z-index: 1;
+    height: 200px;
 	width: 100%;
 }
 
@@ -106,7 +109,7 @@ body {
 .section1 {
 	background-color: var(--blue);
 	height: 200px;
-	top: 200px;
+
 }
 
 .section2 {
@@ -119,46 +122,73 @@ body {
 	top: var(--height-header);
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 1391px) {
     .video-container img {
-        height: 200px;
+        height: 300px;
     }
+
+	.navbar-brand img {
+		/* 1556 x 240 */
+		width: 222.2px;
+		height: auto
+	}
+
+	.nav-item a {
+		font-size: 18px;
+	}
 }
 
-@media screen and (max-width: 651px) {
-    .video-container img  {
-        height: 100px;
-    }
-/*
-	.menu {
-		width: 100%;
-		max-height: 0;
-		overflow: hidden;
+@media screen and (max-width: 701px) {
+	.video-container {
+		top: -5px;
+	}
+
+	.video-container img  {
+		height: 100px;
+	}
+
+	.logo-container {
+		background-color: transparent;
 	}
 
 	.navbar {
-		justify-content: center;
+		max-width: 0;
+		overflow: hidden;
 	}
 
-	.nav {
-		flex-direction: column;
-		align-items: center;
-		padding: 20;
+	.header button {
+		display: block;
+		position: absolute;
+		right: 15px;
+		top: 25px;
+		z-index: 3;
+		background-color: transparent;
+		border: none;
 	}
 
-	.navbar label {
-		display: inline-flex;
-		align-items: center;
-		cursor: pointer;
-	}
-
-	#toggler:checked ~ .menu {
-		max-height: 100%;
+	.header button svg {
+		width: 38px;
+		height: 38px;
+		fill: white;
 	}
 
 	.header {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	}*/
+		position: relative;
+		margin-top: 0 !important;
+		padding-top: 5%;
+		background-color: var(--blue);
+		z-index: 2;
+	}
+
+	.logo-container {
+		grid-column: 1 / 2 !important;
+	}
+
+	.navbar-brand img {
+		/* 1556 x 240 */
+		width: 172.9px;
+		height: auto
+	}
 
 }
 
