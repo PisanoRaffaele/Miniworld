@@ -177,8 +177,7 @@ body {
     /* top: 50px; */
     width: 100%;
     height: 100%;
-    background-color: var(--blue-opaco);
-    /* background-color: rgba(255, 255, 255, 0.7); */
+    background-color: rgba(0, 0, 31, 0.9);
     z-index: 998;
     visibility: hidden;
     transition: opacity 0.3s, transform 0.3s;
@@ -256,4 +255,17 @@ body {
     .dropdown-link:hover {
         color: var(--yellow);
     }
+}
+
+.h1-colored {
+    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 92px;
+    /* background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    line-height: 120%;
+    letter-spacing: 0.014em; */
 }
