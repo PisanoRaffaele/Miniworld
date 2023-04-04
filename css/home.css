@@ -1,0 +1,55 @@
+/****************************** Global Data & Variable ******************************/
+:root {
+    --blue-opaco: rgba(0, 0, 31, 0.7);
+    --blue: #00001f;
+    --yellow: #ffec37;
+    --height-header: 80px;
+    --o: #1e0742;
+}
+
+body {
+    background-color: var(--blue);
+    font-family: Arial;
+}
+
+/* Video Container Style */
+.video-container {
+    width: 100%;
+    position: relative;
+}
+
+.video-container img {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+}
+
+.video-container video {
+    width: 100%;
+}
+
+
+/****************************** Responsive ******************************/
+
+@media (max-width: 991px) {
+    .video-container {
+        transition: 0;
+        margin-top: var(--height-header);
+    }
+}
+
+
+.h1-colored {
+    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 92px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    line-height: 120%;
+    letter-spacing: 0.014em;
+    height: 1000px;
+}
