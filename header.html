@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="container-fluid header sticky-top row justify-content-between">
+        <!-- Logo container -->
+        <div class="col-auto logo ml-5">
+            <a class="navbar-logo" href="">
+                <img src="assets/Logo.png" class="d-inline-block align-top" id="logoimg">
+            </a>
+        </div>
+
+        <!-- Navbar container -->
+        <nav class="navbar navbar-expand-lg mr-5" id="mynav">
+            <button class="navbar-toggler" type="button" id="hamburger">
+                <!-- Attributi aggiuntivi del button -->
+                <!-- data-mdb-toggle="collapse"
+                data-mdb-target="#navbarToggleExternalContent10" aria-controls="navbarToggleExternalContent10"
+                aria-expanded="false" aria-label="Toggle navigation"> -->
+                <div class="animated-togglebutton" onclick="menu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse flex-row" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="#">About Us</a>
+                    <a class="nav-item nav-link" href="#">Classifiche</a>
+                    <a class="nav-item nav-link" href="#">Supporto</a>
+                    <a class="nav-item nav-link" href="#" name="personal"></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dropdown Responsive Navbar -->
+    <div id="dropdown-menu">
+        <div class="dropdown-wrapp">
+            <a class="nav-item nav-link dropdown-link" href="#">About Us</a>
+        </div>
+        <div class="dropdown-separator"></div>
+        <div class="dropdown-wrapp">
+            <a class="nav-item nav-link dropdown-link" href="#">Classifiche</a>
+        </div>
+        <div class="dropdown-separator"></div>
+        <div class="dropdown-wrapp">
+            <a class="nav-item nav-link dropdown-link" href="#">Supporto</a>
+        </div>
+        <div class="dropdown-separator"></div>
+        <div class="dropdown-wrapp">
+            <a class="nav-item nav-link dropdown-link" href="#" name="personal"></a>
+        </div>
+    </div>
+
+    <!-- Javascript Include -->
+    <script src="JavaScript/miniworld.js"></script>
+</body>
+
+</html>
