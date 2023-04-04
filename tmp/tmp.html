@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+    <header class="container-fluid header sticky-top">
+        <div class="row justify-content-between">
+            <div class="col-auto logo ml-5">
+                <a class="navbar-logo" href="#">
+                    <img src="assets/Logo.png"  class="d-inline-block align-top" alt="" style="width: 194.5px;">
+                </a>
+            </div>
+            <nav class="col-auto navbar navbar-expand-lg navbar-dark mr-5">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" onclick="Nav()"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#">Classifiche</a>
+                        <a class="nav-item nav-link" href="#">Supporto</a>
+                        <a class="nav-item nav-link" href="#" tabindex="-1" aria-disabled="true">Login</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="Nav()">&times;</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="video-container">
+            <img src="assets/VideoFade.png">
+            <video class="hero-video" autoplay="" loop="" muted="" playsinline="" poster=""
+                src="assets/HomeVideo.mp4"></video>
+        </div>
+        <div class="section1">
+            <p>Section1: Titolo</p>
+        </div>
+        <div class="section2">
+            <p>Section2: bottoni per i giochi</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+
+
+    <script>
+        function Nav() {
+            var width = document.getElementById("mySidenav").style.width;
+            if (width === "0px" || width == "") {
+                document.getElementById("mySidenav").style.width = "250px";
+                $('.animated-icon').toggleClass('open');
+            } else {
+                document.getElementById("mySidenav").style.width = "0px";
+                $('.animated-icon').toggleClass('open');
+            }
+        }
+    </script>
+</body>
+
+</html>
