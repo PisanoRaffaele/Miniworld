@@ -12,6 +12,7 @@ body {
     font-family: Arial;
 }
 
+/****************************** Video Style ******************************/
 /* Video Container Style */
 .video-container {
     width: 100%;
@@ -29,9 +30,7 @@ body {
     width: 100%;
 }
 
-
-/****************************** Responsive ******************************/
-
+/*************** Video Responsive ***************/
 @media (max-width: 991px) {
     .video-container {
         transition: 0;
@@ -39,6 +38,24 @@ body {
     }
 }
 
+/****************************** Title & Description Game ******************************/
+
+.game-section {
+    display: block;
+    place-content: center;
+    padding: 60px 20px;
+    /* margin: auto 4.5px; */
+}
+
+.content-game {
+    max-width: 1224px;
+    margin: 0 auto;
+}
+
+.game-content-header {
+    margin: 0 auto;
+    text-align: center;
+}
 
 .h1-colored {
     background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
@@ -51,5 +68,32 @@ body {
     background-repeat: repeat;
     line-height: 120%;
     letter-spacing: 0.014em;
-    height: 1000px;
+    margin: 20px auto;
+}
+
+.max-630 {
+    max-width: 630px;
+    margin: 16px auto;
+    font-size: 26px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 33px;
+}
+
+/****************************** Game Presentation ******************************/
+
+.game-position {
+    display: block;
+    box-sizing: border-box;
+}
+
+.game {
+    display: grid;
+    margin-top: 80px;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
 }
