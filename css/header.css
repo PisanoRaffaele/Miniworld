@@ -20,15 +20,11 @@ body {
     width: 30px;
     height: 20px;
     position: relative;
-    margin: 0px;
-    /* -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg); */
-    transform: rotate(0deg);
+    
     /* -webkit-transition: .5s ease-in-out;
     -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out; */
-    transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;*/
     cursor: pointer;
 }
 
@@ -40,10 +36,7 @@ body {
     border-radius: 9px;
     opacity: 1;
     left: 0;
-    /* -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg); */
-    transform: rotate(0deg);
+
     /* -webkit-transition: .25s ease-in-out;
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out; */

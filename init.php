@@ -1,4 +1,4 @@
-<!-- 
+<!--
     1. apri terminale
     2. vai alla directory con i file
     3. esegui "php -S localhost:<port>"
@@ -6,10 +6,10 @@
  -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>miniworld</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -32,7 +32,7 @@
         document.querySelector('#hamburger').addEventListener('click', function () {
                 document.querySelector('.animated-togglebutton').classList.toggle('open');
                 document.querySelector('#dropdown-menu').classList.toggle('show');
-            });  
+            });
     </script>
 </body>
 </html>
