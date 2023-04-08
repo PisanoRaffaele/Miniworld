@@ -33,6 +33,14 @@
                 document.querySelector('.animated-togglebutton').classList.toggle('open');
                 document.querySelector('#dropdown-menu').classList.toggle('show');
             });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 991) {
+                // Attiva la funzione quando la larghezza della finestra > 991px
+                document.querySelector('.animated-togglebutton').classList.remove('open');
+                document.querySelector('#dropdown-menu').classList.remove('show');
+            }
+        });
     </script>
 </body>
 </html>

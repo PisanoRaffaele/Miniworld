@@ -142,3 +142,21 @@ body {
 	}
 }
 
+@media screen and (max-width: 401px) {
+
+	#griglia {
+		width: 90%;
+	}
+	.text-center {
+		font-size: 35px;
+		color: var(--yellow) !important;
+	}
+
+	.grid-item {
+		height: 60px;
+		width: 60px;
+		padding: 6px;
+		margin: 6px;
+	}
+}
+
