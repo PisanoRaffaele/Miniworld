@@ -1,0 +1,144 @@
+/****************************** Global Data & Variable ******************************/
+:root {
+    --blue-opaco: rgba(0, 0, 31, 0.7);
+    --blue: #00001f;
+    --yellow: #ffec37;
+    --height-header: 80px;
+    --o: #1e0742;
+}
+
+body {
+    background-color: var(--blue);
+    font-family: Arial;
+}
+
+/****************************** END ******************************/
+
+.text-center {
+	font-size: 50px;
+	color: var(--yellow) !important;
+}
+
+.game {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#griglia {
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.grid-item {
+	height: 100px;
+	width: 100px;
+	border-radius: 15px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	margin: 10px;
+	box-shadow: -5px 5px 1px rgba(88, 88, 110, 1);
+	background-color: #2F2F4A;
+	transform: rotateY(180deg);
+}
+
+.grid-item img {
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+}
+
+.hidden {
+	background-color: #2F2F4A;
+	transform: rotateY(180deg);
+	transition: 1s;
+}
+
+.hidden img {
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+	transition: 1s;
+}
+
+.visible {
+	background-color: rgba(88, 88, 110, 1);
+	transform: rotateY(0deg);
+	transition: 1s;
+}
+
+.visible img {
+	backface-visibility: hidden;
+	transform: rotateY(0deg);
+	transition: 1s;
+}
+
+.grid-item img {
+	width: 100%;
+}
+
+.container {
+	padding-top : 200px !important;
+}
+
+@media screen and (max-width: 1024px) {
+
+	#griglia {
+		width: 70%;
+	}
+
+	.text-center {
+		font-size: 45px;
+		color: var(--yellow) !important;
+	}
+
+	.grid-item {
+		height: 90px;
+		width: 90px;
+		padding: 9px;
+		margin: 9px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	#griglia {
+		width: 75%;
+	}
+
+	.text-center {
+		font-size: 40px;
+		color: var(--yellow) !important;
+	}
+
+	.grid-item {
+		height: 80px;
+		width: 80px;
+		padding: 8px;
+		margin: 8px;
+	}
+
+}
+
+@media screen and (max-width: 510px) {
+
+	#griglia {
+		width: 90%;
+	}
+	.text-center {
+		font-size: 35px;
+		color: var(--yellow) !important;
+	}
+
+	.grid-item {
+		height: 70px;
+		width: 70px;
+		padding: 7px;
+		margin: 7px;
+	}
+}
+
