@@ -13,9 +13,3 @@ window.onload = function () {
         }
     }
 }
-
-function menu() {
-    document.querySelector('.animated-togglebutton').classList.toggle('open');
-    document.querySelector('#dropdown-menu').classList.toggle('show');
-}
-

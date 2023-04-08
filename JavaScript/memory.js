@@ -36,7 +36,7 @@ const images = [
   		return randomNumber;
 	}
 
-  // Funzione per mescolare le carte
+	// Funzione per mescolare le carte
   	function shuffle(array) {
 		let currentIndex = array.length;
 		let temporaryValue, randomIndex;

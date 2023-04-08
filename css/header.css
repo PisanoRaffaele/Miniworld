@@ -20,7 +20,7 @@ body {
     width: 30px;
     height: 20px;
     position: relative;
-    
+
     /* -webkit-transition: .5s ease-in-out;
     -moz-transition: .5s ease-in-out;
     -o-transition: .5s ease-in-out;
@@ -173,7 +173,7 @@ body {
     z-index: 998;
     visibility: visible;
     transform: translateY(0%);
-    padding-top: 25px;
+    padding-top: 100px;
     position: fixed;
 }
 
@@ -184,13 +184,6 @@ body {
 @media screen and (min-width: 1391px) {
     #logoimg {
         width: 222.2px;
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 701px) {
-    #logoimg {
-        width: 172.9px;
         height: auto;
     }
 }
@@ -256,5 +249,19 @@ body {
 
     .dropdown-link:hover {
         color: var(--yellow);
+    }
+}
+
+@media screen and (max-width: 701px) {
+    #logoimg {
+        width: 172.9px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 401px) {
+    #logoimg {
+        width: 150px;
+        height: auto;
     }
 }
