@@ -177,6 +177,16 @@ body {
     position: fixed;
 }
 
+@keyframes appear {
+    0% { opacity: 0; transform: translateY(100%);}
+    100% { opacity: 1; }
+}
+
+#dropdown-menu.show a {
+    animation: appear 0.6s both;
+}
+
+
 /****************************** END ******************************/
 
 
@@ -188,7 +198,17 @@ body {
     }
 }
 
-@media (max-width: 991px) {
+@media screen and (max-width: 991px) {
+    .header {
+        position: fixed !important;
+        top: 0px;
+        height: var(--height-header) !important;
+        width: 100%;
+        background-color: var(--blue);
+        z-index: 999;
+        margin: 0 !important;
+    }
+
     #mynav {
         border-radius: 99px !important;
         width: 50px;
@@ -202,15 +222,7 @@ body {
         margin-left: 1rem !important;
     }
 
-    .header {
-        position: fixed !important;
-        top: 0px;
-        height: var(--height-header) !important;
-        width: 100%;
-        background-color: var(--blue);
-        z-index: 999;
-        margin: 0 !important;
-    }
+
 
     .video-container {
         transition: 0;

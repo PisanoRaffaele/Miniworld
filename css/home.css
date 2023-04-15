@@ -97,3 +97,19 @@ body {
     -ms-grid-rows: auto auto;
     grid-template-rows: auto auto;
 }
+
+@media screen and (max-width: 991px) {
+    .game {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+

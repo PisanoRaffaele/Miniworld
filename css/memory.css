@@ -57,12 +57,14 @@ body {
 	background-color: #2F2F4A;
 	transform: rotateY(180deg);
 	transition: 1s;
+
 }
 
 .hidden img {
 	backface-visibility: hidden;
 	transform: rotateY(180deg);
 	transition: 1s;
+
 }
 
 .visible {

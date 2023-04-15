@@ -143,3 +143,11 @@ const images = [
 	resetButton.addEventListener('click', resetGame);
 
 	initGame();
+
+
+window.onload = function () {
+	document.querySelector('#hamburger').addEventListener('click', function () {
+		document.querySelector('.animated-togglebutton').classList.toggle('open');
+		document.querySelector('#dropdown-menu').classList.toggle('show');
+	});
+}

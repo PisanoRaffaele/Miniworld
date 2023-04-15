@@ -17,12 +17,6 @@
         include "header.html";
         include "memory.html";
     ?>
-    <script>
-        document.querySelector('#hamburger').addEventListener('click', function () {
-                document.querySelector('.animated-togglebutton').classList.toggle('open');
-                document.querySelector('#dropdown-menu').classList.toggle('show');
-            });
-    </script>
 
     <!-- Javascript Include -->
     <script src="JavaScript/miniworld.js"></script>

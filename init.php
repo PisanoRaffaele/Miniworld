@@ -18,9 +18,6 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/home.css">
 
-    <!-- Javascript Include -->
-    <script src="JavaScript/miniworld.js"></script>
-
 </head>
 <body>
     <?php
@@ -28,19 +25,8 @@
         include "home.html";
     ?>
 
-    <script>
-        document.querySelector('#hamburger').addEventListener('click', function () {
-                document.querySelector('.animated-togglebutton').classList.toggle('open');
-                document.querySelector('#dropdown-menu').classList.toggle('show');
-            });
-
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 991) {
-                // Attiva la funzione quando la larghezza della finestra > 991px
-                document.querySelector('.animated-togglebutton').classList.remove('open');
-                document.querySelector('#dropdown-menu').classList.remove('show');
-            }
-        });
-    </script>
+    <!-- Javascript Include -->
+    <script src="JavaScript/miniworld.js"></script>
+    
 </body>
 </html>
