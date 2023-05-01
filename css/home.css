@@ -62,7 +62,14 @@ body {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    font-size: 92px;
+    /*  1° param: dimensione minima del font
+        2° param: dimensione calcolata in base alla larghezza della pagina
+                - vw sta per viewport, intesa come percentuale della larghezza della pagina
+                - rem sta per dimensione del font del root element (quella di default del browser: 16px)
+        3° param: dimensione massima del font
+        e.g: se la larghezza della pagina è 1200px, il font-size sarà 120px (1200*10/100)+ 3.2px (16 * 0.2) = 123.2px
+    */
+    font-size: clamp(60px, 10vw + 0.2rem, 92px);
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: repeat;
@@ -74,7 +81,8 @@ body {
 .max-630 {
     max-width: 630px;
     margin: 16px auto;
-    font-size: 26px;
+    /* font-size: 26px; */
+    font-size: clamp(15px, 5vw + 0.1rem, 26px);
     color: #fff;
     font-weight: 600;
     line-height: 33px;
@@ -96,6 +104,13 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     -ms-grid-rows: auto auto;
     grid-template-rows: auto auto;
+}
+
+.card {
+    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d2fdf3a5982a_Hover%20Particles.png");
+    background-color: rgba(28, 1, 50, 0.892);
+    border-radius: 10%;
+    color: white;
 }
 
 @media screen and (max-width: 991px) {
