@@ -1,0 +1,33 @@
+#container {
+	text-align: center;
+	margin-top: 50%;
+	place-items: center;
+}
+
+#dot {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: green;
+	margin: 0 auto;
+	margin-top: 50px;
+	cursor: pointer;
+}
+
+#dot:hover {
+	background-color: red;
+}
+
+p {
+	margin-top: 15px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+}
+
+#reset {
+	background-color: #ffec37;
+	font-weight: bold;
+	color: #1e0742;
+	cursor: pointer;
+}
