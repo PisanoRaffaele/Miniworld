@@ -99,8 +99,8 @@ body {
     display: grid;
     margin-top: 80px;
     grid-auto-columns: 1fr;
-    grid-column-gap: 32px;
-    grid-row-gap: 32px;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     -ms-grid-rows: auto auto;
     grid-template-rows: auto auto;
@@ -109,8 +109,84 @@ body {
 .card {
     background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d2fdf3a5982a_Hover%20Particles.png");
     background-color: rgba(28, 1, 50, 0.892);
-    border-radius: 10%;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    margin: 2rem;
+}
+
+.logo-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.description-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+    padding: 10px;
+}
+
+.play-button {
+    opacity: 0;
+    position: absolute;
+    display: inline-block;
+    padding: 18px 48px 16px;
+    margin-top: 40px;
+    border-radius: 99px;
+    background-color: #ffec37;
+    transition: opacity 0.4s ease;
+    color: #00001f;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-20px);
+    border: 2px solid yellow;
+}
+
+.card:hover .card-text {
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+}
+
+.card:hover .play-button {
+    opacity: 1;
+    transform: translateY(-25px);
+}
+
+.play-button:hover {
+    background-color: #ffec37;
+    color: black;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 991px) {
@@ -126,5 +202,3 @@ body {
         grid-template-rows: auto;
     }
 }
-
-
