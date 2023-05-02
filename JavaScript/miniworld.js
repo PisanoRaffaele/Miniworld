@@ -3,11 +3,9 @@ window.onload = function () {
     $('[name="personal"]').each(function () {
         var elem = $(this);
         if (isLoggedIn) {
-            elem.attr('href', '');
             elem.html('Profilo');
         }
         else {
-            elem.attr('href', '');
             elem.html('Registrati/Login');
         }
     });
