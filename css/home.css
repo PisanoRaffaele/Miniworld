@@ -95,7 +95,7 @@ body {
     box-sizing: border-box;
 }
 
-.game {
+.game-list {
     display: grid;
     margin-top: 80px;
     grid-auto-columns: 1fr;
