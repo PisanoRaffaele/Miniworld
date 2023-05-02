@@ -27,6 +27,7 @@ window.onload = function () {
 
     // fetch game elements from server with ajax
 }
+
 $.ajax({
     url: "fetch.php",
     dataType: "json",
@@ -56,6 +57,3 @@ $.ajax({
         console.log(textStatus, errorThrown);
     }
 });
-
-
-
