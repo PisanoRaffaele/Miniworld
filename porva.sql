@@ -20,7 +20,7 @@ CREATE TABLE Relazione (
     username VARCHAR(255) NOT NULL,
     classifica VARCHAR(255) NOT NULL,
     posizione INT NOT NULL,
-    PRIMARY KEY (email, username, classifica),
+    PRIMARY KEY (email, username, classifica, posizione),
     FOREIGN KEY (email, username) REFERENCES Persona (email, username),
     FOREIGN KEY (classifica) REFERENCES Classifica (titolo)
 );
@@ -43,13 +43,12 @@ BEGIN
         UPDATE relazione
         SET posizione = posizione + 1
         WHERE classifica = NEW.classifica AND posizione >= NEW.posizione;
-        RETURN NEW;
     END IF;
-    RETURN OLD;
+    RETURN NEW;
  END;
 $$ language plpgsql;
 
-CREATE TRIGGER update_relazione_trigger
+CREATE TRIGGER trigger_prova
 BEFORE INSERT ON relazione
 FOR EACH ROW EXECUTE PROCEDURE prova();
 
@@ -88,6 +87,7 @@ VALUES
   ('Gioco 9'),
   ('Gioco 10');
 
+
 -- Inserimento di alcune relazioni nella tabella Relazione
 INSERT INTO Relazione (email, username, classifica, posizione)
 VALUES 
@@ -106,3 +106,23 @@ VALUES
   ('email5@example.com', 'user5', 'Gioco 1', 2),
   ('email5@example.com', 'user5', 'Gioco 2', 3),
   ('email5@example.com', 'user5', 'Gioco 3', 1);
+
+
+-- Inserimento di alcune relazioni nella tabella Relazione
+-- INSERT INTO Relazione (email, username, classifica, posizione)
+-- VALUES 
+--   ('email1@example.com', 'user1', 'Gioco 1', 1),
+--   ('email1@example.com', 'user1', 'Gioco 2', 3),
+--   ('email1@example.com', 'user1', 'Gioco 3', 2),
+--   ('email2@example.com', 'user2', 'Gioco 1', 2),
+--   ('email2@example.com', 'user2', 'Gioco 2', 1),
+--   ('email2@example.com', 'user2', 'Gioco 3', 3),
+--   ('email3@example.com', 'user3', 'Gioco 1', 3),
+--   ('email3@example.com', 'user3', 'Gioco 2', 2),
+--   ('email3@example.com', 'user3', 'Gioco 3', 1),
+--   ('email4@example.com', 'user4', 'Gioco 1', 1),
+--   ('email4@example.com', 'user4', 'Gioco 2', 2),
+--   ('email4@example.com', 'user4', 'Gioco 3', 3),
+--   ('email5@example.com', 'user5', 'Gioco 1', 2),
+--   ('email5@example.com', 'user5', 'Gioco 2', 3),
+--   ('email5@example.com', 'user5', 'Gioco 3', 1);
