@@ -14,7 +14,7 @@
     $host = "localhost";
     $port = "5432";
     $user = "postgres";
-    $password = "erfede0106";
+    $password = "password";
 
     // Crea la connessione al database
     $conn = pg_connect("dbname=$dbname host=$host port=$port user=$user password=$password");
