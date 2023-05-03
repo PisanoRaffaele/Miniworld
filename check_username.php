@@ -14,14 +14,19 @@
 ?>
 
 <?php
+
     $username = $_POST["username"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    $email = $_POST["email"];
 
     // Esegui la query utilizzando la connessione esplicita
-    $query = "INSERT INTO Persona (username, password, email) VALUES ($1, $2, $3)";
-    $result = pg_query_params($dbconn, $query, [$username, $password, $email]);
+    $query = "SELECT * FROM Persona WHERE username = $1";
+    $result = pg_query_params($dbconn, $query, [$username]);
 
+    if (pg_num_rows($result) == 0) {
+        echo 0;
+    } else {
+        echo 1;
+    }
+    
     // Chiudi la connessione al database
     pg_close($dbconn);
 ?>

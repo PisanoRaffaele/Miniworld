@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- CSS include -->
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/registration.css">
 </head>
 
 <body>
@@ -23,5 +23,6 @@
     ?>
     <!-- Javascript Include -->
     <script src="JavaScript/header.js"></script>
+    <script src="JavaScript/registration.js"></script>
 </body>
 </html>
