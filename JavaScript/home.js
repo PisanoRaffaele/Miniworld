@@ -1,11 +1,12 @@
-$.ajax({
-    url: "fetch.php",
-    dataType: "json",
-    success: function (data) {
-        var html = data.map(function (value) {
-            var X = Math.floor(Math.random() * 30); // genera un numero casuale compreso tra 0 e 100
-            var Y = Math.floor(Math.random() * 30); // genera un numero casuale compreso tra 0 e 100
-            return `
+$(function () {
+    $.ajax({
+        url: "fetch.php",
+        dataType: "json",
+        success: function (data) {
+            var html = data.map(function (value) {
+                var X = Math.floor(Math.random() * 30); // genera un numero casuale compreso tra 0 e 100
+                var Y = Math.floor(Math.random() * 30); // genera un numero casuale compreso tra 0 e 100
+                return `
                 <div class="card" style="background-position: ${X}% ${Y}%;">
                     <div class="logo-container">
                         <img src="${value.image}" alt="${value.title}">
@@ -19,11 +20,12 @@ $.ajax({
                     </div>
                 </div>
             `;
-        }).join("");
+            }).join("");
 
-        $(".game-list").html(html);
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-    }
+            $(".game-list").html(html);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
 });
