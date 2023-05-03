@@ -1,0 +1,21 @@
+.container {
+    margin: 200px;
+}
+
+#username.error {
+    border: 2.5px solid red;
+    box-shadow: 0 0 3px red;
+}
+
+#email.error {
+    border: 2.5px solid red;
+    box-shadow: 0 0 3px red;
+}
+
+.text-availabilty.error {
+    color: red;
+}
+
+.text-availabilty.available {
+    color: green;
+}
