@@ -106,6 +106,20 @@ body {
     grid-template-rows: auto auto;
 }
 
+@media screen and (max-width: 991px) {
+    .game-list {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-list {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
 .card {
     background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d2fdf3a5982a_Hover%20Particles.png");
     background-color: rgba(28, 1, 50, 0.892);
@@ -187,18 +201,4 @@ body {
     background-color: #ffec37;
     color: black;
     text-decoration: none;
-}
-
-@media screen and (max-width: 991px) {
-    .game {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
 }
