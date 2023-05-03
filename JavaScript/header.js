@@ -6,9 +6,6 @@ window.onload = function () {
         if (isLoggedIn) {
             elem.html('Profilo');
         }
-        else {
-            elem.html('Registrati/Login');
-        }
     });
 
     $('#hamburger').on('click', function () {

@@ -121,7 +121,7 @@ body {
 }
 
 .card {
-    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d2fdf3a5982a_Hover%20Particles.png");
+    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d2efa3a59843_back%20image-cards%20Background-3.png");
     background-color: rgba(28, 1, 50, 0.892);
     color: white;
     display: flex;
@@ -130,6 +130,19 @@ body {
     align-items: center;
     border-radius: 10px;
     transition: all 0.4s ease;
+    position: relative;
+}
+
+.jumping-foto {
+    position: absolute;
+    top: 0;
+    display: flex;
+    opacity: 0;
+    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d2fdf3a5982a_Hover%20Particles.png");
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    width: 100%;
+    height: auto;
+    transform: scale3d(1, 1, 1);
 }
 
 .logo-container {
@@ -174,7 +187,7 @@ body {
     margin-top: 40px;
     border-radius: 99px;
     background-color: #ffec37;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease;
     color: #00001f;
     font-size: 16px;
     line-height: 20px;
@@ -189,12 +202,17 @@ body {
 
 .card:hover .card-text {
     opacity: 0;
-    transition: opacity 0.1s ease-in;
+    transition: opacity 0.1s ease-in, transform 0.1s ease-in;
 }
 
 .card:hover .play-button {
     opacity: 1;
     transform: translateY(-25px);
+}
+
+.card:hover .jumping-foto {
+    opacity: 1;
+    transform: translateY(-70px);
 }
 
 .play-button:hover {
