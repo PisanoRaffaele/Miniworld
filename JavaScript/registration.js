@@ -55,7 +55,6 @@ $('#email').on('input', function () {
 	}
 });
 
-
 $('#registration_form').submit(function (event) {
 	event.preventDefault();
 
@@ -89,6 +88,7 @@ $('#registration_form').submit(function (event) {
 				$('#email + small').text('Utente già registrato con questa email o username. Prova a fare il login');
 			}
 			resetformelem();
+			window.location.href = 'init.php';
 		},
 		error: function (xhr, status, error) {
 			// gestisci l'errore qui

@@ -1,11 +1,12 @@
-$.ajax({
-    url: "fetch.php",
-    dataType: "json",
-    success: function (data) {
-        var html = data.map(function (value) {
-            var X = Math.floor(Math.random() * 30); // genera un numero casuale compreso tra 0 e 100
-            var Y = Math.floor(Math.random() * 30); // genera un numero casuale compreso tra 0 e 100
-            return `
+$(function () {
+    $.ajax({
+        url: "fetch.php",
+        dataType: "json",
+        success: function (data) {
+            var html = data.map(function (value) {
+                var X = Math.floor(Math.random() * 30); // genera un numero casuale compreso tra 0 e 100
+                var Y = Math.floor(Math.random() * 30); // genera un numero casuale compreso tra 0 e 100
+                return `
                 <div class="card" style="background-position: ${X}% ${Y}%;">
                     <img src="https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d2fdf3a5982a_Hover%20Particles.png" class="jumping-foto">
                     <div class="logo-container">
@@ -20,11 +21,12 @@ $.ajax({
                     </div>
                 </div>
             `;
-        }).join("");
+            }).join("");
 
-        $(".game-list").html(html);
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-    }
+            $(".game-list").html(html);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
 });
