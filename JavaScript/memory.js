@@ -144,7 +144,6 @@ const images = [
 
 	initGame();
 
-
 window.onload = function () {
 	document.querySelector('#hamburger').addEventListener('click', function () {
 		document.querySelector('.animated-togglebutton').classList.toggle('open');
