@@ -17,11 +17,11 @@
 <body>
     <?php
 
-    include "header.html";
-    include "register.html";
+    include "html/header.html";
+    include "html/register.html";
 
     ?>
     <!-- Javascript Include -->
-    <script src="JavaScript/miniworld.js"></script>
+    <script src="JavaScript/header.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@ $response = array(); // array vuoto che conterrà la risposta
 foreach ($random as $index) {
     $response[] = $elementi[$index]; // aggiungiamo l'elemento casuale all'array di risposta
 }
-// fino qu
+// fino qui
 
 
 header('Content-Type: application/json'); // specifica il tipo di risposta come JSON
