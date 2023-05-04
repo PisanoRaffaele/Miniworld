@@ -54,13 +54,6 @@ p {
 
 /****************************** END ******************************/
 
-.game {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
 #container {
 	padding-top : 160px !important;
 	display: grid;
@@ -70,22 +63,52 @@ p {
 	text-align: center;
 }
 
-#dot {
-	width: 140px;
-	height: 140px;
-	border-radius: 50%;
-	background-color: green;
-	margin: 0 auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	cursor: pointer;
+.simon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-#dot:hover {
-	background-color: red;
+#griglia {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 10px;
 }
 
-#reset-btn {
+.color {
+	width: 100px;
+	height: 100px;
+}
+
+.red {
+	background: red;
+}
+
+.blue {
+	background: blue;
+}
+
+.green {
+	background: green;
+}
+
+.yellow {
+	background: yellow;
+}
+
+.highlight {
+  transition: background-color 0.25s ease;
+  box-shadow: 0px 0px 10px #fff;
+}
+
+.highlight:active {
+  background-color: #fff;
+  box-shadow: none;
+}
+
+#start-btn {
 	margin: 32px;
 	font-size: 32px;
 	font-weight: bold;
@@ -96,7 +119,7 @@ p {
 	background-color: var(--yellow);
 }
 
-#reset-btn:focus {
+#start-btn:focus {
 	outline: none !important;
 	box-shadow: none;
 }
@@ -111,19 +134,3 @@ p {
 	align-items: center;
 	text-align: center;
 }
-
-@media screen and (max-width: 780px) {
-
-
-	#container {
-		grid-template-columns: 1fr;
-		padding-top : 140px !important;
-	}
-
-	.classifica {
-		padding-top: 10px;
-		height: 200px;
-		width: 70%;
-	}
-}
-
