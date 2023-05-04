@@ -10,7 +10,6 @@ function generateSequence(n) {
     var color = colors[Math.floor(Math.random() * colors.length)];
     sequence.push(color);
   }
-  alert(sequence);
   return sequence;
 }
 
@@ -29,58 +28,63 @@ function playSequence(sequence) {
 
 // funzione per evidenziare un colore per un breve periodo di tempo
 function highlight(color) {
-  var element = document.querySelector(".color." + color);
-  element.classList.add("highlight");
+  var element = $(".color." + color);
+  element.addClass("highlight");
   setTimeout(function() {
-    element.classList.remove("highlight");
+    element.removeClass("highlight");
   }, 500);
 }
 
 // gestore evento click sul pulsante "Start"
-document.getElementById("start-btn").addEventListener("click", function() {
-	var status = document.getElementById("start-btn").innerHTML;
+$("#start-btn").on("click", function() {
+	var status = $(this).text();
 	if (!playing) {
-		if (status == "Next Level" || status == "Start")
+		if (status == "Next Level")
 		{
 			level++;
 			$('#level').text(level);
 			playing = true;
 			sequence = generateSequence(level + 1);
 			playSequence(sequence);
-			document.getElementById("start-btn").innerHTML = "Playing...";
+			$(this).text("Playing...");
+		}
+		else if (status == "Start")
+		{
+			playing = true;
+			sequence = generateSequence(level + 1);
+			playSequence(sequence);
+			$(this).text("Playing...");
 		}
 		else if (status == "Game Over")
 		{
 			level = 0;
 			$('#level').text(level);
-			document.getElementById("start-btn").innerHTML = "Start";
+			$(this).text("Start");
 		}
 	}
 });
 
 // gestore evento click sui colori
-document.querySelectorAll(".color").forEach(function(element) {
-  element.addEventListener("click", function() {
-    if (playing) {
-      var color = element.classList[1];
-      highlight(color);
-      // confrontiamo il colore corrente con la sequenza
-      if (color === sequence[0]) {
-        sequence.shift();
-        if (sequence.length === 0) {
-          // la sequenza è stata completata con successo
+$(".color").on("click", function() {
+  if (playing) {
+    var color = $(this).attr("class").split(" ")[1];
+    highlight(color);
+    // confrontiamo il colore corrente con la sequenza
+    if (color === sequence[0]) {
+      sequence.shift();
+      if (sequence.length === 0) {
+        // la sequenza è stata completata con successo
 
-		  // salva il livello raggiunto
+		// salva il livello raggiunto
 
-          playing = false;
-          document.getElementById("start-btn").innerHTML = "Next Level";
-
-        }
-      } else {
-        // hai perso
         playing = false;
-        document.getElementById("start-btn").innerHTML = "Game Over";
+        $("#start-btn").text("Next Level");
+
       }
+    } else {
+      // hai perso
+      playing = false;
+      $("#start-btn").text("Game Over");
     }
-  });
+  }
 });
