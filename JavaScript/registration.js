@@ -1,17 +1,10 @@
-function resetformelem() {
-	var email = $('#registration_form').find('#email').val();
-	var username = $('#registration_form').find('#username').val();
-	var password = $('#registration_form').find('#password').val();
-
-	$('#email').removeClass('error');
-
+function already_exist() {
+	$('#email').addClass('error');
+	$('#email').next('small').addClass('error');
+	$('#email + small').text('Utente già registrato con questa email. Prova a fare il login');
 	$('#username').removeClass('error');
 	$('#username').next('small').removeClass('error');
 	$('#username').next('small').text('');
-
-	$('#password').removeClass('error');
-	$('#password').next('small').removeClass('error');
-	$('#password').next('small').text('');
 }
 
 $('#username').on('input', function () {
@@ -82,13 +75,9 @@ $('#registration_form').submit(function (event) {
 		data: { email: email, username: username, password: password },
 		success: function (data) {
 			if (data.length > 1)
-			{
-				$('#email').addClass('error');
-				$('#email').next('small').addClass('error');
-				$('#email + small').text('Utente già registrato con questa email o username. Prova a fare il login');
-			}
-			resetformelem();
-			window.location.href = 'init.php';
+				already_exist();
+			else
+				window.location.href = '?p=home';
 		},
 		error: function (xhr, status, error) {
 			// gestisci l'errore qui
