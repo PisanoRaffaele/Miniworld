@@ -1,21 +1,48 @@
-#container {
-	text-align: center;
-	margin-top: 20%;
-	place-items: center;
+/****************************** Global Data & Variable ******************************/
+:root {
+    --blue-opaco: rgba(0, 0, 31, 0.7);
+    --blue: #00001f;
+    --yellow: #ffec37;
+    --height-header: 80px;
+    --o: #1e0742;
 }
 
-#dot {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	background-color: green;
-	margin: 0 auto;
-	margin-top: 50px;
-	cursor: pointer;
+body {
+    background-color: var(--blue);
+    font-family: Arial;
 }
 
-#dot:hover {
-	background-color: red;
+/****************************** END ******************************/
+
+/****************************** TEXT ******************************/
+.text-center {
+	font-size: 55px;
+	font-weight: bold;
+	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+	background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    line-height: 120%;
+    letter-spacing: 0.014em;
+    margin: 16px auto;
+}
+
+.text-side {
+	font-size: 40px;
+	font-weight: bold;
+	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+	background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    line-height: 120%;
+    letter-spacing: 0.014em;
+    margin: 14px auto;
 }
 
 p {
@@ -25,9 +52,81 @@ p {
 	color: #fff;
 }
 
-#reset {
-	background-color: #ffec37;
-	font-weight: bold;
-	color: #1e0742;
+/****************************** END ******************************/
+
+.game {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#container {
+	padding-top : 160px !important;
+	display: grid;
+	grid-template-columns: 5fr 1fr;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+#dot {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	background-color: green;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	cursor: pointer;
+}
+
+#dot:hover {
+	background-color: red;
+}
+
+#reset-btn {
+	margin: 32px;
+	font-size: 32px;
+	font-weight: bold;
+	width: 170px;
+	color: var(--blue);
+	border: 3px solid var(--yellow);
+	border-radius: 32px;
+	background-color: var(--yellow);
+}
+
+#reset-btn:focus {
+	outline: none !important;
+	box-shadow: none;
+}
+
+.classifica {
+	padding: 22px;
+	padding-top: 10px;
+	background-color: #2F2F4A;
+	border-radius: 15px;
+	height: 80%;
+	width: fit-content;
+	align-items: center;
+	text-align: center;
+}
+
+@media screen and (max-width: 780px) {
+
+
+	#container {
+		grid-template-columns: 1fr;
+		padding-top : 140px !important;
+	}
+
+	.classifica {
+		padding-top: 10px;
+		height: 200px;
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 510px) {
+
 }

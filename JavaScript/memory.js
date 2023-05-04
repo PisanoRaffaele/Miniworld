@@ -14,6 +14,9 @@ const images = [
 	let secondCard = null;
 	let cardsMatched = 0;
 	let generatedNumbers = [];
+	var time = 0;
+	var countdown;
+	var gameStarted = false;
 
 	const gridItems = document.querySelectorAll('.grid-item');
 
@@ -82,6 +85,15 @@ const images = [
 	function handleCardClick(event) {
 		const card = event.currentTarget;
 
+		if (!gameStarted) {
+			gameStarted = true;
+			countdown = setInterval(function() {
+				time += 0.1;
+				time = parseFloat(time.toFixed(2));
+				$('#time').text(time);
+			}, 100);
+		}
+
 		if (!card.classList.contains('hidden') || firstCard === card || secondCard) {
 			// La carta è già stata girata o è la stessa carta cliccata in precedenza
 			return;
@@ -106,7 +118,7 @@ const images = [
 					hideCard(secondCard);
 					firstCard = null;
 					secondCard = null;
-				}, 1200);
+				}, 1000);
 			}
 		}
 	}
@@ -129,6 +141,10 @@ const images = [
 		secondCard = null;
 		cardsMatched = 0;
 		generatedNumbers = [];
+		gameStarted = false;
+		clearInterval(countdown);
+		time = 0;
+		$('#time').text(time);
 		for (let i = 0; i < gridItems.length; i++) {
 			const card = gridItems[i];
 			card.removeChild(card.querySelector('img'));
@@ -137,9 +153,15 @@ const images = [
 	}
 
 	function vittoria() {
-		alert("Complimenti, hai vinto!");
+		//salva il tempo
+		gameStarted = false;
+		clearInterval(countdown);
+		setTimeout(function() {
+			alert("Complimenti, hai vinto in " + time + " secondi !");
+		}, 1000);
 	}
-	const resetButton = document.getElementById('reset');
+
+	const resetButton = document.getElementById('reset-btn');
 	resetButton.addEventListener('click', resetGame);
 
 	initGame();

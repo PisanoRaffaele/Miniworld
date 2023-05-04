@@ -19,13 +19,15 @@ $(document).ready(function() {
 		if (time == 0) {
 		  clearInterval(countdown);
 		  $('#dot').unbind();
-		  alert('Time is up! Your score is ' + score + '.');
+		  setTimeout(function() {
+		  	alert('Time is up! Your score is ' + score + '.');
+		  }, 100);
 		  gameStarted = false;
 		}
 	  }, 1000);
 	}
 
-	$('#reset').click(function() {
+	$('#reset-btn').click(function() {
 	  score = 0;
 	  time = 10;
 	  $('#score').text(score);
@@ -42,6 +44,8 @@ $(document).ready(function() {
 
 	$('#dot').click(function() {
 	  if (!gameStarted) {
+		score++;
+		$('#score').text(score);
 		startGame();
 	  }
 	});

@@ -1,6 +1,12 @@
 <body>
 	<!-- aggiungi una colonna laterale al gioco che sia alta quanto il gioco testo che contenga la classifica -->
-<div class="container">
+<div class="container" id="container">
+	<div class="container timer">
+		<div>
+			<h1 class="text-side">Timer</h1>
+			<p><span id="time">0</span> seconds</p>
+		</div>
+	</div>
 	<div class="game">
 		<div class="row-12">
 			<h1 class="text-center">Memory</h1>
@@ -32,11 +38,11 @@
 				<div class="col-auto-3 grid-item" id="15"></div>
 			</div>
 		</div>
-		<button class="btn btn-primary" id="reset">Reset</button>
+		<button class="btn btn-primary" id="reset-btn">Reset</button>
   	</div>
 
-	<div class="classifica">
-	  <h1 class="text-center">Classifica</h1>
+	<div class="container classifica">
+	  <h1 class="text-side">Classifica</h1>
 	</div>
 </div>
 </body>
