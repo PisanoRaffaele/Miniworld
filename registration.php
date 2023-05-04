@@ -1,28 +1,33 @@
-<!DOCTYPE html>
-<html lang="it">
-
-<head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>miniworld</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- CSS include -->
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/registration.css">
-</head>
-
-<body>
-    <?php
-
-    include "html/header.html";
-    include "html/registration.html";
-
-    ?>
-    <!-- Javascript Include -->
-    <script src="JavaScript/header.js"></script>
-    <script src="JavaScript/registration.js"></script>
-</body>
-</html>
+<div class="container">
+	<div class="row">
+		<form id="registration_form" method="post">
+			<div class="col-md-6">
+				<div class="mb-3">
+					<label for="email" class="form-label">Email</label>
+					<input type="email" name="email" id="email" class="form-control" placeholder="Email"
+						aria-describedby="helpId" size="50" required>
+					<small class="text-availabilty"></small>
+				</div>
+				<div class="mb-3">
+					<label for="username" class="form-label">Username</label>
+					<input type="text" name="username" id="username" class="form-control" placeholder="Username"
+						aria-describedby="helpId" size="50" required>
+					<small class="text-availabilty"></small>
+				</div>
+				<div class="mb-3">
+					<label for="password" class="form-label">Password</label>
+					<input type="password" name="password" id="password" class="form-control" placeholder="Password"
+						aria-describedby="helpId" size="50" required>
+					<small class="text-availabilty"></small>
+				</div>
+				<div class="mb-3">
+					<input type="checkbox" name="remember" id="remember" class="form-check-input">
+					<label for="remember" class="form-check-label">Remember me</label>
+				</div>
+				<div class="mb-3">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

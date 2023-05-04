@@ -1,12 +1,3 @@
-<!--
-    1. apri terminale
-    2. vai alla directory con i file
-    3. esegui "php -S localhost:<port>"
-    4. apri il browser e vai a localhost:<port>/<pagine.php>
- -->
-
-<!DOCTYPE html>
-<html lang="it">
 <head>
 <meta charset="UTF-8">
 
@@ -18,18 +9,9 @@
 
     <!-- CSS include -->
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/home.css">
-
-</head>
-<body>
-    <?php
-        include "html/header.html";
-        include "html/home.html";
+    <?php 
+        $page = $_GET['p'];
+        echo "<link rel='stylesheet' href='css/$page.css'>";
     ?>
 
-    <!-- Javascript Include -->
-    <script src="JavaScript/header.js"></script>
-    <script src="JavaScript/home.js"></script>
-
-</body>
-</html>
+</head>
