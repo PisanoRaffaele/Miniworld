@@ -1,3 +1,13 @@
+$(".toggle-password").click(function () {
+	$(this).find('i').toggleClass("fa-eye-slash fa-eye");
+	var input = $($(this).attr("toggle"));
+	if (input.attr("type") == "password") {
+		input.attr("type", "text");
+	} else {
+		input.attr("type", "password");
+	}
+});
+
 function already_exist() {
 	$('#email').addClass('error');
 	$('#email').next('small').addClass('error');
@@ -47,6 +57,24 @@ $('#email').on('input', function () {
 		return;
 	}
 });
+
+$("#re_password").on({
+	"blur": function () {
+		var firstPassword = $("#password").val();
+		if ($(this).val() != firstPassword) {
+			$(this).addClass('error');
+			$(this).next('small').addClass('error');
+			$(this).next('small').text('Le password non coincidono');
+		}
+	},
+	focus: function () {
+		$(this).removeClass('error');
+		$(this).next('small').removeClass('error');
+		$(this).next('small').text('');
+	}
+});
+
+
 
 $('#registration_form').submit(function (event) {
 	event.preventDefault();

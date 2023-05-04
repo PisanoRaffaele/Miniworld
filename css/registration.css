@@ -1,3 +1,11 @@
+:root {
+    --blue-opaco: rgba(0, 0, 31, 0.7);
+    --blue: #00001f;
+    --yellow: #ffec37;
+    --height-header: 80px;
+    --o: #1e0742;
+}
+
 .container {
     margin: 200px;
 }
@@ -18,4 +26,154 @@
 
 .text-availabilty.available {
     color: green;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/montserrat/Montserrat-Bold.ttf");
+}
+
+a:focus,
+a:active {
+	text-decoration: none;
+	outline: none;
+	transition: all 300ms ease 0s;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+figure {
+	margin: 0;
+}
+
+p {
+	margin-bottom: 0px;
+	font-size: 15px;
+	color: #777;
+}
+
+h2 {
+	line-height: 1.66;
+	margin: 0;
+	padding: 0;
+	font-weight: 900;
+	font-size: 24px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 40px;
+    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
+    background-position: center;
+    background-repeat: repeat;
+	background-size: cover;
+    background-clip: text;
+    color: transparent;
+}
+
+.clear {
+	clear: both;
+}
+
+.register-body {
+	font-size: 14px;
+	line-height: 1.8;
+	color: #222;
+	font-weight: 400;
+	background-color: rgba(28, 1, 50, 0.892);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	padding: 115px 0;
+}
+
+.container {
+	width: 660px;
+	position: relative;
+	margin: 0 auto;
+    color: #fff;
+}
+
+.position-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.signup-content {
+	background: #fff;
+	background: var(--blue-opaco);
+	padding: 50px 85px;
+    border-radius: 30px;
+}
+
+.form-group {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.form-input {
+	width: 100%;
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+	padding: 17px 20px;
+	box-sizing: border-box;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.form-submit {
+	width: 100%;
+	border-radius: 5px;
+	padding: 17px 20px;
+	box-sizing: border-box;
+	font-size: 14px;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+	/* background-image: linear-gradient(to left, #74ebd5, #9face6); */
+	background-image: linear-gradient(to right, #3496f2, #1f44e7);
+    background-position: center;
+    background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.loginhere {
+	color: #fff;
+	font-weight: 500;
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 5px;
+}
+
+.loginhere-link {
+	font-weight: 700;
+	color: #878787;
+}
+
+.field-icon {
+	float: right;
+	margin-right: 17px;
+	margin-top: -40px;
+	position: relative;
+	z-index: 2;
+	color: #555;
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		width: calc(100% - 40px);
+		max-width: 100%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.signup-content {
+		padding: 50px 25px;
+	}
 }

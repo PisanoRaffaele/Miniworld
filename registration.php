@@ -1,33 +1,45 @@
-<div class="container">
-	<div class="row">
-		<form id="registration_form" method="post">
-			<div class="col-md-6">
-				<div class="mb-3">
-					<label for="email" class="form-label">Email</label>
-					<input type="email" name="email" id="email" class="form-control" placeholder="Email"
-						aria-describedby="helpId" size="50" required>
-					<small class="text-availabilty"></small>
-				</div>
-				<div class="mb-3">
-					<label for="username" class="form-label">Username</label>
-					<input type="text" name="username" id="username" class="form-control" placeholder="Username"
-						aria-describedby="helpId" size="50" required>
-					<small class="text-availabilty"></small>
-				</div>
-				<div class="mb-3">
-					<label for="password" class="form-label">Password</label>
-					<input type="password" name="password" id="password" class="form-control" placeholder="Password"
-						aria-describedby="helpId" size="50" required>
-					<small class="text-availabilty"></small>
-				</div>
-				<div class="mb-3">
-					<input type="checkbox" name="remember" id="remember" class="form-check-input">
-					<label for="remember" class="form-check-label">Remember me</label>
-				</div>
-				<div class="mb-3">
-					<button type="submit" class="btn btn-primary">Submit</button>
+<div class="register-body">
+	<div class="main">
+		<section class="signup">
+			<div class="container">
+				<div class="signup-content">
+					<form method="POST" id="registration_form" class="signup-form">
+						<h2 class="form-title">Create account</h2>
+						<div class="form-group">
+							<label for="name" class="form-label">Name</label>
+							<input type="text" class="form-input" name="username" id="username" placeholder="Your Name" />
+							<small class="text-availabilty"></small>
+						</div>
+						<div class="form-group">
+							<label for="email" class="form-label">Email</label>
+							<input type="email" class="form-input" name="email" id="email" placeholder="Your Email" />
+							<small class="text-availabilty"></small>
+						</div>
+						<div class="form-group">
+							<label for="password" class="form-label">Password</label>
+							<input type="password" class="form-input" name="password" id="password"
+								placeholder="Password" />
+							<!-- <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span> -->
+							<span toggle="#password" class="field-icon toggle-password">
+								<i class="far fa-eye-slash"></i>
+							</span>
+							<small class="text-availabilty"></small>
+						</div>
+						<div class="form-group">
+							<label for="re_password" class="form-label">Repeat Password</label>
+							<input type="password" class="form-input" name="re_password" id="re_password"
+								placeholder="Repeat your password" />
+							<small class="text-availabilty"></small>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit" class="form-submit mt-3" value="Sign up" />
+						</div>
+					</form>
+					<p class="loginhere">
+						Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+					</p>
 				</div>
 			</div>
-		</form>
+		</section>
 	</div>
 </div>
