@@ -6,6 +6,8 @@ $(document).ready(function() {
 
 	function startGame() {
 	  gameStarted = true;
+	  score++;
+	  $('#score').text(score);
 
 	  $('#dot').click(function() {
 		score++;
@@ -44,8 +46,6 @@ $(document).ready(function() {
 
 	$('#dot').click(function() {
 	  if (!gameStarted) {
-		score++;
-		$('#score').text(score);
 		startGame();
 	  }
 	});
