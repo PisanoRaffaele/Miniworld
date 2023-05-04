@@ -90,6 +90,7 @@
 	color: #fff;
   }
 
+
 .unvisible {
 	display: none !important;
 }
@@ -132,6 +133,7 @@
   #word {
 	font-size: 40px;
 	font-weight: bold;
+	color: #fff;
   }
 
   .classifica {

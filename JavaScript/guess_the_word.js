@@ -75,9 +75,11 @@ function initGame() {
 				alert("You win!");
 				//stop the timer
 				clearInterval(countdown);
+				$('#guess-btn').addClass('unvisible');
 			} else if (guessesRemaining === 0) {
 				alert("You lose. The word was '" + word + "'.");
 				clearInterval(countdown);
+				$('#guess-btn').addClass('unvisible');
 			}
 			// Clear the input field
 			document.getElementById("letter").value = "";
