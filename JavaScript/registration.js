@@ -82,6 +82,7 @@ $('#registration_form').submit(function (event) {
 	var email = $(this).find('#email').val();
 	var username = $(this).find('#username').val();
 	var password = $(this).find('#password').val();
+	var re_password = $(this).find('#re_password').val();
 
 	// controlla campi
 	var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -94,6 +95,13 @@ $('#registration_form').submit(function (event) {
 
 	if (password.length < 1) {
 		alert('La password deve essere lunga almeno 8 caratteri');
+		return false;
+	}
+
+	if (password != re_password) {
+		$(re_password).addClass('error');
+		$(re_password).next('small').addClass('error');
+		$(re_password).next('small').text('Le password non coincidono');
 		return false;
 	}
 
