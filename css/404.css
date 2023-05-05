@@ -41,11 +41,13 @@ section.notFound h1, h2, h3 {
 }
 
 #back-404 {
-    width: 40%;
+    /* width: 40%; */
+    width: 60%;
 }
 
 #car-404 {
-    width: 60%;
+    /* width: 60%; */
+    width: 40%;
 }
 
 div.text {

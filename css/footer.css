@@ -1,0 +1,6 @@
+.nav-link {
+    color: #fff !important;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    padding-right: 10px;
+}

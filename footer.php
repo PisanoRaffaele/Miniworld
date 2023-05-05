@@ -1,15 +1,15 @@
-<footer class="container-fluid footer row justify-content-between">
-    <!-- <div class="col-auto logo ml-5">
-        <a class="navbar-logo" href="init.php">
+<footer class="container-fluid footer row justify-content-between mt-3 mb-2">
+    <div class="col-auto logo ml-5">
+        <a class="navbar-logo" href="#">
             <img src="assets/Logo.png" class="d-inline-block align-top" id="logoimg">
         </a>
     </div>
-    <div class="col-auto">
-        <a class="nav-item nav-link" href="memory.php">About Us</a>
-        <a class="nav-item nav-link" href="dot.php">Classifiche</a>
-        <a class="nav-item nav-link" href="#">Supporto</a>
-        <a class="nav-item nav-link" href="register.php" name="personal"></a>
-    </div> -->
+    <div class="d-flex">
+        <a class="footer-link nav-link" href="#">About Us</a>
+        <a class="footer-link nav-link" href="#">Classifiche</a>
+        <a class="footer-link nav-link" href="#">Supporto</a>
+        <a class="footer-link nav-link" href="#" name="personal"></a>
+    </div>
 </footer>
 
 
