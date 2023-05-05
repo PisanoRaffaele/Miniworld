@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="css/header.css">
     <?php 
         $page = $_GET['p'];
-        echo "<link rel='stylesheet' href='css/$page.css'>";
+        $css_file = "css/$page.css";
+        if (file_exists($css_file))
+            echo "<link rel='stylesheet' href='css/$page.css'>";
+        else
+            echo "<link rel='stylesheet' href='css/404.css'>";
     ?>
 
 </head>

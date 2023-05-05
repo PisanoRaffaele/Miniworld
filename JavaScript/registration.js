@@ -19,7 +19,7 @@ function already_exist() {
 
 $('#username').on('input', function () {
 	var username = $(this).val();
-	if (username === '') {
+	if (!username) {
 		$('#username').removeClass('error');
 		$('#username').next('small').text('');
 		return;

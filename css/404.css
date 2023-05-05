@@ -1,0 +1,68 @@
+:root {
+    --blue-opaco: rgba(0, 0, 31, 0.7);
+    --blue: #00001f;
+    --yellow: #ffec37;
+    --height-header: 80px;
+    --o: #1e0742;
+}
+
+.body-404 {
+    background-color: var(--blue-opaco);
+    padding: 0;
+    margin: 150px;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P';
+    color: #FFFFFF;
+    text-align: center;
+}
+
+section.notFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5%;
+    height: 100vh;
+    width: 100%;
+}
+
+section.notFound h1 {
+    color: red;
+    font-size: 150px;
+}
+
+section.notFound h2 {
+    font-size: 50px;
+}
+
+section.notFound h1, h2, h3 {
+    margin-bottom: 40px;
+}
+
+#first-foto {
+    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    background-clip: content-box;
+}
+
+div.text {
+    height: 50vh;
+}
+
+@media only screen and (max-width: 768px) {
+    section.notFound {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    section.notFound div.img img {
+        width: 70vw;
+        height: auto;
+    }
+    section.notFound h1 {
+        font-size: 50px;
+    }
+    section.notFound h2 {
+        font-size: 25px;
+    }
+}
