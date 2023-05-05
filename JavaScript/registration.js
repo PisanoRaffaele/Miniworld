@@ -102,10 +102,13 @@ $('#registration_form').submit(function (event) {
 		url: 'handle_registration.php',
 		data: { email: email, username: username, password: password },
 		success: function (data) {
-			if (data.length > 1)
+			if (data.length > 1) {
+				console.log(data);
 				already_exist();
-			else
+			} else {
+				localStorage.setItem('isLoggedIn', true);
 				window.location.href = '?p=home';
+			}
 		},
 		error: function (xhr, status, error) {
 			// gestisci l'errore qui
