@@ -8,8 +8,8 @@
 
 .body-404 {
     background-color: var(--blue-opaco);
-    padding: 0;
-    margin: 150px;
+    display: flex;
+    margin-top: 50px;
     box-sizing: border-box;
     font-family: 'Press Start 2P';
     color: #FFFFFF;
@@ -18,51 +18,58 @@
 
 section.notFound {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 5%;
+    margin-top: 50px;
     height: 100vh;
     width: 100%;
 }
 
 section.notFound h1 {
-    color: red;
-    font-size: 150px;
+    font-size: clamp(60px, 10vw, 150px);
+    padding-right: 10px;
 }
 
 section.notFound h2 {
-    font-size: 50px;
+    font-size: clamp(20px, 5vw, 50px);
+    padding-left: 10px;
 }
 
 section.notFound h1, h2, h3 {
     margin-bottom: 40px;
 }
 
-#first-foto {
-    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: repeat;
-    background-clip: content-box;
+#back-404 {
+    width: 40%;
+}
+
+#car-404 {
+    width: 60%;
 }
 
 div.text {
-    height: 50vh;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-404 {
+    font-size: clamp(10px, 3vw, 30px);
+    margin-top: -40px;
 }
 
 @media only screen and (max-width: 768px) {
     section.notFound {
-        flex-direction: column;
-        justify-content: space-around;
+        height: 60vh;
     }
     section.notFound div.img img {
         width: 70vw;
         height: auto;
     }
-    section.notFound h1 {
-        font-size: 50px;
-    }
-    section.notFound h2 {
-        font-size: 25px;
+
+    #back-404 {
+        width: 65vw;
     }
 }
