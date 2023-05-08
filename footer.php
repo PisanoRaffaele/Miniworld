@@ -20,6 +20,4 @@
     $js_file = "css/$page.css";
     if (file_exists($js_file))
         echo "<script src='JavaScript/$js_file.js'></script>";
-    else
-        echo "<script src='JavaScript/404.js'></script>";
 ?>
