@@ -74,8 +74,6 @@ $("#re_password").on({
 	}
 });
 
-
-
 $('#registration_form').submit(function (event) {
 	event.preventDefault();
 

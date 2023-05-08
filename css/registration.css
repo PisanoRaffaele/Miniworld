@@ -71,6 +71,8 @@ h2 {
     background-repeat: repeat;
 	background-size: cover;
     background-clip: text;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
     color: transparent;
 }
 
