@@ -1,0 +1,77 @@
+:root {
+    --blue-opaco: rgba(0, 0, 31, 0.7);
+    --blue: #00001f;
+    --yellow: #ffec37;
+    --height-header: 80px;
+    --o: #1e0742;
+}
+
+.body-404 {
+    background-color: var(--blue-opaco);
+    display: flex;
+    margin-top: 50px;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P';
+    color: #FFFFFF;
+    text-align: center;
+}
+
+section.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    height: 100vh;
+    width: 100%;
+}
+
+section.notFound h1 {
+    font-size: clamp(60px, 10vw, 150px);
+    padding-right: 10px;
+}
+
+section.notFound h2 {
+    font-size: clamp(20px, 5vw, 50px);
+    padding-left: 10px;
+}
+
+section.notFound h1, h2, h3 {
+    margin-bottom: 40px;
+}
+
+#back-404 {
+    /* width: 40%; */
+    width: 60%;
+}
+
+#car-404 {
+    /* width: 60%; */
+    width: 40%;
+}
+
+div.text {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-404 {
+    font-size: clamp(10px, 3vw, 30px);
+    margin-top: -40px;
+}
+
+@media only screen and (max-width: 768px) {
+    section.notFound {
+        height: 60vh;
+    }
+    section.notFound div.img img {
+        width: 70vw;
+        height: auto;
+    }
+
+    #back-404 {
+        width: 65vw;
+    }
+}

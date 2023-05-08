@@ -1,7 +1,7 @@
 <header class="container-fluid header row justify-content-between"> <!-- sticky-top -->
     <!-- Logo container -->
     <div class="col-auto logo ml-5">
-        <a class="navbar-logo" href="init.php">
+        <a class="navbar-logo" href="?p=home">
             <img src="assets/Logo.png" class="d-inline-block align-top" id="logoimg">
         </a>
     </div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="header-link-container pl-1 pr-1">
                     <img src="assets/forme.png" alt="" class="jumping-foto2">
-                    <a class="nav-item nav-link" href="registration.php" name="personal">Registrati/Login</a>
+                    <a class="nav-item nav-link" href="?p=registration" name="personal">Registrati/Login</a>
                 </div>
                 <div class="header-link-container pl-1 pr-1">
                     <i class="far fa-search fa-lg"></i>
@@ -57,6 +57,6 @@
     </div>
     <div class="dropdown-separator"></div>
     <div class="dropdown-wrapp">
-        <a class="nav-item nav-link dropdown-link" href="#" name="personal">Registrati/Login</a>
+        <a class="nav-item nav-link dropdown-link" href="?p=registration" name="personal">Registrati/Login</a>
     </div>
 </div>

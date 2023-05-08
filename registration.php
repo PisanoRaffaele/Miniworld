@@ -1,28 +1,45 @@
-<!DOCTYPE html>
-<html lang="it">
-
-<head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>miniworld</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- CSS include -->
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/registration.css">
-</head>
-
-<body>
-    <?php
-
-    include "html/header.html";
-    include "html/registration.html";
-
-    ?>
-    <!-- Javascript Include -->
-    <script src="JavaScript/header.js"></script>
-    <script src="JavaScript/registration.js"></script>
-</body>
-</html>
+<div class="register-body">
+	<div class="main">
+		<section class="signup">
+			<div class="container">
+				<div class="signup-content">
+					<form method="POST" id="registration_form" class="signup-form">
+						<h2 class="form-title">Create account</h2>
+						<div class="form-group">
+							<label for="name" class="form-label">Name</label>
+							<input type="text" class="form-input" name="username" id="username" placeholder="Your Name" />
+							<small class="text-availabilty"></small>
+						</div>
+						<div class="form-group">
+							<label for="email" class="form-label">Email</label>
+							<input type="email" class="form-input" name="email" id="email" placeholder="Your Email" />
+							<small class="text-availabilty"></small>
+						</div>
+						<div class="form-group">
+							<label for="password" class="form-label">Password</label>
+							<input type="password" class="form-input" name="password" id="password"
+								placeholder="Password" />
+							<!-- <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span> -->
+							<span toggle="#password" class="field-icon toggle-password">
+								<i class="far fa-eye-slash"></i>
+							</span>
+							<small class="text-availabilty"></small>
+						</div>
+						<div class="form-group">
+							<label for="re_password" class="form-label">Repeat Password</label>
+							<input type="password" class="form-input" name="re_password" id="re_password"
+								placeholder="Repeat your password" />
+							<small class="text-availabilty"></small>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit" class="form-submit mt-3" value="Sign up" />
+						</div>
+					</form>
+					<p class="loginhere">
+						Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+					</p>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

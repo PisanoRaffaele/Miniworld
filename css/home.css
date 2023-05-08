@@ -133,6 +133,10 @@ body {
     position: relative;
 }
 
+.card-text {
+    font-weight: bold;
+}
+
 .jumping-foto {
     position: absolute;
     top: 0;

@@ -1,13 +1,20 @@
-window.onload = function () {
-    var isLoggedIn = false; // Definisci una variabile per indicare se l'utente è loggato o no. In questo esempio, l'utente non è loggato.
+$(function () {
+    // Definisci una variabile per indicare se l'utente è loggato o no. In questo esempio, l'utente non è loggato.
+    if (localStorage.getItem('isLoggedIn') == null) {
+        localStorage.setItem('isLoggedIn', false);
+    }
     
+    var isLoggedIn = localStorage.getItem('isLoggedIn');
+
     $('[name="personal"]').each(function () {
         var elem = $(this);
-        if (isLoggedIn) {
+        if (isLoggedIn == 'true') {
             elem.html('Profilo');
         }
     });
+});
 
+window.onload = function () {
     $('#hamburger').on('click', function () {
         $('.animated-togglebutton').toggleClass('open');
         $('#dropdown-menu').toggleClass('show');

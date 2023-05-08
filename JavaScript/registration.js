@@ -1,22 +1,25 @@
-function resetformelem() {
-	var email = $('#registration_form').find('#email').val();
-	var username = $('#registration_form').find('#username').val();
-	var password = $('#registration_form').find('#password').val();
+$(".toggle-password").click(function () {
+	$(this).find('i').toggleClass("fa-eye-slash fa-eye");
+	var input = $($(this).attr("toggle"));
+	if (input.attr("type") == "password") {
+		input.attr("type", "text");
+	} else {
+		input.attr("type", "password");
+	}
+});
 
-	$('#email').removeClass('error');
-
+function already_exist() {
+	$('#email').addClass('error');
+	$('#email').next('small').addClass('error');
+	$('#email + small').text('Utente già registrato con questa email. Prova a fare il login');
 	$('#username').removeClass('error');
 	$('#username').next('small').removeClass('error');
 	$('#username').next('small').text('');
-
-	$('#password').removeClass('error');
-	$('#password').next('small').removeClass('error');
-	$('#password').next('small').text('');
 }
 
 $('#username').on('input', function () {
 	var username = $(this).val();
-	if (username === '') {
+	if (!username) {
 		$('#username').removeClass('error');
 		$('#username').next('small').text('');
 		return;
@@ -55,12 +58,31 @@ $('#email').on('input', function () {
 	}
 });
 
+$("#re_password").on({
+	"blur": function () {
+		var firstPassword = $("#password").val();
+		if ($(this).val() != firstPassword) {
+			$(this).addClass('error');
+			$(this).next('small').addClass('error');
+			$(this).next('small').text('Le password non coincidono');
+		}
+	},
+	focus: function () {
+		$(this).removeClass('error');
+		$(this).next('small').removeClass('error');
+		$(this).next('small').text('');
+	}
+});
+
+
+
 $('#registration_form').submit(function (event) {
 	event.preventDefault();
 
 	var email = $(this).find('#email').val();
 	var username = $(this).find('#username').val();
 	var password = $(this).find('#password').val();
+	var re_password = $(this).find('#re_password').val();
 
 	// controlla campi
 	var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -76,19 +98,25 @@ $('#registration_form').submit(function (event) {
 		return false;
 	}
 
+	if (password != re_password) {
+		$(re_password).addClass('error');
+		$(re_password).next('small').addClass('error');
+		$(re_password).next('small').text('Le password non coincidono');
+		return false;
+	}
+
 	$.ajax({
 		type: $(this).attr('method'),
 		url: 'handle_registration.php',
 		data: { email: email, username: username, password: password },
 		success: function (data) {
-			if (data.length > 1)
-			{
-				$('#email').addClass('error');
-				$('#email').next('small').addClass('error');
-				$('#email + small').text('Utente già registrato con questa email o username. Prova a fare il login');
+			if (data.length > 1) {
+				console.log(data);
+				already_exist();
+			} else {
+				localStorage.setItem('isLoggedIn', true);
+				window.location.href = '?p=home';
 			}
-			resetformelem();
-			window.location.href = 'init.php';
 		},
 		error: function (xhr, status, error) {
 			// gestisci l'errore qui
