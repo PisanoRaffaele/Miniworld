@@ -17,5 +17,4 @@
         else
             echo "<link rel='stylesheet' href='css/404.css'>";
     ?>
-
 </head>

@@ -91,7 +91,7 @@ $('#registration_form').submit(function (event) {
 		return false;
 	}
 
-	if (password.length < 1) {
+	if (password.length < 8) {
 		alert('La password deve essere lunga almeno 8 caratteri');
 		return false;
 	}
@@ -108,6 +108,12 @@ $('#registration_form').submit(function (event) {
 		url: 'handle_registration.php',
 		data: { email: email, username: username, password: password },
 		success: function (data) {
+			/*
+				se l'utente è già registrato con questa email allora non lo registra e lo manda al login
+				altrimenti lo registra e lo manda alla home, data.length > 1 è necessario in quanto se utente non registrato
+				e non presente nel DB la risposta è una stringa vuota di lenght = 1 se invece è già registrato la risposta
+				è un array di lunghezza > 1 che resituisce l'errore rimandato dal DB (email già presente)
+			*/
 			if (data.length > 1) {
 				console.log(data);
 				already_exist();
@@ -117,7 +123,6 @@ $('#registration_form').submit(function (event) {
 			}
 		},
 		error: function (xhr, status, error) {
-			// gestisci l'errore qui
 			alert("Errore: " + xhr.responseText);
 		},
 		failure: function (response) {

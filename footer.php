@@ -16,4 +16,10 @@
 <!-- Javascript Include -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="JavaScript/header.js"></script>
-<script src="JavaScript/<?= $page; ?>.js"></script>
+<?php
+    $js_file = "css/$page.css";
+    if (file_exists($js_file))
+        echo "<script src='JavaScript/$js_file.js'></script>";
+    else
+        echo "<script src='JavaScript/404.js'></script>";
+?>
