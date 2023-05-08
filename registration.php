@@ -21,7 +21,7 @@
 								placeholder="Password" />
 							<!-- <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span> -->
 							<span toggle="#password" class="field-icon toggle-password">
-								<i class="far fa-eye-slash"></i>
+								<i class="fa fa-eye-slash"></i>
 							</span>
 							<small class="text-availabilty"></small>
 						</div>
@@ -29,14 +29,17 @@
 							<label for="re_password" class="form-label">Repeat Password</label>
 							<input type="password" class="form-input" name="re_password" id="re_password"
 								placeholder="Repeat your password" />
+							<span toggle="#re_password" class="field-icon toggle-re_password">
+								<i class="fa fa-eye-slash"></i>
+							</span>
 							<small class="text-availabilty"></small>
 						</div>
-						<div class="form-group">
+						<div class="form-group" id="form-group-submit">
 							<input type="submit" name="submit" id="submit" class="form-submit mt-3" value="Sign up" />
 						</div>
 					</form>
 					<p class="loginhere">
-						Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+						Have already an account ? <a href="?p=login" class="loginhere-link">Login here</a>
 					</p>
 				</div>
 			</div>

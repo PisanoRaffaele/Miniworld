@@ -3,7 +3,7 @@ $(function () {
     if (localStorage.getItem('isLoggedIn') == null) {
         localStorage.setItem('isLoggedIn', false);
     }
-    
+
     var isLoggedIn = localStorage.getItem('isLoggedIn');
 
     $('[name="personal"]').each(function () {
@@ -23,11 +23,22 @@ window.onload = function () {
     $(window).on('resize', function () {
         if ($(window).innerWidth() > 991) {
             // Attiva la funzione quando la larghezza della finestra > 991px
-            $('.animated-togglebutton').removeClass('open');
+            $('.fa-search').removeClass('open');
             $('#dropdown-menu').removeClass('show');
         }
     });
 
-    // fetch game elements from server with ajax
+    $('#search-btn2, #search-btn').on('click', function () {
+        $('#dropdown-search').toggleClass('show');
+        $("header").css('visibility', 'hidden');
+        $('.video-container').css('margin-top', '0');
+    });
+
+    $('.close-search').on('click', function () {
+        $('#dropdown-search').removeClass('show');
+        $("header").css('visibility', 'visible');
+        $('.video-container').css('margin-top', '80');
+    });
+
 }
 

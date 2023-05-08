@@ -4,3 +4,14 @@
     transition: all 0.3s ease-in-out;
     padding-right: 10px;
 }
+
+#btn-footer {
+	font-size: 15px;
+	font-weight: bold;
+	color: var(--blue);
+	border: 3px solid var(--yellow);
+	border-radius: 35px;
+	background-color: var(--yellow);
+}
+
+

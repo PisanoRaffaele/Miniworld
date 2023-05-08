@@ -1,23 +1,37 @@
-<footer class="container-fluid footer row justify-content-between mt-3 mb-2">
-    <div class="col-auto logo ml-5">
-        <a class="navbar-logo" href="#">
-            <img src="assets/Logo.png" class="d-inline-block align-top" id="logoimg">
-        </a>
+<div class="container">
+
+  <footer>
+    <div class="container d-flex justify-content-center pt-5">
+      <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" id="btn-footer">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+      <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" id="btn-footer">
+        <i class="fab fa-youtube"></i>
+      </button>
+      <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" id="btn-footer">
+        <i class="fab fa-instagram"></i>
+      </button>
+      <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" id="btn-footer">
+        <i class="fab fa-twitter"></i>
+      </button>
     </div>
-    <div class="d-flex">
-        <a class="footer-link nav-link" href="#">About Us</a>
-        <a class="footer-link nav-link" href="#">Classifiche</a>
-        <a class="footer-link nav-link" href="#">Supporto</a>
-        <a class="footer-link nav-link" href="#" name="personal"></a>
+
+    <!-- Copyright -->
+    <div class="text-center text-white py-4 px-2">
+      © 2023 Copyright:
+      <a class="text-white" href="#">miniworld.com</a>
     </div>
-</footer>
+
+  </footer>
+
+</div>
 
 
 <!-- Javascript Include -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="JavaScript/header.js"></script>
 <?php
-    $js_file = "css/$page.css";
+    $js_file = "JavaScript/$page.js";
     if (file_exists($js_file))
-        echo "<script src='JavaScript/$js_file.js'></script>";
+        echo "<script src='$js_file'></script>";
 ?>

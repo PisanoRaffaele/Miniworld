@@ -8,6 +8,16 @@ $(".toggle-password").click(function () {
 	}
 });
 
+$(".toggle-re_password").click(function () {
+	$(this).find('i').toggleClass("fa-eye-slash fa-eye");
+	var input = $($(this).attr("toggle"));
+	if (input.attr("type") == "password") {
+		input.attr("type", "text");
+	} else {
+		input.attr("type", "password");
+	}
+});
+
 function already_exist() {
 	$('#email').addClass('error');
 	$('#email').next('small').addClass('error');

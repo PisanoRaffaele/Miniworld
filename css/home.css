@@ -44,7 +44,7 @@ body {
     display: block;
     place-content: center;
     padding: 60px 20px;
-    /* margin: auto 4.5px; */
+    margin: auto 40px;
 }
 
 .content-game {
@@ -106,14 +106,14 @@ body {
     grid-template-rows: auto auto;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1191px) {
     .game-list {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 660px) {
     .game-list {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
