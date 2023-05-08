@@ -1,5 +1,4 @@
-<div class="container">
-
+<div class="container container-footer">
   <footer>
     <div class="container d-flex justify-content-center pt-5">
       <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" id="btn-footer">
@@ -21,9 +20,7 @@
       © 2023 Copyright:
       <a class="text-white" href="#">miniworld.com</a>
     </div>
-
   </footer>
-
 </div>
 
 

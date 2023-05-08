@@ -22,7 +22,6 @@ window.onload = function () {
 
     $(window).on('resize', function () {
         if ($(window).innerWidth() > 991) {
-            // Attiva la funzione quando la larghezza della finestra > 991px
             $('.fa-search').removeClass('open');
             $('#dropdown-menu').removeClass('show');
         }
@@ -32,6 +31,33 @@ window.onload = function () {
         $('#dropdown-search').toggleClass('show');
         $("header").css('visibility', 'hidden');
         $('.video-container').css('margin-top', '0');
+        $.ajax({
+            type: 'POST',
+            url: 'fetch.php',
+            dataType: "json",
+            success: function (data) {
+                var html = data.map(function (value) {
+                    return `
+                        <div class="dropdown-game-container">
+                            <a class="row search-game-link" href="${value.link}">
+                                <div class="search-game-img">
+                                    <img src="${value.image}" alt="${value.image}">
+                                </div>
+                                <div class="search-game-text">
+                                    <h4 class="search-game-title">${value.title}</h4>
+                                    <div class="search-game-description">${value.description}</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="dropdown-separator-search"></div>
+                    `;
+                }).join("");
+                $(".search-game-result").html(html);
+            },
+            error: function (xhr, status, error) {
+                alert("Errore: " + xhr.responseText);
+            }
+        });
     });
 
     $('.close-search').on('click', function () {

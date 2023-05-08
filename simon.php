@@ -2,7 +2,7 @@
 
 	<div class="container simon">
 		<div class="row-12">
-			<h1 class="text-center">Simon</h1>
+			<h1 class="text-center textCenter">Simon</h1>
 			<p>Livello: <span id="level">0</span></p>
 		</div>
 		<div id="griglia">
@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="container classifica">
-		<h1 class="text-side">Classifica</h1>
+		<h1 class="textSide">Classifica</h1>
 	</div>
 
 </div>

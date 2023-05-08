@@ -15,7 +15,7 @@
   /****************************** END ******************************/
 
   /****************************** TEXT ******************************/
-  .text-center {
+  .textCenter {
 	font-size: 55px;
 	font-weight: bold;
 	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
@@ -30,7 +30,7 @@
     margin: 16px auto;
   }
 
-  .text-side {
+  .textSide {
 	font-size: 40px;
 	font-weight: bold;
 	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
@@ -178,11 +178,11 @@
 		font-size: 20px;
 	}
 
-	.text-center {
+	.textCenter {
 		font-size: 48px;
 	}
 
-	.text-side {
+	.textSide {
 		font-size: 38px;
 	}
 
@@ -216,11 +216,11 @@
 		font-size: 30px;
 	  }
 
-	.text-center {
+	.textCenter {
 		font-size: 42px;
 	}
 
-	.text-side {
+	.textSide {
 		font-size: 32px;
 	}
 

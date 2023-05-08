@@ -15,7 +15,7 @@ body {
 /****************************** END ******************************/
 
 /****************************** TEXT ******************************/
-.text-center {
+.textCenter {
 	font-size: 55px;
 	font-weight: bold;
 	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
@@ -30,7 +30,7 @@ body {
     margin: 20px auto;
 }
 
-.text-side {
+.textSide {
 	font-size: 40px;
 	font-weight: bold;
 	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
@@ -156,7 +156,7 @@ body {
 @media screen and (max-width: 1224px) {
 
 
-	.text-center {
+	.textCenter {
 		font-size: 50px;
 		color: var(--yellow) !important;
 	}
@@ -182,7 +182,7 @@ body {
 
 @media screen and (max-width: 780px) {
 
-	.text-center {
+	.textCenter {
 		font-size: 50px;
 		color: var(--yellow) !important;
 	}
@@ -212,7 +212,7 @@ body {
 	#griglia {
 		width: 90%;
 	}
-	.text-center {
+	.textCenter {
 		font-size: 45px;
 		color: var(--yellow) !important;
 	}
@@ -245,7 +245,7 @@ body {
 	#griglia {
 		width: 90%;
 	}
-	.text-center {
+	.textCenter {
 		font-size: 35px;
 		color: var(--yellow) !important;
 	}

@@ -2,14 +2,14 @@
 
     <div class="container timer">
         <div>
-            <h1 class="text-side">Timer</h1>
+            <h1 class="textSide">Timer</h1>
             <p><span id="time">0</span> seconds</p>
         </div>
     </div>
 
     <div class="game">
         <div class="row-12">
-            <h1 class="text-center">Memory</h1>
+            <h1 class="text-center textCenter">Memory</h1>
         </div>
 
         <div class="row row-cols-4" id="griglia">
@@ -42,6 +42,6 @@
     </div>
 
     <div class="container classifica">
-        <h1 class="text-side">Classifica</h1>
+        <h1 class="textSide">Classifica</h1>
     </div>
 </div>
