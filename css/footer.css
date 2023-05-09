@@ -1,17 +1,24 @@
-.nav-link {
-    color: #fff !important;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    padding-right: 10px;
+body {
+	min-height: 100vh !important;
 }
 
 #btn-footer {
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: bold;
 	color: var(--blue);
 	border: 3px solid var(--yellow);
 	border-radius: 35px;
 	background-color: var(--yellow);
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-
+.container-footer {
+	margin-top: 50px;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}

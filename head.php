@@ -9,6 +9,7 @@
 
     <!-- CSS include -->
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <?php 
         $page = $_GET['p'];
         $css_file = "css/$page.css";
