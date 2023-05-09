@@ -1,34 +1,33 @@
-<div class="container container-footer">
-  <footer>
-    <div class="container d-flex justify-content-center pt-5">
-      <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" id="btn-footer">
-        <i class="fab fa-facebook-f"></i>
-      </button>
-      <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" id="btn-footer">
-        <i class="fab fa-youtube"></i>
-      </button>
-      <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" id="btn-footer">
-        <i class="fab fa-instagram"></i>
-      </button>
-      <button type="button" class="btn btn-warning btn-lg btn-floating mx-2" id="btn-footer">
-        <i class="fab fa-twitter"></i>
-      </button>
-    </div>
-
-    <!-- Copyright -->
-    <div class="text-center text-white py-4 px-2">
-      © 2023 Copyright:
-      <a class="text-white" href="#">miniworld.com</a>
-    </div>
-  </footer>
-</div>
-
+<footer class="d-flex align-items-center justify-content-between mx-4 py-3 border-top">
+	<div class="text-white">
+		© 2023 Copyright: miniworld.com
+	</div>
+	<div class="d-flex justify-content-center">
+		<ul class="footer-list">
+			<li class="footer-item">
+				<a href="#" class="footer-link"><i class="fab fa-facebook-f"></i></a>
+			</li>
+			<li class="footer-item">
+				<a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
+			</li>
+			<li class="footer-item">
+				<a href="#" class="footer-link"><i class="fab fa-google-plus-g"></i></a>
+			</li>
+			<li class="footer-item">
+				<a href="#" class="footer-link"><i class="fab fa-youtube"></i></a>
+			</li>
+			<li class="footer-item">
+				<a href="#" class="footer-link"><i class="fab fa-linkedin-in"></i></a>
+			</li>
+		</ul>
+	</div>
+</footer>
 
 <!-- Javascript Include -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="JavaScript/header.js"></script>
 <?php
-    $js_file = "JavaScript/$page.js";
-    if (file_exists($js_file))
-        echo "<script src='$js_file'></script>";
+$js_file = "JavaScript/$page.js";
+if (file_exists($js_file))
+	echo "<script src='$js_file'></script>";
 ?>

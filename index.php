@@ -2,13 +2,14 @@
 <html lang="it">
 
 <?php
-    include 'head.php';
+include 'head.php';
 ?>
 
 <body>
-    <?php
+    <main>
+        <?php
         include "header.php";
-        
+
         switch ($page) {
             case 'home':
                 include 'home.php';
@@ -39,7 +40,10 @@
                 break;
         }
 
-        include 'footer.php';
+        ?>
+    </main>
+    <?php
+    include 'footer.php';
     ?>
 </body>
 

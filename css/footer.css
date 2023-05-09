@@ -1,24 +1,43 @@
-body {
-	min-height: 100vh !important;
+main {
+	min-height: 100vh;
 }
 
-#btn-footer {
-	font-size: 18px;
-	font-weight: bold;
-	color: var(--blue);
-	border: 3px solid var(--yellow);
-	border-radius: 35px;
-	background-color: var(--yellow);
-	width: 48px;
-	height: 48px;
+a {
+	color: inherit;
+}
+
+.footer-list {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	list-style: none;
 }
 
-.container-footer {
-	margin-top: 50px;
-	position: relative;
-	bottom: 0;
-	width: 100%;
+.footer-item {
+	color: #fff;
+	margin-inline: 1rem;
+	font-size: 20px;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.footer-link i {
+	transition: color 0.5s;
+}
+
+.footer-link:hover i.fa-facebook-f {
+	color: #3b5998;
+}
+
+.footer-link:hover i.fa-twitter {
+	color: #1da1f2;
+}
+
+.footer-link:hover i.fa-google-plus-g {
+	color: #dd4b39;
+}
+
+.footer-link:hover i.fa-youtube {
+	color: #dd4b39;
+}
+
+.footer-link:hover i.fa-linkedin-in {
+	color: #0077b5;
 }
