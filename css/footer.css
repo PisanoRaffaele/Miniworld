@@ -1,3 +1,11 @@
+:root {
+    --blue-opaco: rgba(0, 0, 31, 0.7);
+    --blue: #00001f;
+    --yellow: #ffec37;
+    --height-header: 80px;
+    --o: #1e0742;
+}
+
 main {
 	min-height: 100vh;
 }
@@ -6,14 +14,22 @@ a {
 	color: inherit;
 }
 
+footer {
+	background-color: var(--o);
+	/* decommentare questa per la differenza */
+	/* flex-direction: column; */
+}
+
 .footer-list {
 	display: flex;
 	list-style: none;
+	margin-bottom: 0px;
+
 }
 
 .footer-item {
 	color: #fff;
-	margin-inline: 1rem;
+	margin-inline: 10px;
 	font-size: 20px;
 	transition: transform 0.3s, opacity 0.3s;
 }
@@ -40,4 +56,10 @@ a {
 
 .footer-link:hover i.fa-linkedin-in {
 	color: #0077b5;
+}
+
+@media screen and (max-width: 768px) {
+	footer {
+		flex-direction: column;
+	}
 }

@@ -1,9 +1,9 @@
-<footer class="d-flex align-items-center justify-content-between mx-4 py-3 border-top">
+<footer class="d-flex align-items-center justify-content-between p-3">
 	<div class="text-white">
 		© 2023 Copyright: miniworld.com
 	</div>
 	<div class="d-flex justify-content-center">
-		<ul class="footer-list">
+		<ul class="footer-list px-0 py-2">
 			<li class="footer-item">
 				<a href="#" class="footer-link"><i class="fab fa-facebook-f"></i></a>
 			</li>
