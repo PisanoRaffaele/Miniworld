@@ -2,13 +2,6 @@ body {
 	min-height: 100vh !important;
 }
 
-.nav-link {
-    color: #fff !important;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    padding-right: 10px;
-}
-
 #btn-footer {
 	font-size: 18px;
 	font-weight: bold;
@@ -29,4 +22,3 @@ body {
 	bottom: 0;
 	width: 100%;
 }
-

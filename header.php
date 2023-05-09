@@ -8,7 +8,7 @@
 
     <!-- Navbar container -->
     <nav class="navbar navbar-expand-lg mr-5" id="mynav">
-        <div class="boh">
+        <div class="d-flex justify-content-center">
             <div class="header-link-container px-3 navbar-toggler" id="search-btn">
                 <i class="fa fa-search fa-lg"></i>
             </div>
@@ -48,7 +48,7 @@
 </header>
 
 <!-- Dropdown Responsive Navbar -->
-<div class="dropdownHome" id="dropdown-menu">
+<div class="dropdown-nav-container">
     <div class="dropdown-wrapp">
         <a class="nav-item nav-link dropdown-link" href="#">About Us</a>
     </div>
@@ -67,36 +67,23 @@
 </div>
 
 <!-- Searchbar -->
-<div class="dropdownHome" id="dropdown-search">
+<div class="dropdown-search-container">
+
     <div class="search-container">
-        <div class="dropdown-wrapp">
-            <form class="form-inline">
-                <!-- <input class="form-control mr-sm-2" type="search" placeholder="Cerca" aria-label="Search"> -->
-                <input type="text" class="search-input w-input" maxlength="256" name="search" filter-by="*"
-                    data-name="Search" placeholder="Type your request" id="search">
-            </form>
+        <div class="dropdown-wrapp d-flex align-items-center">
+            <input type="text" class="search-input" maxlength="256" name="search" filter-by="*"
+                data-name="Search" placeholder="Type your request">
+            <div class="close-search">
+                <img src="https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d200afa59815_search-close.svg"
+                    loading="lazy">
+            </div>
         </div>
-        <div class="close-search">
-            <img src="https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d200afa59815_search-close.svg"
-                loading="lazy" alt="" class="image-9">
-        </div>
+        
+        <div class="dropdown-separator-search-input"></div>
     </div>
-    <div class="dropdown-separator-search-input"></div>
 
 
     <div class="container-fluid search-game-result">
-        <div class="dropdown-game-container">
-            <a class="row search-game-link" href="#">
-                <div class="search-game-img col-auto">
-                    <img src="assets/Logo.png">
-                </div>
-                <div class="search-game-description col-auto">
-                    <h4 style="color: #fff;">Titolo Gioco</h4>
-                    <div style="color: #fff;">Descrizione Gioco</div>
-                </div>
-            </a>
-        </div>
-        <div class="dropdown-separator-search"></div>
-    </div>
 
+    </div>
 </div>
