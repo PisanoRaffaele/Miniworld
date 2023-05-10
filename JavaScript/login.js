@@ -9,19 +9,16 @@ $(".toggle-password").click(function () {
 });
 
 function already_exist() {
-	// $('#email').addClass('error');
-	// $('#email').next('small').addClass('error');
-	// $('#email + small').text('Utente già registrato con questa email. Prova a fare il login');
-	// $('#username').removeClass('error');
-	// $('#username').next('small').removeClass('error');
-	// $('#username').next('small').text('');
+	$('#username_email').addClass('error');
+	$('#username_email').next('small').addClass('error');
+	$('#username_email + small').text('Email o Username non validi');
 }
 
-$('.username_email').on('input', function () {
+$('#username_email').on('input', function () {
 	var username = $(this).val();
 	if (!username) {
-		$('.username_email').removeClass('error');
-		$('.username_email').next('small').text('');
+		$('#username_email').removeClass('error');
+		$('#username_email').next('small').text('');
 		return;
 	}
 });
@@ -37,7 +34,7 @@ $('#login_form').submit(function (event) {
 	$.ajax({
 		type: $(this).attr('method'),
 		url: 'login_handle.php',
-		data: { email: email, username: username, password: password },
+		data: { email_username: email_username, password: password },
 		success: function (data) {
 			/*
 				se l'utente è già registrato con questa email allora non lo registra e lo manda al login
@@ -54,6 +51,7 @@ $('#login_form').submit(function (event) {
 			}
 		},
 		error: function (xhr, status, error) {
+			already_exist();
 			alert("Errore: " + xhr.responseText);
 		},
 		failure: function (response) {

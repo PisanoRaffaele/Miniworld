@@ -68,10 +68,26 @@ $('#email').on('input', function () {
 	}
 });
 
+$("#password").on({
+	"blur": function () {
+		var password = $(this).val();
+		if (password && password.length < 8) {
+			$(this).addClass('error');
+			$(this).next('small').addClass('error');
+			$(this).next('small').text('La password deve essere lunga almeno 8 caratteri');
+		}
+	},
+	focus: function () {
+		$(this).removeClass('error');
+		$(this).next('small').removeClass('error');
+		$(this).next('small').text('');
+	}
+});
+
 $("#re_password").on({
 	"blur": function () {
 		var firstPassword = $("#password").val();
-		if ($(this).val() != firstPassword) {
+		if ($(this).val() && $(this).val() != firstPassword) {
 			$(this).addClass('error');
 			$(this).next('small').addClass('error');
 			$(this).next('small').text('Le password non coincidono');
@@ -93,6 +109,9 @@ $('#registration_form').submit(function (event) {
 	var re_password = $(this).find('#re_password').val();
 
 	// controlla campi
+	if ($(this).find('#username').hasClass("error"))
+		return false;
+
 	var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	if (!emailRegex.test(email)) {
 		$('#email').addClass('error');
@@ -102,7 +121,9 @@ $('#registration_form').submit(function (event) {
 	}
 
 	if (password.length < 8) {
-		alert('La password deve essere lunga almeno 8 caratteri');
+		$(password).addClass('error');
+		$(password).next('small').addClass('error');
+		$(password).next('small').text('La password deve essere lunga almeno 8 caratteri');
 		return false;
 	}
 

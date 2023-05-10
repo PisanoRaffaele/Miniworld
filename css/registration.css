@@ -6,12 +6,10 @@
     --o: #1e0742;
 }
 
-#username.error {
-    border: 2.5px solid red;
-    box-shadow: 0 0 3px red;
-}
-
-#email.error {
+#username.error,
+#email.error,
+#password.error,
+#re_password.error {
     border: 2.5px solid red;
     box-shadow: 0 0 3px red;
 }
@@ -134,7 +132,6 @@ h2 {
 	font-weight: 700;
 	text-transform: uppercase;
 	border: none;
-	/* background-image: linear-gradient(to left, #74ebd5, #9face6); */
 	color: var(--blue);
 	border: 3px solid var(--yellow);
 	border-radius: 35px;

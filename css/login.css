@@ -6,6 +6,10 @@
     --o: #1e0742;
 }
 
+main {
+	background-color: rgba(28, 1, 50, 0.892);
+}
+
 #username_email.error {
     border: 2.5px solid red;
     box-shadow: 0 0 3px red;
@@ -76,7 +80,6 @@ h2 {
 	line-height: 1.8;
 	color: #222;
 	font-weight: 400;
-	background-color: rgba(28, 1, 50, 0.892);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
