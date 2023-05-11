@@ -64,7 +64,7 @@ p {
 #container {
 	padding-top : 160px !important;
 	display: grid;
-	grid-template-columns: 5fr 1fr;
+	grid-template-columns: 2fr 10fr 1fr 1fr;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
@@ -103,13 +103,18 @@ p {
 
 .classifica {
 	padding: 22px;
-	padding-top: 10px;
 	background-color: #2F2F4A;
 	border-radius: 15px;
-	height: 80%;
+	height: fit-content;
 	width: fit-content;
 	align-items: center;
 	text-align: center;
+	color: #fff;
+	flex-wrap: wrap;
+}
+
+th {
+	padding: 10px;
 }
 
 @media screen and (max-width: 780px) {
@@ -122,8 +127,9 @@ p {
 
 	.classifica {
 		padding-top: 10px;
-		height: 200px;
+		height: fit-content;
 		width: 70%;
+		margin-bottom: 50px;
 	}
 }
 

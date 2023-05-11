@@ -36,8 +36,8 @@ $('#username').on('input', function () {
 	}
 	$.ajax({
 		type: 'POST',
-		url: 'check_username.php',
-		data: { username: username },
+		url: 'handle_db.php',
+		data: { username: username, funzione: 'check_username'},
 		success: function (data) {
 			if (data == 1) {
 				$('#username').addClass('error');
@@ -127,6 +127,15 @@ $('#registration_form').submit(function (event) {
 		return false;
 	}
 
+	var passwordRegex = /^(?=.*[A-Z])(?=.*\d).+$/;
+	if (!passwordRegex.test(password)) {
+		console.log('Password non valida')
+		$(password).addClass('error');
+		$(password).next('small').addClass('error');
+		$(password).next('small').text('La password deve contenere almeno un carattere maiuscolo e un numero');
+		return false;
+	}
+
 	if (password != re_password) {
 		$(re_password).addClass('error');
 		$(re_password).next('small').addClass('error');
@@ -137,7 +146,7 @@ $('#registration_form').submit(function (event) {
 	$.ajax({
 		type: $(this).attr('method'),
 		url: 'handle_db.php',
-		data: { email: email, username: username, password: password },
+		data: { email: email, username: username, password: password, funzione: 'registration'},
 		success: function (data) {
 			/*
 				se l'utente è già registrato con questa email allora non lo registra e lo manda al login
@@ -145,11 +154,12 @@ $('#registration_form').submit(function (event) {
 				e non presente nel DB la risposta è una stringa vuota di lenght = 1 se invece è già registrato la risposta
 				è un array di lunghezza > 1 che resituisce l'errore rimandato dal DB (email già presente)
 			*/
-			if (data.length > 1) {
-				console.log(data);
+			if (data.trim() === '0') {
 				already_exist();
 			} else {
 				localStorage.setItem('isLoggedIn', true);
+				localStorage.setItem('username', username);
+				localStorage.setItem('email', email);
 				window.location.href = '?p=home';
 			}
 		},

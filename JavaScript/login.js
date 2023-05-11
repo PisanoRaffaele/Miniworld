@@ -34,7 +34,7 @@ $('#login_form').submit(function (event) {
 	$.ajax({
 		type: $(this).attr('method'),
 		url: 'handle_db.php',
-		data: { email_username: email_username, password: password },
+		data: { email_username: email_username, password: password, funzione: 'login' },
 		success: function (data) {
 			/*
 				se l'utente è già registrato con questa email allora non lo registra e lo manda al login
@@ -42,11 +42,13 @@ $('#login_form').submit(function (event) {
 				e non presente nel DB la risposta è una stringa vuota di lenght = 1 se invece è già registrato la risposta
 				è un array di lunghezza > 1 che resituisce l'errore rimandato dal DB (email già presente)
 			*/
-			if (data === "error") {
-				console.log(data);
+			if (data.trim() === '0') {
 				already_exist();
 			} else {
+				var userData = JSON.parse(data);
 				localStorage.setItem('isLoggedIn', true);
+				localStorage.setItem('username', userData.username);
+				localStorage.setItem('email', userData.email);
 				window.location.href = '?p=home';
 			}
 		},

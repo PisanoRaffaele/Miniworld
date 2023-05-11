@@ -188,7 +188,7 @@ body {
     padding: 18px 48px 16px;
     margin-top: 40px;
     border-radius: 99px;
-    background-color: #ffec37;
+    background-color: var(--yellow);
     transition: opacity 0.4s ease, transform 0.4s ease;
     color: #00001f;
     font-size: 16px;
@@ -199,7 +199,7 @@ body {
 
 .card:hover {
     transform: translateY(-20px);
-    border: 2px solid yellow;
+    border: 3px solid var(--yellow);
 }
 
 .card:hover .card-text {
@@ -218,7 +218,7 @@ body {
 }
 
 .play-button:hover {
-    background-color: #ffec37;
+    background-color: #fff273;
     color: black;
     text-decoration: none;
 }

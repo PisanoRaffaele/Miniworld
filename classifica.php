@@ -3,8 +3,8 @@
     $host = "localhost";
     $port = "5432";
     $dbname = "miniworld";
-    $user = "carlo1700";
-    $password = "tib2O6pNuxnR";
+    $user = "";
+    $password = "";
 
     // Create connection
     $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
@@ -15,8 +15,8 @@
         die("Connessione al database fallita");
     }
 
-    // preparing the query for the insertion of the data in the results table
-    $query = "INSERT INTO risultati (giocatore1, giocatore2, risultato) VALUES ($1, $2, $3)";
+    
+    
     $result = pg_prepare($conn, "insert_query", $query);
 
     // assigning the values to the parameters of the query
@@ -34,4 +34,26 @@
 
     // closing the connection to the database
     pg_close($conn);
+    
+    
+
+    function richiedi_classifica($dbconn) 
+    {
+        $gioco = $_POST["gioco"];
+
+        $query = "SELECT * FROM Statistiche WHERE (gioco = $1) ORDER BY punteggio LIMIT 10";
+        $result = pg_query_params($dbconn, $query, [$gioco]);
+
+        // Creazione di un array per i risultati
+        $classifica = array();
+        while ($row = pg_fetch_assoc($result)) {
+            $classifica[] = $row;
+        }
+
+        // Restituzione dei risultati in formato JSON
+        header('Content-Type: application/json');
+        echo json_encode($classifica);
+            
+        pg_close($dbconn);
+    }
 ?>

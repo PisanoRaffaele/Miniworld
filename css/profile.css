@@ -10,9 +10,8 @@
 body {
     background-color: var(--blue);
     font-family: Arial;
+    background: rgb(99, 39, 120);
 }
-
-/****************************** END ******************************/
 
 
 /****************************** TEXT ******************************/
@@ -46,9 +45,6 @@ body {
     margin: 15px auto;
 }
 
-/****************************** END ******************************/
-
-
 /****************************** Sfondo ******************************/
 .top-bg {
     position: relative;
@@ -67,7 +63,7 @@ body {
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x;
 }
 
-/****************************** END ******************************/
+/****************************** Profile Data ******************************/
 
 #container {
 	padding-top : 160px !important;
@@ -79,35 +75,51 @@ body {
 
 }
 
-.descriptionAbout {
-	font-size: clamp(14px, 4vw, 20px);
-	font-weight: 500;
-	line-height: 150%;
-	letter-spacing: 0.02em;
-	color: #fff;
-	margin-top: 32px;
-	margin-bottom: 32px;
-	max-width: 600px;
-	height: auto;
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
 }
 
-.imgAbout {
-	width: 100%;
-	height: auto;
-	margin: 0px auto;
-	max-width: 600px;
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
 }
 
-.span-yellow {
-	color: var(--yellow);
+.profile-button:hover {
+    background: #682773
 }
 
-.about-footnote {
-    margin-top: 32px;
-    margin-bottom: 32px;
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
     color: #fff;
-    font-size: 22px;
-    line-height: 33px;
-    font-weight: 500;
-    letter-spacing: 0.005em;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+
+.setting-side {
+    width: 100%;
+}
+
+.setting-side:hover {
+    cursor: pointer;
 }

@@ -18,6 +18,7 @@ $(function () {
         var elem = $(this);
         if (isLoggedIn == 'true') {
             elem.html('Profilo');
+            elem.attr('href','?p=profile');
         }
     });
 });
