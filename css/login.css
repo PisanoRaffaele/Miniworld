@@ -7,7 +7,14 @@
 }
 
 main {
-	background-color: rgba(28, 1, 50, 0.892);
+    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c5ada3c5cb112cfd9942d2_Header%20Shape%20-%20Tirangle.svg"),
+    url("https://assets.website-files.com/61c070585317d242d3a59789/61c5ada3a561fd62da066d54_Header%20Shape%20-%20Circle.svg"),
+    url("https://assets.website-files.com/61c070585317d242d3a59789/61c5ada376ce2f33cb89a827_Header%20Shape%20-%20Cross.svg"),
+    url("https://assets.website-files.com/61c070585317d242d3a59789/61c5ada30c499cf71d711619_Header%20Shape%20-%20Stripes.svg"),
+    url("https://assets.website-files.com/61c070585317d242d3a59789/61c5ada38be2557dbd30de9e_Header%20Shape%20-%20Background.svg");
+    background-position: -31px 50%, 90% 80%, 98% 50%, 30% -35%, 50% 0%;
+    background-size: auto, auto, auto, 224px, auto 60vh;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x;
 }
 
 #username_email.error {

@@ -13,7 +13,7 @@
     <!-- CSS include -->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <?php 
+    <?php
         $page = $_GET['p'];
         $css_file = "css/$page.css";
         if (file_exists($css_file))

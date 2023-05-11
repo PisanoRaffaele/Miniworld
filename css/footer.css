@@ -17,7 +17,7 @@ a {
 footer {
 	background-color: var(--o);
 	/* decommentare questa per la differenza */
-	/* flex-direction: column; */
+	/*flex-direction: column;*/
 }
 
 .footer-list {

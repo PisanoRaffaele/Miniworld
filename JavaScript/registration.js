@@ -136,7 +136,7 @@ $('#registration_form').submit(function (event) {
 
 	$.ajax({
 		type: $(this).attr('method'),
-		url: 'handle_registration.php',
+		url: 'handle_db.php',
 		data: { email: email, username: username, password: password },
 		success: function (data) {
 			/*

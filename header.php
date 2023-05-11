@@ -25,15 +25,15 @@
             <div class="navbar-nav">
                 <div class="header-link-container pl-1 pr-1">
                     <img src="assets/forme.png" alt="" class="jumping-foto2">
-                    <a class="nav-item nav-link" href="#">About Us</a>
+                    <a class="nav-item nav-link" href="?p=home">Home</a>
+                </div>
+                <div class="header-link-container pl-1 pr-1">
+                    <img src="assets/forme.png" alt="" class="jumping-foto2">
+                    <a class="nav-item nav-link" href="?p=about_us">About Us</a>
                 </div>
                 <div class="header-link-container pl-1 pr-1">
                     <img src="assets/forme.png" alt="" class="jumping-foto2">
                     <a class="nav-item nav-link" href="#">Classifiche</a>
-                </div>
-                <div class="header-link-container pl-1 pr-1">
-                    <img src="assets/forme.png" alt="" class="jumping-foto2">
-                    <a class="nav-item nav-link" href="#">Supporto</a>
                 </div>
                 <div class="header-link-container pl-1 pr-1">
                     <img src="assets/forme.png" alt="" class="jumping-foto2">
@@ -50,15 +50,15 @@
 <!-- Dropdown Responsive Navbar -->
 <div class="dropdown-nav-container">
     <div class="dropdown-wrapp">
-        <a class="nav-item nav-link dropdown-link" href="#">About Us</a>
+        <a class="nav-item nav-link dropdown-link" href="?p=home">Home</a>
+    </div>
+    <div class="dropdown-separator"></div>
+    <div class="dropdown-wrapp">
+        <a class="nav-item nav-link dropdown-link" href="?p=about_us">About Us</a>
     </div>
     <div class="dropdown-separator"></div>
     <div class="dropdown-wrapp">
         <a class="nav-item nav-link dropdown-link" href="#">Classifiche</a>
-    </div>
-    <div class="dropdown-separator"></div>
-    <div class="dropdown-wrapp">
-        <a class="nav-item nav-link dropdown-link" href="#">Supporto</a>
     </div>
     <div class="dropdown-separator"></div>
     <div class="dropdown-wrapp">
@@ -78,7 +78,7 @@
                     loading="lazy">
             </div>
         </div>
-        
+
         <div class="dropdown-separator-search-input"></div>
     </div>
 

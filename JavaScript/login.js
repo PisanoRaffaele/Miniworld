@@ -33,7 +33,7 @@ $('#login_form').submit(function (event) {
 
 	$.ajax({
 		type: $(this).attr('method'),
-		url: 'login_handle.php',
+		url: 'handle_db.php',
 		data: { email_username: email_username, password: password },
 		success: function (data) {
 			/*
@@ -42,7 +42,7 @@ $('#login_form').submit(function (event) {
 				e non presente nel DB la risposta è una stringa vuota di lenght = 1 se invece è già registrato la risposta
 				è un array di lunghezza > 1 che resituisce l'errore rimandato dal DB (email già presente)
 			*/
-			if (data.length > 1) {
+			if (data === "error") {
 				console.log(data);
 				already_exist();
 			} else {

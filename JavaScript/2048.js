@@ -117,7 +117,7 @@ function directions(e) {
         cellReset();
     }
 
-    // ----- KEY LEFT ----- //      
+    // ----- KEY LEFT ----- //
 
     else if (e.keyCode == '37') { // left
 

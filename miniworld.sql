@@ -2,30 +2,22 @@ CREATE TABLE Persona (
     email VARCHAR(255) NOT NULL,
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    -- nome VARCHAR(255) NOT NULL,
-    -- cognome VARCHAR(255) NOT NULL,
     PRIMARY KEY (email, username)
 );
 
-CREATE TABLE Gioco (
-    titolo VARCHAR(255) NOT NULL,
-    PRIMARY KEY (titolo)
-);
-
 CREATE TABLE Statistiche (
-    email VARCHAR(255) NOT NULL,
     username VARCHAR(255) NOT NULL,
     gioco VARCHAR(255) NOT NULL,
+    punteggio INT NOT NULL,
     posizione INT NOT NULL,
-    PRIMARY KEY (email, username, gioco),
-    FOREIGN KEY (email, username) REFERENCES Persona (email, username),
-    FOREIGN KEY (gioco) REFERENCES Gioco (titolo)
+    PRIMARY KEY (username, gioco),
+    FOREIGN KEY (username) REFERENCES Persona (username),
 );
 
 
 CREATE OR REPLACE FUNCTION update_func() RETURNS TRIGGER AS
 $$
-BEGIN 
+BEGIN
     IF EXISTS (
         SELECT *
         FROM statistiche
@@ -36,8 +28,8 @@ BEGIN
     ) THEN
         UPDATE statistiche
         SET posizione = posizione + 1
-        WHERE gioco = NEW.gioco 
-        AND posizione >= NEW.posizione 
+        WHERE gioco = NEW.gioco
+        AND posizione >= NEW.posizione
         AND email != NEW.email
         AND username != NEW.username;
     END IF;
@@ -52,7 +44,7 @@ FOR EACH ROW EXECUTE PROCEDURE update_func();
 
 CREATE OR REPLACE FUNCTION delete_func() RETURNS TRIGGER AS
 $$
-BEGIN 
+BEGIN
     UPDATE statistiche
     SET posizione = posizione - 1
     WHERE gioco = OLD.gioco AND posizione > OLD.posizione;
@@ -72,7 +64,7 @@ FOR EACH ROW EXECUTE PROCEDURE delete_func();
 
 -- Inserimento di 15 persone nella tabella Persona
 INSERT INTO Persona (email, username, password, nome, cognome, giorno, mese, anno)
-VALUES 
+VALUES
   ('email1@example.com', 'user1', 'password1', 'Mario', 'Rossi', 1, 1, 1980),
   ('email2@example.com', 'user2', 'password2', 'Luigi', 'Bianchi', 2, 2, 1981),
   ('email3@example.com', 'user3', 'password3', 'Paolo', 'Neri', 3, 3, 1982),
@@ -91,7 +83,7 @@ VALUES
 
 -- Inserimento di 10 giochi nella tabella Classifica
 INSERT INTO Gioco (titolo)
-VALUES 
+VALUES
   ('Gioco 1'),
   ('Gioco 2'),
   ('Gioco 3'),
@@ -106,7 +98,7 @@ VALUES
 
 -- Inserimento di alcune relazioni nella tabella Statistiche
 INSERT INTO Statistiche (email, username, gioco, posizione)
-VALUES 
+VALUES
   ('email1@example.com', 'user1', 'Gioco 1', 1),
   ('email1@example.com', 'user1', 'Gioco 2', 3),
   ('email1@example.com', 'user1', 'Gioco 3', 2),

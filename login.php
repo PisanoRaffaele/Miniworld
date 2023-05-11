@@ -17,7 +17,6 @@
 							<label for="password" class="form-label">Password</label>
 							<input type="password" class="form-input" name="password" id="password"
 								placeholder="Password" required />
-							<!-- <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span> -->
 							<span toggle="#password" class="field-icon toggle-password">
 								<i class="fa fa-eye-slash"></i>
 							</span>

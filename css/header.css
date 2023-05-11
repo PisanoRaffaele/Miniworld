@@ -260,7 +260,7 @@ body {
     display: flex;
     width: 100%;
     padding: 10px;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
 .search-input {
@@ -403,4 +403,5 @@ body {
     .dropdown-link:hover {
         color: var(--yellow);
     }
+
 }
