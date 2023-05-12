@@ -140,10 +140,17 @@
 	padding-top: 10px;
 	background-color: #2F2F4A;
 	border-radius: 15px;
-	height: 80%;
+	height: fit-content;
 	width: fit-content;
 	align-items: center;
 	text-align: center;
+	color: #fff;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+  }
+
+  th {
+	padding: 10px;
   }
 
   @media screen and (max-width: 991px) {

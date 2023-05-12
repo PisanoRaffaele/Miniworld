@@ -14,7 +14,7 @@ const images = [
 	let secondCard = null;
 	let cardsMatched = 0;
 	let generatedNumbers = [];
-	var time = 0;
+	var time = 0.0;
 	var countdown;
 	var gameStarted = false;
 
@@ -157,6 +157,7 @@ const images = [
 		gameStarted = false;
 		clearInterval(countdown);
 		setTimeout(function() {
+			aggiornaClassifica()
 			alert("Complimenti, hai vinto in " + time + " secondi !");
 		}, 1000);
 	}
@@ -165,5 +166,54 @@ const images = [
 	resetButton.addEventListener('click', resetGame);
 
 	initGame();
+
+	$(function () {
+		get_classifica();
+	});
+
+
+	/****************************** Gestione Classifica ******************************/
+
+	function get_classifica() {
+		$.ajax({
+			type: "POST",
+			url: "handle_db.php",
+			data: { gioco: "MEMORY", funzione: "richiedi_classifica", order: "reverse" },
+			dataType: "json",
+			success: function (response) {
+				var html = '<h1 class="textSide">Classifica</h1>'
+				html += '<table><thead><tr><th>Posizione</th><th>Username</th><th>Punteggio</th></tr></thead><tbody>';
+				$.each(response, function (i, item) {
+					html += '<tr><td>' + (i + 1) + '</td><td>' + item.username + '</td><td>' + item.punteggio + '</td></tr>';
+				});
+				html += '</tbody></table>';
+				$('.classifica').html(html);
+			},
+			error: function (xhr, status, error) {
+				alert("Errore: " + xhr.responseText);
+			}
+		});
+	};
+
+	function aggiornaClassifica() {
+		
+		var username = localStorage.getItem('username');
+		var email = localStorage.getItem('email');
+		$.ajax({
+			type: "POST",
+			url: "handle_db.php",
+			data: { gioco: "MEMORY", order: "reverse", funzione: "aggiorna_classifica", punteggio: time, username: username, email: email },
+			success: function (data) {
+				get_classifica();
+			},
+			error: function (xhr, status, error) {
+				alert("Errore: " + xhr.responseText);
+			},
+			failure: function (response) {
+				alert("Failure: " + response);
+			}
+		});
+	}
+
 
 

@@ -22,7 +22,7 @@ $(document).ready(function () {
 				clearInterval(countdown);
 				$('#dot').unbind();
 				setTimeout(function () {
-					vittoria();
+					aggiornaClassifica();
 				}, 100);
 				gameStarted = false;
 			}
@@ -50,6 +50,12 @@ $(document).ready(function () {
 		}
 	});
 
+	$(function () {
+		get_classifica();
+	});
+
+	/****************************** Gestione Classifica ******************************/
+
 	function get_classifica() {
 		$.ajax({
 			type: "POST",
@@ -58,7 +64,7 @@ $(document).ready(function () {
 			dataType: "json",
 			success: function (response) {
 				var html = '<h1 class="textSide">Classifica</h1>'
-				html += '<table><thead><tr><th>Punteggio</th><th>Username</th><th>Punteggio</th></tr></thead><tbody>';
+				html += '<table><thead><tr><th>Posizione</th><th>Username</th><th>Punteggio</th></tr></thead><tbody>';
 				$.each(response, function (i, item) {
 					html += '<tr><td>' + (i + 1) + '</td><td>' + item.username + '</td><td>' + item.punteggio + '</td></tr>';
 				});
@@ -66,13 +72,12 @@ $(document).ready(function () {
 				$('.classifica').html(html);
 			},
 			error: function (xhr, status, error) {
-				already_exist();
 				alert("Errore: " + xhr.responseText);
 			}
 		});
 	};
 
-	function vittoria() {
+	function aggiornaClassifica() {
 		var username = localStorage.getItem('username');
 		var email = localStorage.getItem('email');
 		$.ajax({
@@ -83,7 +88,6 @@ $(document).ready(function () {
 				get_classifica();
 			},
 			error: function (xhr, status, error) {
-				already_exist();
 				alert("Errore: " + xhr.responseText);
 			},
 			failure: function (response) {
@@ -92,8 +96,5 @@ $(document).ready(function () {
 		});
 	}
 
-	$(function () {
-		get_classifica();
-	});
 
 });

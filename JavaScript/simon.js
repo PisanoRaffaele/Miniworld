@@ -1,4 +1,5 @@
-var colors = ["red", "blue", "green", "yellow"];
+// var colors = ["red", "blue", "green", "yellow"];
+var colors = ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "white"];
 var sequence = [];
 var playing = false;
 var level = 0;
@@ -32,7 +33,7 @@ function highlight(color) {
   element.addClass("highlight");
   setTimeout(function() {
     element.removeClass("highlight");
-  }, 500);
+  }, 600);
 }
 
 // gestore evento click sul pulsante "Start"
@@ -76,15 +77,65 @@ $(".color").on("click", function() {
         // la sequenza è stata completata con successo
 
 		// salva il livello raggiunto
-
         playing = false;
         $("#start-btn").text("Next Level");
-
       }
     } else {
       // hai perso
       playing = false;
       $("#start-btn").text("Game Over");
+      aggiornaClassifica()
     }
   }
 });
+
+
+$(function () {
+  get_classifica();
+});
+
+
+/****************************** Gestione Classifica ******************************/
+
+function get_classifica() {
+  $.ajax({
+    type: "POST",
+    url: "handle_db.php",
+    data: { gioco: "SIMON", funzione: "richiedi_classifica", order: "notReverse" },
+    dataType: "json",
+    success: function (response) {
+      var html = '<h1 class="textSide">Classifica</h1>'
+      html += '<table><thead><tr><th>Posizione</th><th>Username</th><th>Punteggio</th></tr></thead><tbody>';
+      $.each(response, function (i, item) {
+        html += '<tr><td>' + (i + 1) + '</td><td>' + item.username + '</td><td>' + item.punteggio + '</td></tr>';
+      });
+      html += '</tbody></table>';
+      $('.classifica').html(html);
+    },
+    error: function (xhr, status, error) {
+      alert("Errore: " + xhr.responseText);
+    }
+  });
+};
+
+function aggiornaClassifica() {
+
+  var username = localStorage.getItem('username');
+  var email = localStorage.getItem('email');
+  $.ajax({
+    type: "POST",
+    url: "handle_db.php",
+    data: { gioco: "SIMON", order: "notReverse", funzione: "aggiorna_classifica", punteggio: level, username: username, email: email },
+    success: function (data) {
+      get_classifica();
+    },
+    error: function (xhr, status, error) {
+      alert("Errore: " + xhr.responseText);
+    },
+    failure: function (response) {
+      alert("Failure: " + response);
+    }
+  });
+}
+
+

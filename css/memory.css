@@ -136,10 +136,17 @@ body {
 	padding: 22px;
 	background-color: #2F2F4A;
 	border-radius: 15px;
-	height: 80%;
+	height: fit-content;
 	width: fit-content;
 	align-items: center;
 	text-align: center;
+	color: #fff;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+}
+
+th {
+	padding: 10px;
 }
 
 .timer {
@@ -172,12 +179,6 @@ body {
 		padding-right: 30px;
 	}
 
-	.classifica {
-		padding-top: 10px;
-		height: 200px;
-		width: 70%;
-	}
-
 }
 
 @media screen and (max-width: 780px) {
@@ -201,8 +202,8 @@ body {
 	}
 
 	.classifica {
-		padding-top: 6px;
-		width: 80%;
+		padding-top: 10px;
+		width: 70%;
 	}
 
 }

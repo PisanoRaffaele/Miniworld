@@ -13,14 +13,6 @@
                     <span> </span>
                 </div>
                 <div class="mb-5">
-                    <div class="border-top d-flex align-items-center py-3 setting-side" id="edit-profile">
-                        <div class="px-1">
-                            <i class="fas fa-edit" style="color: #000;"></i>
-                        </div>
-                        <div class="px-1">
-                            Edit Profile
-                        </div>
-                    </div>
                     <div class="border-top d-flex align-items-center py-3 setting-side" id="reset-password">
                         <div class="px-1">
                             <i class="fas fa-cogs" style="color: #000;"></i>
@@ -41,22 +33,24 @@
             </div>
             <div class="col d-flex justify-content-center setting-container">
                 <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile Settings</h4>
+                    <div class="d-flex justify-content-center align-items-center mb-3">
+                        <h4 class="text-right">Reset Password</h4>
                     </div>
-                    <form class="" method="POST" id="edit-profile-form">
-                        <div class="row mt-2">
-                            <div class="col-md-6"><label class="labels">Username</label>
-                                <input type="text" id="newUsername" class="form-control" placeholder="Username" value="" required>
-                            </div>
-                            <div class="col-md-6"><label class="labels">Email</label>
-                                <input type="text" id="newEmail" class="form-control" placeholder="Email" value="" required>
-                            </div>
+                    <form class="row mt-3 d-flex justify-content-center px-5" method="POST" id="reset-pass-form">
+                        <div class="col-md-12">
+                            <label class="labels">Old Password</label>
+                            <input type="password" class="form-control" placeholder="Enter Old Password" value="" id="oldPassword" required>
+                            <small class="text-availabilty"></small>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Mobile Number</label>
-                                <input type="text" class="form-control" placeholder="Enter phone number" value="">
-                            </div>
+                        <div class="col-md-12">
+                            <label class="labels">New Password</label>
+                            <input type="password" class="form-control" placeholder="Enter New Password" value="" id="newPassword" required>
+                            <small class="text-availabilty"></small>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">Repeat Password</label>
+                            <input type="password" class="form-control" placeholder="Repeat Password" value="" id="rePassword" required>
+                            <small class="text-availabilty"></small>
                         </div>
                         <div class="mt-5 text-center save-button px-5">
                             <button class="btn btn-primary profile-button" type="submit">Save Profile</button>

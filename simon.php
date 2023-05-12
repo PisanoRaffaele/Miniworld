@@ -8,8 +8,13 @@
 		<div id="griglia">
 			<div class="color red"></div>
 			<div class="color blue"></div>
-			<div class="color green"></div>
+			<div class="color orange"></div>
 			<div class="color yellow"></div>
+			<div class="color purple"></div>
+			<div class="color green"></div>
+			<div class="color pink"></div>
+			<div class="color brown"></div>
+			<div class="color white"></div> 
 		</div>
 		<button class="btn btn-primary" id="start-btn">Start</button>
 	</div>

@@ -72,8 +72,8 @@ p {
 
 #griglia {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
 	grid-gap: 10px;
 }
 
@@ -98,6 +98,27 @@ p {
 .yellow {
 	background: yellow;
 }
+
+.orange {
+	background: orange;
+}
+
+.purple {
+	background: purple;
+}
+
+.pink {
+	background: pink;
+}
+
+.brown {
+	background: brown;
+}
+
+.white {
+	background: white;
+}
+
 
 .highlight {
   transition: background-color 0.25s ease;
@@ -130,8 +151,24 @@ p {
 	padding-top: 10px;
 	background-color: #2F2F4A;
 	border-radius: 15px;
-	height: 80%;
+	height: fit-content;
 	width: fit-content;
 	align-items: center;
 	text-align: center;
+	color: #fff;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+}
+
+th {
+	padding: 10px;
+}
+
+@media screen and (max-width: 780px) {
+
+
+	.classifica {
+		padding-top: 10px;
+		width: 70%;
+	}
 }

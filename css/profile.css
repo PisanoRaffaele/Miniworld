@@ -1,4 +1,5 @@
 /****************************** Global Data & Variable ******************************/
+
 :root {
     --blue-opaco: rgba(0, 0, 31, 0.7);
     --blue: #00001f;
@@ -15,6 +16,7 @@ body {
 
 
 /****************************** TEXT ******************************/
+
 .textCenter {
 	font-size: 55px;
 	font-weight: bold;
@@ -45,7 +47,9 @@ body {
     margin: 15px auto;
 }
 
+
 /****************************** Sfondo ******************************/
+
 .top-bg {
     position: relative;
     left: 0%;
@@ -62,6 +66,7 @@ body {
     background-size: auto, auto, auto, 224px, auto 60vh;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x;
 }
+
 
 /****************************** Profile Data ******************************/
 
@@ -120,13 +125,6 @@ body {
 
 .labels {
     font-size: 11px
-}
-
-.add-experience:hover {
-    background: #BA68C8;
-    color: #fff;
-    cursor: pointer;
-    border: solid 1px #BA68C8
 }
 
 .setting-side {

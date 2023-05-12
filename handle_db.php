@@ -117,23 +117,6 @@ function aggiorna_classifica($dbconn)
 
 }
 
-function edit_profile($dbconn)
-{
-    $oldEmail = $_POST["oldEmail"];
-    $oldUsername = $_POST["oldUsername"];
-    $newEmail = $_POST["newEmail"];
-    $newUsername = $_POST["newUsername"];
-
-    // Esegui la query utilizzando la connessione esplicita
-    $query = "UPDATE Persona SET username = $1, email = $2 WHERE email = $3 or username = $4";
-    $result = pg_query_params($dbconn, $query, [$newUsername, $newEmail, $oldEmail, $oldUsername]);
-
-    if ($result && pg_affected_rows($result) > 0)
-        echo 1;
-    else
-        echo 0;
-}
-
 function reset_password($dbconn)
 {
     $email = $_POST["email"];

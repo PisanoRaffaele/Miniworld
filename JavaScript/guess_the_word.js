@@ -12,7 +12,7 @@ var words = [
   var letters;
   var underscores;
   var guessesRemaining;
-  var time;
+  var time = 0.0;
   var countdown;
   var Started = false;
 
@@ -37,7 +37,7 @@ function initGame() {
 
 	Started = true;
 
-	time = 0;
+	time = 0.0;
 	countdown = setInterval(function() {
 		time += 0.1;
 		time = parseFloat(time.toFixed(2));
@@ -72,7 +72,7 @@ function initGame() {
 			$("#word").text(underscores.join(" "));
 			// Check if the user has won or lost
 			if (underscores.indexOf("_") === -1) {
-				alert("You win!");
+				aggiornaClassifica()
 				//stop the timer
 				clearInterval(countdown);
 				$('#guess-btn').addClass('unvisible');
@@ -105,3 +105,50 @@ $("#reset-btn").on("click", function() {
 });
 
 
+$(function () {
+	get_classifica();
+});
+  
+  
+/****************************** Gestione Classifica ******************************/
+  
+  function get_classifica() {
+	$.ajax({
+	  type: "POST",
+	  url: "handle_db.php",
+	  data: { gioco: "GTW", funzione: "richiedi_classifica", order: "reverse" },
+	  dataType: "json",
+	  success: function (response) {
+		var html = '<h1 class="textSide">Classifica</h1>'
+		html += '<table><thead><tr><th>Posizione</th><th>Username</th><th>Punteggio</th></tr></thead><tbody>';
+		$.each(response, function (i, item) {
+		  html += '<tr><td>' + (i + 1) + '</td><td>' + item.username + '</td><td>' + item.punteggio + '</td></tr>';
+		});
+		html += '</tbody></table>';
+		$('.classifica').html(html);
+	  },
+	  error: function (xhr, status, error) {
+		alert("Errore: " + xhr.responseText);
+	  }
+	});
+  };
+  
+  function aggiornaClassifica() {
+  
+	var username = localStorage.getItem('username');
+	var email = localStorage.getItem('email');
+	$.ajax({
+	  type: "POST",
+	  url: "handle_db.php",
+	  data: { gioco: "GTW", order: "reverse", funzione: "aggiorna_classifica", punteggio: time, username: username, email: email },
+	  success: function (data) {
+		get_classifica();
+	  },
+	  error: function (xhr, status, error) {
+		alert("Errore: " + xhr.responseText);
+	  },
+	  failure: function (response) {
+		alert("Failure: " + response);
+	  }
+	});
+  }
