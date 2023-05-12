@@ -134,6 +134,34 @@ function edit_profile($dbconn)
         echo 0;
 }
 
+function reset_password($dbconn)
+{
+    $email = $_POST["email"];
+    $username = $_POST["username"];
+    $oldPassword = $_POST["oldPassword"];
+    $newPassword = $_POST["newPassword"];
+
+    $query = "SELECT * FROM Persona WHERE email = $1 AND username = $2";
+    $result = pg_query_params($dbconn, $query, [$email, $username]);
+
+    if (pg_num_rows($result) > 0) {
+        $row = pg_fetch_row($result);
+        $hash = $row[2];
+        if (password_verify($oldPassword, $hash)) {
+            $query = "UPDATE Persona SET password = $1 WHERE username = $2";
+            $result = pg_query_params($dbconn, $query, [password_hash($newPassword, PASSWORD_DEFAULT), $username]);
+            if ($result && pg_affected_rows($result) > 0)
+                echo 1;
+            else
+                echo 0;
+        } else {
+            echo 2;
+        }
+    } else {
+        echo 0;
+    }
+}
+
 ?>
 
 <?php
