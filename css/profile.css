@@ -75,9 +75,22 @@ body {
 
 }
 
+.text-availabilty.error {
+    color: red;
+}
+
+.text-availabilty.available {
+    color: green;
+}
+
 .form-control:focus {
     box-shadow: none;
     border-color: #BA68C8
+}
+
+.save-button {
+    display: flex;
+    flex-direction: column;
 }
 
 .profile-button {

@@ -26,17 +26,10 @@ function registration($dbconn)
     $query = "INSERT INTO Persona (username, password, email) VALUES ($1, $2, $3)";
     $result = pg_query_params($dbconn, $query, [$username, $password, $email]);
 
-    if ($result) {
-        $rows_affected = pg_affected_rows($result);
-        if ($rows_affected > 0) {
-            echo 1;
-        } else {
-            echo 0;
-        }
-    } else {
+    if ($result && pg_affected_rows($result) > 0)
+        echo 1;
+    else
         echo 0;
-    }
-    // Chiudi la connessione al database
 }
 
 function login($dbconn)
@@ -75,8 +68,6 @@ function check_username($dbconn)
     } else {
         echo 1;
     }
-
-    // Chiudi la connessione al database
 }
 
 function richiedi_classifica($dbconn) 
@@ -126,6 +117,23 @@ function aggiorna_classifica($dbconn)
 
 }
 
+function edit_profile($dbconn)
+{
+    $oldEmail = $_POST["oldEmail"];
+    $oldUsername = $_POST["oldUsername"];
+    $newEmail = $_POST["newEmail"];
+    $newUsername = $_POST["newUsername"];
+
+    // Esegui la query utilizzando la connessione esplicita
+    $query = "UPDATE Persona SET username = $1, email = $2 WHERE email = $3 or username = $4";
+    $result = pg_query_params($dbconn, $query, [$newUsername, $newEmail, $oldEmail, $oldUsername]);
+
+    if ($result && pg_affected_rows($result) > 0)
+        echo 1;
+    else
+        echo 0;
+}
+
 ?>
 
 <?php
@@ -134,24 +142,14 @@ function main($dbconn)
 {
     $funzione = $_POST['funzione'];
 
-    switch ($funzione) {
-        case 'registration':
-            registration($dbconn);
-            break;
-        case 'login':
-            login($dbconn);
-            break;
-        case 'check_username':
-            check_username($dbconn);
-            break;
-        case 'richiedi_classifica':
-            richiedi_classifica($dbconn);
-            break;
-        case 'aggiorna_classifica':
-            aggiorna_classifica($dbconn);
-            break;
+    if (!function_exists($funzione)) {
+        echo "Funzione non esistente";
+        return;
     }
-    pg_close($dbconn);
+
+    $funzione($dbconn);
+
+    // pg_close($dbconn);
 }
 
 ?>
