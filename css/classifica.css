@@ -1,0 +1,107 @@
+/****************************** Global Data & Variable ******************************/
+:root {
+    --blue-opaco: rgba(0, 0, 31, 0.7);
+    --blue: #00001f;
+    --yellow: #ffec37;
+    --height-header: 80px;
+    --o: #1e0742;
+}
+
+body {
+    background-color: var(--blue);
+    font-family: Arial;
+}
+
+/****************************** END ******************************/
+
+
+/****************************** TEXT ******************************/
+.textCenter {
+	font-size: 55px;
+	font-weight: bold;
+	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+	background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    line-height: 120%;
+    letter-spacing: 0.014em;
+    margin: 20px auto;
+}
+
+.textSide {
+	font-size: 40px;
+	font-weight: bold;
+	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+	background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    line-height: 120%;
+    letter-spacing: 0.014em;
+    margin: 15px auto;
+}
+
+/****************************** END ******************************/
+
+
+/****************************** Sfondo ******************************/
+.top-bg {
+    position: relative;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    min-height: 100vh;
+    background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c5ada3c5cb112cfd9942d2_Header%20Shape%20-%20Tirangle.svg"),
+    url("https://assets.website-files.com/61c070585317d242d3a59789/61c5ada3a561fd62da066d54_Header%20Shape%20-%20Circle.svg"),
+    url("https://assets.website-files.com/61c070585317d242d3a59789/61c5ada376ce2f33cb89a827_Header%20Shape%20-%20Cross.svg"),
+    url("https://assets.website-files.com/61c070585317d242d3a59789/61c5ada30c499cf71d711619_Header%20Shape%20-%20Stripes.svg"),
+    url("https://assets.website-files.com/61c070585317d242d3a59789/61c5ada38be2557dbd30de9e_Header%20Shape%20-%20Background.svg");
+    background-position: -31px 50%, 90% 80%, 98% 50%, 30% -35%, 50% 0%;
+    background-size: auto, auto, auto, 224px, auto 60vh;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x;
+}
+
+/****************************** END ******************************/
+
+#container {
+	padding-top : 160px !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+
+}
+
+.classifica {
+	padding: 22px;
+	padding-top: 10px;
+	background-color: #2F2F4A;
+	border-radius: 15px;
+	height: fit-content;
+	width: fit-content;
+	align-items: center;
+	text-align: center;
+	color: #fff;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+}
+
+th {
+	padding: 10px;
+}
+
+@media screen and (max-width: 780px) {
+
+
+	.classifica {
+		padding-top: 10px;
+		width: 70%;
+	}
+}

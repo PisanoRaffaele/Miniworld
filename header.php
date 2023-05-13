@@ -33,7 +33,7 @@
                 </div>
                 <div class="header-link-container pl-1 pr-1">
                     <img src="assets/forme.png" alt="" class="jumping-foto2">
-                    <a class="nav-item nav-link" href="#">Classifiche</a>
+                    <a class="nav-item nav-link" href="?p=classifica">Classifiche</a>
                 </div>
                 <div class="header-link-container pl-1 pr-1">
                     <img src="assets/forme.png" alt="" class="jumping-foto2">
@@ -58,7 +58,7 @@
     </div>
     <div class="dropdown-separator"></div>
     <div class="dropdown-wrapp">
-        <a class="nav-item nav-link dropdown-link" href="#">Classifiche</a>
+        <a class="nav-item nav-link dropdown-link" href="?p=classifica">Classifiche</a>
     </div>
     <div class="dropdown-separator"></div>
     <div class="dropdown-wrapp">
