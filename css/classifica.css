@@ -97,11 +97,31 @@ th {
 	padding: 10px;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 200px;
+    justify-content: stretch;
+}
+
 @media screen and (max-width: 780px) {
 
 
 	.classifica {
-		padding-top: 10px;
 		width: 70%;
+        padding: 10px;
+        padding-inline: 34px;
 	}
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .textCenter {
+        font-size: 40px;
+    }
+
+    .textSide {
+        font-size: 30px;
+    }
 }
