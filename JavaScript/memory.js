@@ -162,8 +162,9 @@ function vittoria() {
 	}, 1000);
 }
 
-const resetButton = document.getElementById('reset-btn');
-resetButton.addEventListener('click', resetGame);
+$(function () {
+	$('#reset-btn').on('click', resetGame);
+});
 
 initGame();
 

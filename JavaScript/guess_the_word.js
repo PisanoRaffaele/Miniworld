@@ -50,9 +50,9 @@ function initGame() {
 
 
 // Handle the form submission when the user guesses a letter
-document.getElementById("guess-btn").addEventListener("click", function () {
+$("#guess-btn").on("click", function () {
 	if (Started) {
-		var letter = document.getElementById("letter").value.toLowerCase();
+		var letter = $("#letter").val().toLowerCase();
 		if (letter && /^[a-z]$/.test(letter)) {
 			// Check if the letter is in the word
 			var found = false;
