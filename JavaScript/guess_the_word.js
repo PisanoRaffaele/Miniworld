@@ -7,14 +7,14 @@ var words = [
 	"programming",
 	"sunglasses",
 	"watermelon"
-  ];
-  var word;
-  var letters;
-  var underscores;
-  var guessesRemaining;
-  var time = 0.0;
-  var countdown;
-  var Started = false;
+];
+var word;
+var letters;
+var underscores;
+var guessesRemaining;
+var time = 0.0;
+var countdown;
+var Started = false;
 
 
 
@@ -30,15 +30,15 @@ function initGame() {
 	word = words[Math.floor(Math.random() * words.length)];
 	letters = word.split("");
 	underscores = [];
-  	for (var i = 0; i < letters.length; i++) {
+	for (var i = 0; i < letters.length; i++) {
 		underscores.push("_");
-  	}
+	}
 	$("#word").text(underscores.join(" "));
 
 	Started = true;
 
 	time = 0.0;
-	countdown = setInterval(function() {
+	countdown = setInterval(function () {
 		time += 0.1;
 		time = parseFloat(time.toFixed(2));
 		$('#time').text(time);
@@ -49,18 +49,17 @@ function initGame() {
 
 
 
-  // Handle the form submission when the user guesses a letter
-  document.getElementById("guess-btn").addEventListener("click", function() {
-	if (Started)
-	{
+// Handle the form submission when the user guesses a letter
+document.getElementById("guess-btn").addEventListener("click", function () {
+	if (Started) {
 		var letter = document.getElementById("letter").value.toLowerCase();
 		if (letter && /^[a-z]$/.test(letter)) {
 			// Check if the letter is in the word
 			var found = false;
 			for (var i = 0; i < letters.length; i++) {
 				if (letters[i] === letter) {
-				underscores[i] = letter;
-				found = true;
+					underscores[i] = letter;
+					found = true;
 				}
 			}
 			// If the letter was not found, decrement the number of guesses remaining
@@ -83,15 +82,14 @@ function initGame() {
 			}
 			// Clear the input field
 			document.getElementById("letter").value = "";
-			}
+		}
 	}
-  	});
+});
 
 
 // use the reset button to reset the game
-$("#reset-btn").on("click", function() {
-	if(Started)
-	{
+$("#reset-btn").on("click", function () {
+	if (Started) {
 		$('#reset-btn').text('Start');
 		Started = false;
 		time = 0;
@@ -108,47 +106,49 @@ $("#reset-btn").on("click", function() {
 $(function () {
 	get_classifica();
 });
-  
-  
+
+
 /****************************** Gestione Classifica ******************************/
-  
-  function get_classifica() {
+
+function get_classifica() {
 	$.ajax({
-	  type: "POST",
-	  url: "handle_db.php",
-	  data: { gioco: "GTW", funzione: "richiedi_classifica", order: "reverse" },
-	  dataType: "json",
-	  success: function (response) {
-		var html = '<h1 class="textSide">Classifica</h1>'
-		html += '<table><thead><tr><th>Posizione</th><th>Username</th><th>Punteggio</th></tr></thead><tbody>';
-		$.each(response, function (i, item) {
-		  html += '<tr><td>' + (i + 1) + '</td><td>' + item.username + '</td><td>' + item.punteggio + '</td></tr>';
-		});
-		html += '</tbody></table>';
-		$('.classifica').html(html);
-	  },
-	  error: function (xhr, status, error) {
-		alert("Errore: " + xhr.responseText);
-	  }
+		type: "POST",
+		url: "handle_db.php",
+		data: { gioco: "GTW", funzione: "richiedi_classifica", order: "reverse" },
+		dataType: "json",
+		success: function (response) {
+			var html = '<h1 class="textSide">Classifica</h1>'
+			html += '<table><thead><tr><th>Posizione</th><th>Username</th><th>Punteggio</th></tr></thead><tbody>';
+			$.each(response, function (i, item) {
+				html += '<tr><td>' + (i + 1) + '</td><td>' + item.username + '</td><td>' + item.punteggio + '</td></tr>';
+			});
+			html += '</tbody></table>';
+			$('.classifica').html(html);
+		},
+		error: function (xhr, status, error) {
+			alert("Errore: " + xhr.responseText);
+		}
 	});
-  };
-  
-  function aggiornaClassifica() {
-  
+};
+
+function aggiornaClassifica() {
+	var logged = localStorage.getItem('isLoggedIn');
+	if (logged == "null" || logged === "false")
+		return;
 	var username = localStorage.getItem('username');
 	var email = localStorage.getItem('email');
 	$.ajax({
-	  type: "POST",
-	  url: "handle_db.php",
-	  data: { gioco: "GTW", order: "reverse", funzione: "aggiorna_classifica", punteggio: time, username: username, email: email },
-	  success: function (data) {
-		get_classifica();
-	  },
-	  error: function (xhr, status, error) {
-		alert("Errore: " + xhr.responseText);
-	  },
-	  failure: function (response) {
-		alert("Failure: " + response);
-	  }
+		type: "POST",
+		url: "handle_db.php",
+		data: { gioco: "GTW", order: "reverse", funzione: "aggiorna_classifica", punteggio: time, username: username, email: email },
+		success: function (data) {
+			get_classifica();
+		},
+		error: function (xhr, status, error) {
+			alert("Errore: " + xhr.responseText);
+		},
+		failure: function (response) {
+			alert("Failure: " + response);
+		}
 	});
-  }
+}

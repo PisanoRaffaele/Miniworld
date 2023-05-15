@@ -78,6 +78,9 @@ $(document).ready(function () {
 	};
 
 	function aggiornaClassifica() {
+		var logged = localStorage.getItem('isLoggedIn');
+		if (logged == "null" || logged === "false")
+			return;
 		var username = localStorage.getItem('username');
 		var email = localStorage.getItem('email');
 		$.ajax({

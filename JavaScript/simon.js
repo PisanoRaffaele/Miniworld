@@ -17,7 +17,7 @@ function generateSequence(n) {
 // funzione per riprodurre una sequenza di colori
 function playSequence(sequence) {
   var i = 0;
-  var interval = setInterval(function() {
+  var interval = setInterval(function () {
     var color = sequence[i];
     highlight(color);
     i++;
@@ -31,42 +31,39 @@ function playSequence(sequence) {
 function highlight(color) {
   var element = $(".color." + color);
   element.addClass("highlight");
-  setTimeout(function() {
+  setTimeout(function () {
     element.removeClass("highlight");
   }, 600);
 }
 
 // gestore evento click sul pulsante "Start"
-$("#start-btn").on("click", function() {
-	var status = $(this).text();
-	if (!playing) {
-		if (status == "Next Level")
-		{
-			level++;
-			$('#level').text(level);
-			playing = true;
-			sequence = generateSequence(level + 1);
-			playSequence(sequence);
-			$(this).text("Playing...");
-		}
-		else if (status == "Start")
-		{
-			playing = true;
-			sequence = generateSequence(level + 1);
-			playSequence(sequence);
-			$(this).text("Playing...");
-		}
-		else if (status == "Game Over")
-		{
-			level = 0;
-			$('#level').text(level);
-			$(this).text("Start");
-		}
-	}
+$("#start-btn").on("click", function () {
+  var status = $(this).text();
+  if (!playing) {
+    if (status == "Next Level") {
+      level++;
+      $('#level').text(level);
+      playing = true;
+      sequence = generateSequence(level + 1);
+      playSequence(sequence);
+      $(this).text("Playing...");
+    }
+    else if (status == "Start") {
+      playing = true;
+      sequence = generateSequence(level + 1);
+      playSequence(sequence);
+      $(this).text("Playing...");
+    }
+    else if (status == "Game Over") {
+      level = 0;
+      $('#level').text(level);
+      $(this).text("Start");
+    }
+  }
 });
 
 // gestore evento click sui colori
-$(".color").on("click", function() {
+$(".color").on("click", function () {
   if (playing) {
     var color = $(this).attr("class").split(" ")[1];
     highlight(color);
@@ -76,7 +73,7 @@ $(".color").on("click", function() {
       if (sequence.length === 0) {
         // la sequenza è stata completata con successo
 
-		// salva il livello raggiunto
+        // salva il livello raggiunto
         playing = false;
         $("#start-btn").text("Next Level");
       }
@@ -119,7 +116,9 @@ function get_classifica() {
 };
 
 function aggiornaClassifica() {
-
+  var logged = localStorage.getItem('isLoggedIn');
+  if (logged == "null" || logged === "false")
+    return;
   var username = localStorage.getItem('username');
   var email = localStorage.getItem('email');
   $.ajax({
