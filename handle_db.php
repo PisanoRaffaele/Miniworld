@@ -156,8 +156,6 @@ function main($dbconn)
     }
 
     $funzione($dbconn);
-
-    // pg_close($dbconn);
 }
 
 ?>

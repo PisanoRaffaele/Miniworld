@@ -12,9 +12,6 @@ body {
     font-family: Arial;
 }
 
-/****************************** END ******************************/
-
-
 /****************************** TEXT ******************************/
 .textCenter {
 	font-size: 55px;
@@ -45,8 +42,6 @@ body {
     letter-spacing: 0.014em;
     margin: 15px auto;
 }
-
-/****************************** END ******************************/
 
 
 /****************************** Sfondo ******************************/
@@ -91,6 +86,7 @@ body {
 	color: #fff;
 	flex-wrap: wrap;
 	margin-bottom: 50px;
+    flex-direction: column;
 }
 
 th {
@@ -100,7 +96,7 @@ th {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 200px;
+    grid-gap: 100px 300px;
     justify-content: stretch;
 }
 

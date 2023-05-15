@@ -1,6 +1,6 @@
 $(function () {
 	$('body').hide();
-	if (localStorage.getItem('isLoggedIn') === 'true') {
+	if (localStorage.getItem('isLoggedIn') === 'false') {
 		window.location.href = '?p=home';
 	}
 	$('body').show();
