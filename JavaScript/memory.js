@@ -1,4 +1,3 @@
-// Array di immagini da utilizzare
 const images = [
 	'../assets/memory/1.png',
 	'../assets/memory/2.png',
@@ -14,16 +13,16 @@ let firstCard = null;
 let secondCard = null;
 let cardsMatched = 0;
 let generatedNumbers = [];
-var time = 0.0;
-var countdown;
-var gameStarted = false;
+let time = 0.0;
+let countdown;
+let gameStarted = false;
 
-const gridItems = document.querySelectorAll('.grid-item');
+const gridItems = $('.grid-item');
 
 function generateRandomNumber() {
 	let randomNumber = 0;
 
-	if (generatedNumbers.length == 16) {
+	if (generatedNumbers.length === 16) {
 		alert("Errore: non ci sono più numeri da generare");
 		return -1;
 	}
@@ -57,33 +56,30 @@ function shuffle(array) {
 
 // Funzione per impostare l'immagine di una carta
 function setImage(card, index) {
-	const img = document.createElement('img');
-	img.src = images[index];
-	card.appendChild(img);
+	const img = $('<img>').attr('src', images[index]);
+	card.append(img);
 }
 
 // Funzione per girare una carta
 function flipCard(card) {
-	card.classList.remove('hidden');
-	card.classList.add('visible');
+	card.removeClass('hidden').addClass('visible');
 }
 
 // Funzione per nascondere una carta
 function hideCard(card) {
-	card.classList.remove('visible');
-	card.classList.add('hidden');
+	card.removeClass('visible').addClass('hidden');
 }
 
 // Funzione per controllare se due carte sono uguali
 function cardsMatch(card1, card2) {
-	const img1 = card1.querySelector('img');
-	const img2 = card2.querySelector('img');
-	return img1.src === img2.src;
+	const img1 = card1.find('img');
+	const img2 = card2.find('img');
+	return img1.attr('src') === img2.attr('src');
 }
 
 // Funzione per gestire il click su una carta
 function handleCardClick(event) {
-	const card = event.currentTarget;
+	const card = $(event.currentTarget);
 
 	if (!gameStarted) {
 		gameStarted = true;
@@ -94,7 +90,7 @@ function handleCardClick(event) {
 		}, 100);
 	}
 
-	if (!card.classList.contains('hidden') || firstCard === card || secondCard) {
+	if (!card.hasClass('hidden') || firstCard === card || secondCard) {
 		// La carta è già stata girata o è la stessa carta cliccata in precedenza
 		return;
 	}
@@ -109,7 +105,7 @@ function handleCardClick(event) {
 			cardsMatched += 2;
 			firstCard = null;
 			secondCard = null;
-			if (cardsMatched == 16) vittoria();
+			if (cardsMatched === 16) vittoria();
 		}
 		else {
 			// Le due carte non sono uguali
@@ -123,16 +119,15 @@ function handleCardClick(event) {
 	}
 }
 
-// Funzione per inizializzare il gioco
 function initGame() {
-	for (let i = 0; i < gridItems.length; i++) {
-		const card = gridItems[i];
-		let index = generateRandomNumber();
+	gridItems.each(function (i) {
+		const card = $(this);
+		const index = generateRandomNumber();
 
 		hideCard(card);
 		setImage(card, index);
-		card.addEventListener('click', handleCardClick);
-	}
+		card.on('click', handleCardClick);
+	});
 	shuffle(images);
 }
 
@@ -145,10 +140,10 @@ function resetGame() {
 	clearInterval(countdown);
 	time = 0;
 	$('#time').text(time);
-	for (let i = 0; i < gridItems.length; i++) {
-		const card = gridItems[i];
-		card.removeChild(card.querySelector('img'));
-	}
+	gridItems.each(function () {
+		const card = $(this);
+		card.find('img').remove();
+	});
 	initGame();
 }
 
@@ -157,10 +152,11 @@ function vittoria() {
 	gameStarted = false;
 	clearInterval(countdown);
 	setTimeout(function () {
-		aggiornaClassifica()
-		alert("Complimenti, hai vinto in " + time + " secondi !");
+		aggiornaClassifica();
+		//alert("Complimenti, hai vinto in " + time + " secondi !");
 	}, 1000);
 }
+
 
 $(function () {
 	$('#reset-btn').on('click', resetGame);
