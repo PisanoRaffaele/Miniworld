@@ -1,3 +1,11 @@
+$(function () {
+	$('body').hide();
+	if (localStorage.getItem('isLoggedIn') === 'true') {
+		window.location.href = '?p=home';
+	}
+	$('body').show();
+});
+
 $(".toggle-password").click(function () {
 	$(this).find('i').toggleClass("fa-eye-slash fa-eye");
 	var input = $($(this).attr("toggle"));
@@ -37,7 +45,7 @@ $('#username').on('input', function () {
 	$.ajax({
 		type: 'POST',
 		url: 'handle_db.php',
-		data: { username: username, funzione: 'check_username'},
+		data: { username: username, funzione: 'check_username' },
 		success: function (data) {
 			if (data == 1) {
 				$('#username').addClass('error');
@@ -146,7 +154,7 @@ $('#registration_form').submit(function (event) {
 	$.ajax({
 		type: $(this).attr('method'),
 		url: 'handle_db.php',
-		data: { email: email, username: username, password: password, funzione: 'registration'},
+		data: { email: email, username: username, password: password, funzione: 'registration' },
 		success: function (data) {
 			/*
 				se l'utente è già registrato con questa email allora non lo registra e lo manda al login

@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     $user = "postgres";
     $password = "erfede0106";
 
-    // Crea la connessione al database
     $dbconn = pg_connect("dbname=$dbname host=$host port=$port user=$user password=$password") or die("Could not connect:" . pg_last_error());
 
     main($dbconn);
@@ -44,11 +43,10 @@ function login($dbconn)
     if (pg_num_rows($result) > 0) {
         $row = pg_fetch_row($result);
         $hash = $row[2];
-        if (password_verify($password, $hash)) {
+        if (password_verify($password, $hash))
             echo json_encode(array("email" => $row[0], "username" => $row[1]));
-        } else {
+        else
             echo 0;
-        }
     } else {
         echo 0;
     }
@@ -63,21 +61,20 @@ function check_username($dbconn)
     $query = "SELECT * FROM Persona WHERE username = $1";
     $result = pg_query_params($dbconn, $query, [$username]);
 
-    if (pg_num_rows($result) == 0) {
+    if (pg_num_rows($result) == 0)
         echo 0;
-    } else {
+    else
         echo 1;
-    }
 }
 
-function richiedi_classifica($dbconn) 
+function richiedi_classifica($dbconn)
 {
     $gioco = $_POST["gioco"];
     $order = $_POST["order"];
 
     if ($order === "reverse")
         $query = "SELECT * FROM Statistiche WHERE (gioco = $1) ORDER BY punteggio LIMIT 10";
-    else 
+    else
         $query = "SELECT * FROM Statistiche WHERE (gioco = $1) ORDER BY punteggio DESC LIMIT 10";
 
     $result = pg_query_params($dbconn, $query, [$gioco]);
@@ -91,10 +88,10 @@ function richiedi_classifica($dbconn)
     // Restituzione dei risultati in formato JSON
     header('Content-Type: application/json');
     echo json_encode($classifica);
-        
+
 }
 
-function aggiorna_classifica($dbconn) 
+function aggiorna_classifica($dbconn)
 {
     $email = $_POST["email"];
     $gioco = $_POST["gioco"];
@@ -103,7 +100,7 @@ function aggiorna_classifica($dbconn)
     $order = $_POST["order"];
 
     $query = "SELECT * FROM Statistiche WHERE (gioco = $1 AND username = $2 AND email = $3)";
-    
+
     $result = pg_query_params($dbconn, $query, [$gioco, $username, $email]);
     if (pg_num_rows($result) > 0) {
         $row = pg_fetch_row($result);

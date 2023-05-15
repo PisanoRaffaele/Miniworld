@@ -1,3 +1,11 @@
+$(function () {
+	$('body').hide();
+	if (localStorage.getItem('isLoggedIn') === 'true') {
+		window.location.href = '?p=home';
+	}
+	$('body').show();
+});
+
 $(".toggle-password").click(function () {
 	$(this).find('i').toggleClass("fa-eye-slash fa-eye");
 	var input = $($(this).attr("toggle"));

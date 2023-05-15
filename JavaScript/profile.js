@@ -1,5 +1,12 @@
 $(function () {
+	$('body').hide();
+	if (localStorage.getItem('isLoggedIn') === 'true') {
+		window.location.href = '?p=home';
+	}
+	$('body').show();
+});
 
+$(function () {
     var username = localStorage.getItem('username');
     var email = localStorage.getItem('email');
 
@@ -100,5 +107,7 @@ $('#reset-pass-form').submit(function (event) {
 
 $('#logout').click(function () {
     localStorage.setItem('isLoggedIn', null);
+    localStorage.removeItem('username');
+    localStorage.removeItem('email');
     window.location.href = '?p=home';
 });

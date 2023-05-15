@@ -12,11 +12,10 @@ include 'head.php';
 
         $php_page = $page . '.php';
 
-        if (file_exists($php_page)) {
+        if (file_exists($php_page))
             include $php_page;
-        } else {
+        else
             include '404.php';
-        }
         ?>
     </main>
 
