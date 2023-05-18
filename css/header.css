@@ -19,10 +19,6 @@ body {
     width: 30px;
     height: 20px;
     position: relative;
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
     cursor: pointer;
 }
 
@@ -109,7 +105,6 @@ body {
 /* Left Navbar Side */
 .header {
     position: fixed;
-    justify-content: space-around;
     align-items: center;
     background-color: transparent;
     z-index: 999;
@@ -232,11 +227,12 @@ body {
     position: fixed;
 }
 
-.dropdown-search-container.show a {  
+.dropdown-search-container.show a {
     opacity: 0;
+    /* forwards mantiene l'ultimo stato del keyframe */
     animation: fadeIn 0.2s ease-out forwards;
 }
-  
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -245,7 +241,7 @@ body {
         opacity: 1;
     }
 }
-  
+
 
 .fa-search {
     color: #fff;
@@ -319,6 +315,7 @@ body {
 .search-game-img img {
     width: 100%;
     height: 100%;
+    /* object-fit serve per adattare l'immagine dentro il suo contenitore */
     object-fit: cover;
     object-position: center;
 }

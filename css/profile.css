@@ -76,6 +76,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+    /* orientamento del flex */
 	flex-direction: column;
 
 }
@@ -108,12 +109,9 @@ body {
     background: #682773
 }
 
-.profile-button:focus {
-    background: #682773;
-    box-shadow: none
-}
 
-.profile-button:active {
+
+.profile-button:focus {
     background: #682773;
     box-shadow: none
 }

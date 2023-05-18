@@ -74,9 +74,7 @@ h2 {
     color: transparent;
 }
 
-.clear {
-	clear: both;
-}
+
 
 .register-body {
 	font-size: 14px;
@@ -109,7 +107,6 @@ h2 {
 }
 
 .form-group {
-	overflow: hidden;
 	margin-bottom: 20px;
 }
 
@@ -118,7 +115,6 @@ h2 {
 	border: 1px solid #ebebeb;
 	border-radius: 5px;
 	padding: 17px 20px;
-	box-sizing: border-box;
 	font-size: 14px;
 	font-weight: 500;
 }
@@ -127,7 +123,6 @@ h2 {
 	width: 100%;
 	border-radius: 5px;
 	padding: 17px 20px;
-	box-sizing: border-box;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;

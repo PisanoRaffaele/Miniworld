@@ -62,10 +62,10 @@ $('#login_form').submit(function (event) {
 		},
 		error: function (xhr, status, error) {
 			already_exist();
-			alert("Errore: " + xhr.responseText);
+			console.log("Errore: " + xhr.responseText);
 		},
 		failure: function (response) {
-			alert("Failure: " + response);
+			console.log("Failure: " + response);
 		}
 	});
 });

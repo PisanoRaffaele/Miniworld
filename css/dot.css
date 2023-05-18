@@ -110,7 +110,10 @@ p {
 	align-items: center;
 	text-align: center;
 	color: #fff;
-	flex-wrap: wrap;
+}
+
+table {
+    box-sizing: content-box !important;
 }
 
 th {
@@ -127,7 +130,6 @@ th {
 
 	.classifica {
 		padding-top: 10px;
-		width: 70%;
 		margin-bottom: 50px;
 	}
 }

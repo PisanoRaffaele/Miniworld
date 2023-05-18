@@ -59,10 +59,10 @@ $('#username').on('input', function () {
 			}
 		},
 		error: function (xhr, status, error) {
-			alert("Errore: " + xhr.responseText);
+			console.log("Errore: " + xhr.responseText);
 		},
 		failure: function (response) {
-			alert("Failure: " + response);
+			console.log("Failure: " + response);
 		}
 	});
 });
@@ -172,10 +172,10 @@ $('#registration_form').submit(function (event) {
 			}
 		},
 		error: function (xhr, status, error) {
-			alert("Errore: " + xhr.responseText);
+			console.log("Errore: " + xhr.responseText);
 		},
 		failure: function (response) {
-			alert("Failure: " + response);
+			console.log("Failure: " + response);
 		}
 	});
 });

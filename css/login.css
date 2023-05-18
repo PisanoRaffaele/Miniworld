@@ -37,13 +37,6 @@ main {
 	src: url("../fonts/montserrat/Montserrat-Bold.ttf");
 }
 
-a:focus,
-a:active {
-	text-decoration: none;
-	outline: none;
-	transition: all 300ms ease 0s;
-}
-
 img {
 	max-width: 100%;
 	height: auto;
@@ -73,14 +66,12 @@ h2 {
     background-repeat: repeat;
 	background-size: cover;
     background-clip: text;
+	/* clip serve a far si che lo sfondo non vada oltre il testo */
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
     color: transparent;
 }
 
-.clear {
-	clear: both;
-}
 
 .login-body {
 	font-size: 14px;
@@ -116,7 +107,6 @@ h2 {
 }
 
 .form-group {
-	overflow: hidden;
 	margin-bottom: 20px;
 }
 
@@ -125,7 +115,6 @@ h2 {
 	border: 1px solid #ebebeb;
 	border-radius: 5px;
 	padding: 17px 20px;
-	box-sizing: border-box;
 	font-size: 14px;
 	font-weight: 500;
 }
@@ -134,12 +123,10 @@ h2 {
 	width: 100%;
 	border-radius: 5px;
 	padding: 17px 20px;
-	box-sizing: border-box;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
 	border: none;
-	/* background-image: linear-gradient(to left, #74ebd5, #9face6); */
 	color: var(--blue);
 	border: 3px solid var(--yellow);
 	border-radius: 35px;

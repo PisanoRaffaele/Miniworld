@@ -14,7 +14,7 @@ function get_classifica($id, $revers, $game) {
 			$($id).html(html);
 		},
 		error: function (xhr, status, error) {
-			alert("Errore: " + xhr.responseText);
+			console.log("Errore: " + xhr.responseText);
 		}
 	});
 };

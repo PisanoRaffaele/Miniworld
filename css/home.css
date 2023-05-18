@@ -62,14 +62,7 @@ body {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    /*  1° param: dimensione minima del font
-        2° param: dimensione calcolata in base alla larghezza della pagina
-                - vw sta per viewport, intesa come percentuale della larghezza della pagina
-                - rem sta per dimensione del font del root element (quella di default del browser: 16px)
-        3° param: dimensione massima del font
-        e.g: se la larghezza della pagina è 1200px, il font-size sarà 120px (1200*10/100)+ 3.2px (16 * 0.2) = 123.2px
-    */
-    font-size: clamp(60px, 10vw + 0.2rem, 92px);
+    font-size: clamp(60px, 10vw , 92px);
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: repeat;
@@ -92,7 +85,6 @@ body {
 
 .game-position {
     display: block;
-    box-sizing: border-box;
 }
 
 .game-list {

@@ -61,7 +61,7 @@ function get_game(input_data) {
             $(".search-game-result").html(html);
         },
         error: function (xhr, status, error) {
-            alert("Errore: " + xhr.responseText);
+            console.log("Errore: " + xhr.responseText);
         }
     });
 }

@@ -10,7 +10,6 @@
     background-color: var(--blue-opaco);
     display: flex;
     margin-top: 50px;
-    box-sizing: border-box;
     font-family: 'Press Start 2P';
     color: #FFFFFF;
     text-align: center;

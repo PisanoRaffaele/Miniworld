@@ -84,9 +84,12 @@ body {
 	align-items: center;
 	text-align: center;
 	color: #fff;
-	flex-wrap: wrap;
 	margin-bottom: 50px;
     flex-direction: column;
+}
+
+table {
+    box-sizing: content-box !important;
 }
 
 th {
@@ -104,7 +107,6 @@ th {
 
 
 	.classifica {
-		width: 70%;
         padding: 10px;
         padding-inline: 34px;
 	}

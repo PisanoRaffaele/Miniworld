@@ -2,11 +2,11 @@
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location:init.php");
 } else {
-    $dbname = "MiniworldDB";
+    $dbname = "miniworld";
     $host = "localhost";
     $port = "5432";
     $user = "postgres";
-    $password = "erfede0106";
+    $password = "ciaomamma";
 
     $dbconn = pg_connect("dbname=$dbname host=$host port=$port user=$user password=$password") or die("Could not connect:" . pg_last_error());
 

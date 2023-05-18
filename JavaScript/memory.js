@@ -23,7 +23,7 @@ function generateRandomNumber() {
 	let randomNumber = 0;
 
 	if (generatedNumbers.length === 16) {
-		alert("Errore: non ci sono più numeri da generare");
+		console.log("Errore: non ci sono più numeri da generare");
 		return -1;
 	}
 
@@ -153,7 +153,7 @@ function vittoria() {
 	clearInterval(countdown);
 	setTimeout(function () {
 		aggiornaClassifica();
-		//alert("Complimenti, hai vinto in " + time + " secondi !");
+		//console.log("Complimenti, hai vinto in " + time + " secondi !");
 	}, 1000);
 }
 
@@ -187,7 +187,7 @@ function get_classifica() {
 			$('.classifica').html(html);
 		},
 		error: function (xhr, status, error) {
-			alert("Errore: " + xhr.responseText);
+			console.log("Errore: " + xhr.responseText);
 		}
 	});
 };
@@ -206,10 +206,10 @@ function aggiornaClassifica() {
 			get_classifica();
 		},
 		error: function (xhr, status, error) {
-			alert("Errore: " + xhr.responseText);
+			console.log("Errore: " + xhr.responseText);
 		},
 		failure: function (response) {
-			alert("Failure: " + response);
+			console.log("Failure: " + response);
 		}
 	});
 }
