@@ -1,3 +1,6 @@
+// addesso devi commentare ogni funzione dettagliatamente e spiegare cosa fa e come funziona il codice che hai scritto (per ogni funzione)
+// devi anche aggiungere un commento che spiega cosa fa il codice che segue (per ogni blocco di codice)
+
 const images = [
 	'../assets/memory/1.png',
 	'../assets/memory/2.png',
@@ -9,18 +12,20 @@ const images = [
 	'../assets/memory/8.png',
 ];
 
-let firstCard = null;
-let secondCard = null;
-let cardsMatched = 0;
-let generatedNumbers = [];
-let time = 0.0;
-let countdown;
-let gameStarted = false;
+// Variabili globali per gestire il gioco 
+let firstCard = null; // prima carta cliccata
+let secondCard = null; // seconda carta cliccata
+let cardsMatched = 0; // numero di carte abbinate
+let generatedNumbers = []; // array contenente i numeri generati per le carte 
+let time = 0.0; // tempo di gioco
+let countdown; // timer
+let gameStarted = false; // indica se il gioco è iniziato o meno
 
-const gridItems = $('.grid-item');
+const gridItems = $('.grid-item'); // array contenente le carte del gioco
 
+// Funzione per generare un numero casuale da 0 a 8 (inclusi) che non sia già stato generato in precedenza 
 function generateRandomNumber() {
-	let randomNumber = 0;
+	let randomNumber = 0; // numero casuale da generare 
 
 	if (generatedNumbers.length === 16) {
 		console.log("Errore: non ci sono più numeri da generare");
@@ -28,21 +33,22 @@ function generateRandomNumber() {
 	}
 
 	do {
-		// genera un numero casuale da 0 a 8
-		randomNumber = Math.floor(Math.random() * 8);
-	} while (generatedNumbers.filter(n => n === randomNumber).length >= 2);
+		randomNumber = Math.floor(Math.random() * 8); // genera un numero casuale da 0 a 8 (inclusi)
+	} while (generatedNumbers.filter(n => n === randomNumber).length >= 2); // controlla che il numero non sia già stato generato in precedenza 
 
 	// aggiungi il numero generato all'array
-	generatedNumbers.push(randomNumber);
+	generatedNumbers.push(randomNumber); 
 
 	return randomNumber;
 }
 
 // Funzione per mescolare le carte
 function shuffle(array) {
+	// algoritmo di Fisher-Yates per mescolare un array 
 	let currentIndex = array.length;
 	let temporaryValue, randomIndex;
 
+	// finché ci sono elementi da mescolare 
 	while (currentIndex !== 0) {
 		randomIndex = Math.floor(Math.random() * currentIndex);
 		currentIndex--;
@@ -57,11 +63,11 @@ function shuffle(array) {
 // Funzione per impostare l'immagine di una carta
 function setImage(card, index) {
 	const img = $('<img>').attr('src', images[index]);
-	card.append(img);
+	card.append(img); 
 }
 
 // Funzione per girare una carta
-function flipCard(card) {
+function flipCard(card) { 
 	card.removeClass('hidden').addClass('visible');
 }
 
@@ -77,7 +83,7 @@ function cardsMatch(card1, card2) {
 	return img1.attr('src') === img2.attr('src');
 }
 
-// Funzione per gestire il click su una carta
+// Funzione per gestire il click su una carta prende come parametro l'evento che ha scatenato la funzione
 function handleCardClick(event) {
 	const card = $(event.currentTarget);
 
@@ -90,8 +96,8 @@ function handleCardClick(event) {
 		}, 100);
 	}
 
-	if (!card.hasClass('hidden') || firstCard === card || secondCard) {
-		// La carta è già stata girata o è la stessa carta cliccata in precedenza
+	// La carta è già stata girata o è la stessa carta cliccata in precedenza o è già stata trovata un'altra carta 
+	if (!card.hasClass('hidden') || firstCard === card || secondCard) { 
 		return;
 	}
 
@@ -100,18 +106,18 @@ function handleCardClick(event) {
 	if (!firstCard) firstCard = card;
 	else {
 		secondCard = card;
-		if (cardsMatch(firstCard, secondCard)) {
-			// Le due carte sono uguali
+		// Le due carte sono uguali
+		if (cardsMatch(firstCard, secondCard)) { 
 			cardsMatched += 2;
 			firstCard = null;
-			secondCard = null;
+			secondCard = null; 
 			if (cardsMatched === 16) vittoria();
 		}
+		// Le due carte non sono uguali
 		else {
-			// Le due carte non sono uguali
 			setTimeout(() => {
-				hideCard(firstCard);
-				hideCard(secondCard);
+				hideCard(firstCard); 
+				hideCard(secondCard); 
 				firstCard = null;
 				secondCard = null;
 			}, 1000);
@@ -126,7 +132,7 @@ function initGame() {
 
 		hideCard(card);
 		setImage(card, index);
-		card.on('click', handleCardClick);
+		card.on('click', handleCardClick); 
 	});
 	shuffle(images);
 }
@@ -139,33 +145,26 @@ function resetGame() {
 	gameStarted = false;
 	clearInterval(countdown);
 	time = 0;
-	$('#time').text(time);
+	$('#time').text(time); 
 	gridItems.each(function () {
 		const card = $(this);
-		card.find('img').remove();
+		card.find('img').remove(); 
 	});
 	initGame();
 }
 
 function vittoria() {
-	//salva il tempo
 	gameStarted = false;
 	clearInterval(countdown);
 	setTimeout(function () {
 		aggiornaClassifica();
-		//console.log("Complimenti, hai vinto in " + time + " secondi !");
 	}, 1000);
 }
 
-
-$(function () {
-	$('#reset-btn').on('click', resetGame);
-});
-
-initGame();
-
 $(function () {
 	get_classifica();
+	initGame();
+	$('#reset-btn').on('click', resetGame);
 });
 
 
