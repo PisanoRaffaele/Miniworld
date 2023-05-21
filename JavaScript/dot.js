@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(() => {
 	var score = 0;
 	var time = 10;
 	var countdown;

@@ -27,15 +27,20 @@ $(window).on('resize', function () {
     }
 });
 
+// spiega questa funzione aggiungendo commenti per il codice che non è chiaro a cosa serve e cosa fa
 function get_game(input_data) {
     $.ajax({
         type: 'POST',
         url: 'fetch.php',
         dataType: "json",
         success: function (data) {
-            var html = data
+            console.log(data + "\n\n\n");
+            console.log(data.filter(function (value) {
+                    return input_data === '' || value.title.toLowerCase().startsWith(input_data.toLowerCase());
+                })
+            );
+            var html = data 
                 .filter(function (value) {
-                    // Filter games that match the input_data title or return all games if input_data is empty
                     return input_data === '' || value.title.toLowerCase().startsWith(input_data.toLowerCase());
                 })
                 .map(function (value) {

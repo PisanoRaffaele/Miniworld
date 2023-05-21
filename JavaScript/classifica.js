@@ -1,8 +1,8 @@
-function get_classifica($id, $revers, $game) {
+function get_classifica(id, revers, game) {
 	$.ajax({
 		type: "POST",
 		url: "handle_db.php",
-		data: { gioco: $game, funzione: "richiedi_classifica", order: $revers },
+		data: { gioco: game, funzione: "richiedi_classifica", order: revers },
 		dataType: "json",
 		success: function (response) {
 			var html = '<h1 class="textSide">Classifica</h1>'
@@ -11,7 +11,7 @@ function get_classifica($id, $revers, $game) {
 				html += '<tr><td>' + (i + 1) + '</td><td>' + item.username + '</td><td>' + item.punteggio + '</td></tr>';
 			});
 			html += '</tbody></table>';
-			$($id).html(html);
+			$(id).html(html);
 		},
 		error: function (xhr, status, error) {
 			console.log("Errore: " + xhr.responseText);
@@ -19,10 +19,9 @@ function get_classifica($id, $revers, $game) {
 	});
 };
 
-get_classifica('#classifica1', 'reverse', 'MEMORY');
-
-get_classifica('#classifica2', 'notReverse', 'DOT');
-
-get_classifica('#classifica3', 'notReverse', 'SIMON');
-
-get_classifica('#classifica4', 'reverse', 'GTW');
+$(() => {
+	get_classifica('#classifica1', 'reverse', 'MEMORY');
+	get_classifica('#classifica2', 'notReverse', 'DOT');
+	get_classifica('#classifica3', 'notReverse', 'SIMON');
+	get_classifica('#classifica4', 'reverse', 'GTW');
+})
