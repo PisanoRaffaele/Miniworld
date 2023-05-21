@@ -39,7 +39,6 @@ function login($dbconn)
     $query = "SELECT * FROM Persona WHERE (username = $1 or email = $1)";
     $result = pg_query_params($dbconn, $query, [$username]);
 
-
     if (pg_num_rows($result) > 0) {
         $row = pg_fetch_row($result);
         $hash = $row[2];
@@ -50,7 +49,6 @@ function login($dbconn)
     } else {
         echo 0;
     }
-
 }
 
 function check_username($dbconn)

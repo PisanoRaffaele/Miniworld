@@ -16,12 +16,7 @@
 }
 
 section.notFound {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    height: 100vh;
+    margin-top: 100px;
     width: 100%;
 }
 
@@ -40,20 +35,11 @@ section.notFound h1, h2, h3 {
 }
 
 #back-404 {
-    /* width: 40%; */
-    width: 60%;
+    width: clamp(200px, 60vw, 1000px);
 }
 
 #car-404 {
-    /* width: 60%; */
-    width: 40%;
-}
-
-div.text {
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: clamp(200px, 40vw, 1000px);
 }
 
 .comment-404 {
@@ -63,14 +49,14 @@ div.text {
 
 @media only screen and (max-width: 768px) {
     section.notFound {
-        height: 60vh;
+        height: 35vh;
     }
-    section.notFound div.img img {
+    section.notFound div.img-404 img {
         width: 70vw;
         height: auto;
     }
 
-    #back-404 {
-        width: 65vw;
+    main {
+        min-height: 90vh !important;
     }
 }

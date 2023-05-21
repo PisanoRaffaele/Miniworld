@@ -81,7 +81,7 @@ $("#guess-btn").on("click", function () {
 				$('#guess-btn').addClass('unvisible');
 			}
 			// Clear the input field
-			document.getElementById("letter").value = "";
+			$("#letter").val("");
 		}
 	}
 });

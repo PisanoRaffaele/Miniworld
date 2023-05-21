@@ -1,10 +1,10 @@
-window.onload = function () {
+$(window).on('load', function () {
     $('#hamburger').on('click', function () {
         $('.animated-togglebutton').toggleClass('open');
         $('.dropdown-nav-container').toggleClass('show');
         $('#search-btn').toggleClass('show');
-    });
-}
+  });
+});
 
 $(function () {
     // Definisci una variabile per indicare se l'utente è loggato o no. In questo esempio, l'utente non è loggato.
@@ -85,5 +85,3 @@ $('.close-search').on('click', function () {
     $("header").css('visibility', 'visible');
     $('.video-container').css('margin-top', '80');
 });
-
-
