@@ -26,6 +26,3 @@ get_classifica('#classifica2', 'notReverse', 'DOT');
 get_classifica('#classifica3', 'notReverse', 'SIMON');
 
 get_classifica('#classifica4', 'reverse', 'GTW');
-
-
-

@@ -1,6 +1,3 @@
-// addesso devi commentare ogni funzione dettagliatamente e spiegare cosa fa e come funziona il codice che hai scritto (per ogni funzione)
-// devi anche aggiungere un commento che spiega cosa fa il codice che segue (per ogni blocco di codice)
-
 const images = [
 	'../assets/memory/1.png',
 	'../assets/memory/2.png',
