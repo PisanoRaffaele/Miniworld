@@ -1,13 +1,10 @@
-$(window).on('load', function () {
+$(() => {
     $('#hamburger').on('click', function () {
         $('.animated-togglebutton').toggleClass('open');
         $('.dropdown-nav-container').toggleClass('show');
         $('#search-btn').toggleClass('show');
-  });
-});
+    });
 
-$(function () {
-    // Definisci una variabile per indicare se l'utente è loggato o no. In questo esempio, l'utente non è loggato.
     if (localStorage.getItem('isLoggedIn') == null) {
         localStorage.setItem('isLoggedIn', false);
     }
@@ -18,11 +15,10 @@ $(function () {
         var elem = $(this);
         if (isLoggedIn == 'true') {
             elem.html('Profilo');
-            elem.attr('href','?p=profile');
+            elem.attr('href', '?p=profile');
         }
     });
 });
-
 
 $(window).on('resize', function () {
     if ($(window).innerWidth() > 991) {
