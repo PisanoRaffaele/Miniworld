@@ -6,7 +6,8 @@ var words = [
 	"pizza",
 	"programming",
 	"sunglasses",
-	"watermelon"
+	"watermelon",
+	"ao"
 ];
 var word;
 var letters;
@@ -43,8 +44,6 @@ function initGame() {
 		time = parseFloat(time.toFixed(2));
 		$('#time').text(time);
 	}, 100);
-
-
 }
 
 
@@ -103,7 +102,7 @@ $("#reset-btn").on("click", function () {
 });
 
 
-$(function () {
+$(() => {
 	get_classifica();
 });
 
@@ -146,9 +145,6 @@ function aggiornaClassifica() {
 		},
 		error: function (xhr, status, error) {
 			console.log("Errore: " + xhr.responseText);
-		},
-		failure: function (response) {
-			console.log("Failure: " + response);
 		}
 	});
 }

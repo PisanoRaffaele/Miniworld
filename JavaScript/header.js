@@ -27,7 +27,6 @@ $(window).on('resize', function () {
     }
 });
 
-// spiega questa funzione aggiungendo commenti per il codice che non è chiaro a cosa serve e cosa fa
 function get_game(input_data) {
     $.ajax({
         type: 'POST',

@@ -44,12 +44,6 @@ $('#login_form').submit(function (event) {
 		url: 'handle_db.php',
 		data: { email_username: email_username, password: password, funzione: 'login' },
 		success: function (data) {
-			/*
-				se l'utente è già registrato con questa email allora non lo registra e lo manda al login
-				altrimenti lo registra e lo manda alla home, data.length > 1 è necessario in quanto se utente non registrato
-				e non presente nel DB la risposta è una stringa vuota di lenght = 1 se invece è già registrato la risposta
-				è un array di lunghezza > 1 che resituisce l'errore rimandato dal DB (email già presente)
-			*/
 			if (data.trim() === '0') {
 				already_exist();
 			} else {
@@ -63,9 +57,6 @@ $('#login_form').submit(function (event) {
 		error: function (xhr, status, error) {
 			already_exist();
 			console.log("Errore: " + xhr.responseText);
-		},
-		failure: function (response) {
-			console.log("Failure: " + response);
 		}
 	});
 });

@@ -92,9 +92,6 @@ $(() => {
 			},
 			error: function (xhr, status, error) {
 				console.log("Errore: " + xhr.responseText);
-			},
-			failure: function (response) {
-				console.log("Failure: " + response);
 			}
 		});
 	}

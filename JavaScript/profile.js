@@ -80,7 +80,6 @@ $('#reset-pass-form').submit(function (event) {
             else {
                 $('.profile-button').next('small').removeClass('error').addClass('available');
                 $('.profile-button').next('small').text('Password cambiata');
-                // togli gli errori e svuota i campi password e re_password
                 $('#oldPassword').removeClass('error');
                 $('#oldPassword').next('small').removeClass('error');
                 $('#oldPassword').next('small').text('');
@@ -98,9 +97,6 @@ $('#reset-pass-form').submit(function (event) {
         error: function (xhr, status, error) {
             already_exist();
             console.log("Errore: " + xhr.responseText);
-        },
-        failure: function (response) {
-            console.log("Failure: " + response);
         }
     });
 });

@@ -4,8 +4,8 @@ $(function () {
         dataType: "json",
         success: function (data) {
             var html = data.map(function (value) {
-                var X = Math.floor(Math.random() * 30); // genera un numero casuale compreso tra 0 e 100
-                var Y = Math.floor(Math.random() * 30); // genera un numero casuale compreso tra 0 e 100
+                var X = Math.floor(Math.random() * 30); 
+                var Y = Math.floor(Math.random() * 30);
                 return `
                 <div class="card" style="background-position: ${X}% ${Y}%;">
                     <img src="assets/cardFoto.png" class="jumping-foto">
@@ -25,8 +25,9 @@ $(function () {
 
             $(".game-list").html(html);
         },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
+        error: function (xhr, status, error) {
+            console.log("Errore: " + xhr.responseText);
+            console.log(status, error);
         }
     });
 });
