@@ -33,11 +33,6 @@ function get_game(input_data) {
         url: 'fetch.php',
         dataType: "json",
         success: function (data) {
-            console.log(data + "\n\n\n");
-            console.log(data.filter(function (value) {
-                    return input_data === '' || value.title.toLowerCase().startsWith(input_data.toLowerCase());
-                })
-            );
             var html = data 
                 .filter(function (value) {
                     return input_data === '' || value.title.toLowerCase().startsWith(input_data.toLowerCase());
