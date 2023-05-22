@@ -110,6 +110,7 @@ p {
 	align-items: center;
 	text-align: center;
 	color: #fff;
+	flex-direction: column;
 }
 
 table {
@@ -118,6 +119,11 @@ table {
 
 th {
 	padding: 10px;
+    font-size: clamp(10px, 3vw , 20px);
+}
+
+td {
+    font-size: clamp(10px, 3vw , 20px);
 }
 
 @media screen and (max-width: 780px) {

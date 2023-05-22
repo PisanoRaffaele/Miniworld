@@ -16,7 +16,7 @@
 
   /****************************** TEXT ******************************/
   .textCenter {
-	font-size: 55px;
+	font-size: clamp(36px, 6vw, 55px);
 	font-weight: bold;
 	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
     -webkit-text-fill-color: transparent;
@@ -31,7 +31,7 @@
   }
 
   .textSide {
-	font-size: 40px;
+	font-size: clamp(32px, 5vw, 40px);
 	font-weight: bold;
 	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
     -webkit-text-fill-color: transparent;
@@ -152,9 +152,14 @@
     box-sizing: content-box !important;
 }
 
-  th {
+th {
 	padding: 10px;
-  }
+    font-size: clamp(10px, 3vw , 20px);
+}
+
+td {
+    font-size: clamp(10px, 3vw , 20px);
+}
 
   @media screen and (max-width: 991px) {
 	#container {
@@ -187,14 +192,6 @@
 		font-size: 20px;
 	}
 
-	.textCenter {
-		font-size: 48px;
-	}
-
-	.textSide {
-		font-size: 38px;
-	}
-
 	p {
 		font-size: 20px;
 	}
@@ -224,14 +221,6 @@
 	#word {
 		font-size: 30px;
 	  }
-
-	.textCenter {
-		font-size: 42px;
-	}
-
-	.textSide {
-		font-size: 32px;
-	}
 
 	#reset-btn {
 		margin: 16px;

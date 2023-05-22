@@ -86,21 +86,18 @@ body {
 .logo {
     border-radius: 25px !important;
     background-color: var(--blue-opaco);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 13px;
+    padding: 12px;
+    width: auto;
 }
 
 #logoimg {
-    width: clamp(140px, 30vw, 220px);
+    width: clamp(110px, 30vw, 220px);
     height: auto;
 }
 
 #hamburger {
     outline: none;
 }
-
 
 /* Left Navbar Side */
 .header {
@@ -109,6 +106,8 @@ body {
     background-color: transparent;
     z-index: 999;
     top: 50px;
+    padding-inline: 25px;
+    width: 100%;
 }
 
 .navbar {
@@ -301,9 +300,9 @@ body {
 /****************************** Search Game Result ******************************/
 
 .search-game-img {
-    width: clamp(72px, 7vw, 92px);
-    height: clamp(52px, 7vw, 72px);
-    margin-right: 28px;
+    width: clamp(62px, 8vw, 92px);
+    height: clamp(58px, 9vw, 72px);
+    margin-right: clamp(10px, 5vw, 50px);
     flex: 0 0 auto;
     border: 4px solid #23223e;
     border-radius: 20px;
@@ -323,7 +322,7 @@ body {
 .dropdown-game-container {
     display: flex;
     align-items: center;
-    padding-left: clamp(10px, 5vw, 50px);
+    padding-left: clamp(0px, 1vw, 50px);
     width: 100%;
     height: auto;
 }
@@ -359,26 +358,14 @@ body {
 
 @media screen and (max-width: 991px) {
     .header {
-        position: fixed !important;
         top: 0px;
         height: var(--height-header) !important;
-        width: 100%;
         background-color: var(--blue);
-        z-index: 999;
-        margin: 0 !important;
+        padding-inline: 10px;
     }
 
     #mynav {
-        border-radius: 99px !important;
-        width: 50px;
-        height: 50px;
-        justify-content: center;
-        align-items: center;
-        margin-right: 2rem !important;
-    }
-
-    .logo {
-        margin-left: 0px !important;
+        padding: 0;
     }
 
     .video-container {
@@ -412,4 +399,23 @@ body {
         color: var(--yellow);
     }
 
+}
+
+@media screen and (max-width: 601px) {
+    .header {
+        padding-inline: 4px;
+    }
+
+    .close-search {
+        margin-right: 0px;
+    }
+
+}
+
+@media screen and (max-width: 301px) {
+
+
+    .search-game-link {
+        flex-direction: column;
+    }
 }

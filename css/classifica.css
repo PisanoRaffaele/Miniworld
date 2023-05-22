@@ -14,7 +14,7 @@ body {
 
 /****************************** TEXT ******************************/
 .textCenter {
-	font-size: 55px;
+	font-size: clamp(27px, 6vw , 55px);
 	font-weight: bold;
 	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
     -webkit-text-fill-color: transparent;
@@ -29,7 +29,7 @@ body {
 }
 
 .textSide {
-	font-size: 40px;
+	font-size: clamp(22px, 5vw , 42px);
 	font-weight: bold;
 	background-image: url("https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d282fba597e2_user.jpeg");
     -webkit-text-fill-color: transparent;
@@ -94,32 +94,40 @@ table {
 
 th {
 	padding: 10px;
+    font-size: clamp(10px, 3vw , 20px);
+}
+
+td {
+    font-size: clamp(10px, 3vw , 20px);
 }
 
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 100px 300px;
     justify-content: stretch;
+    align-items: stretch;
 }
 
-@media screen and (max-width: 780px) {
+.box-classifica {
+    padding-inline: clamp(6px, 10vh, 200px);
+}
 
-
-	.classifica {
-        padding: 10px;
-        padding-inline: 34px;
-	}
+@media screen and (max-width: 1080px) {
 
     .grid {
         grid-template-columns: 1fr;
     }
 
-    .textCenter {
-        font-size: 40px;
+    .box-classifica {
+        padding-inline: 0;
     }
+}
+@media screen and (max-width: 780px) {
 
-    .textSide {
-        font-size: 30px;
-    }
+
+	.classifica {
+        padding: 10px;
+        padding-inline: 22px;
+	}
+
 }
