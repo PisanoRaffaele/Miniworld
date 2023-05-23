@@ -30,8 +30,8 @@ $(window).on('resize', function () {
 
 $('#search-btn2, #search-btn').on('click', function () {
     $('.dropdown-search-container').toggleClass('show');
-    $(".animated-togglebutton, .animated-togglebutton span").css('transition', '0s');
     $("header").css('visibility', 'hidden');
+    $(".animated-togglebutton, .animated-togglebutton span").css('transition', '0s');
     $('.video-container').css('margin-top', '0');
     get_game('');
 });
@@ -42,9 +42,9 @@ $('.search-input').on('input', function () {
 
 $('.close-search').on('click', function () {
     $('.dropdown-search-container').removeClass('show');
+    $("header").css('visibility', 'visible');
     $(".animated-togglebutton").css('transition', '0.5s');
     $(".animated-togglebutton span").css('transition', '0.25s');
-    $("header").css('visibility', 'visible');
     $('.video-container').css('margin-top', '80');
 });
 

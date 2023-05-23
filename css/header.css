@@ -210,12 +210,11 @@ body {
     text-align: center;
     transform: translateY(-100%);
     backdrop-filter: blur(7px);
-    transition: opacity 0.3s, transform 0.3s;
+    transition: transform 0.3s;
     padding: 40px;
 }
 
 .dropdown-search-container.show {
-    opacity: 1;
     z-index: 998;
     visibility: visible;
     transform: translateY(0%);
