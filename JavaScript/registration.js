@@ -126,25 +126,25 @@ $('#registration_form').submit(function (event) {
 	}
 
 	if (password.length < 8) {
-		$(password).addClass('error');
-		$(password).next('small').addClass('error');
-		$(password).next('small').text('La password deve essere lunga almeno 8 caratteri');
+		$('#password').addClass('error');
+		$('#password').next('small').addClass('error');
+		$('#password').next('small').text('La password deve essere lunga almeno 8 caratteri');
 		return false;
 	}
 
 	var passwordRegex = /^(?=.*[A-Z])(?=.*\d).+$/;
 	if (!passwordRegex.test(password)) {
 		console.log('Password non valida')
-		$(password).addClass('error');
-		$(password).next('small').addClass('error');
-		$(password).next('small').text('La password deve contenere almeno un carattere maiuscolo e un numero');
+		$('#password').addClass('error');
+		$('#password').next('small').addClass('error');
+		$('#password').next('small').text('La password deve contenere almeno un carattere maiuscolo e un numero');
 		return false;
 	}
 
 	if (password != re_password) {
-		$(re_password).addClass('error');
-		$(re_password).next('small').addClass('error');
-		$(re_password).next('small').text('Le password non coincidono');
+		$('#re_password').addClass('error');
+		$('#re_password').next('small').addClass('error');
+		$('#re_password').next('small').text('Le password non coincidono');
 		return false;
 	}
 
