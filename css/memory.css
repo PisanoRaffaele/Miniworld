@@ -168,8 +168,15 @@ td {
 	color: #fff;
 }
 
+.container {
+	padding-inline : 0px !important;
+}
+
 @media screen and (max-width: 1224px) {
 
+	.container {
+		padding-inline : 15px !important;
+	}
 
 	.textCenter {
 		font-size: 50px;
