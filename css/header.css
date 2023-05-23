@@ -350,7 +350,7 @@ body {
 
 /****************************** Responsive ******************************/
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
     .header {
         top: 0px;
         height: var(--height-header) !important;
