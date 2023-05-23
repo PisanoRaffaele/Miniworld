@@ -22,7 +22,6 @@ $(function () {
                 </div>
             `;
             }).join("");
-
             $(".game-list").html(html);
         },
         error: function (xhr, status, error) {

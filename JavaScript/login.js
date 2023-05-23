@@ -38,7 +38,6 @@ $('#login_form').submit(function (event) {
 	var email_username = $(this).find('#username_email').val();
 	var password = $(this).find('#password').val();
 
-
 	$.ajax({
 		type: $(this).attr('method'),
 		url: 'handle_db.php',
