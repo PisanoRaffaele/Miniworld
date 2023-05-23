@@ -11,6 +11,70 @@ body {
     background-color: var(--blue);
     font-family: Arial;
 }
+/****************************** Navbar ******************************/
+
+.logo {
+    border-radius: 25px !important;
+    background-color: var(--blue-opaco);
+    padding: 12px;
+    width: auto;
+}
+
+#logoimg {
+    width: clamp(110px, 30vw, 220px); /* clamp */
+    height: auto;
+}
+
+#hamburger {
+    outline: none;
+}
+
+.header {
+    position: fixed;
+    align-items: center;
+    background-color: transparent; /* sfondo */
+    z-index: 999;
+    top: 50px;
+    padding-inline: 25px;
+    width: 100%;
+}
+
+.navbar {
+    border-radius: 25px !important;
+    background-color: var(--blue-opaco); /* sfondo */
+    backdrop-filter: blur(3px);
+}
+
+.navbar-nav a {
+    color: #ffffff;
+}
+
+.navbar-nav a:hover {
+    background-color: rgba(255, 255, 255, 0) !important;
+    color: var(--yellow); /* colore testo */
+}
+
+.header-link-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumping-foto2 {
+    position: absolute;
+    top: 0;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+    width: 40px;
+    height: 20px;
+}
+
+.header-link-container:hover .jumping-foto2 {
+    opacity: 1;
+    transform: translateY(-10px); /* transizione */
+}
 
 /****************************** Toggle Button ******************************/
 
@@ -79,75 +143,6 @@ body {
     left: 50%;
 }
 
-
-/****************************** Navbar ******************************/
-
-/* Right Navbar Side */
-.logo {
-    border-radius: 25px !important;
-    background-color: var(--blue-opaco);
-    padding: 12px;
-    width: auto;
-}
-
-#logoimg {
-    width: clamp(110px, 30vw, 220px);
-    height: auto;
-}
-
-#hamburger {
-    outline: none;
-}
-
-/* Left Navbar Side */
-.header {
-    position: fixed;
-    align-items: center;
-    background-color: transparent;
-    z-index: 999;
-    top: 50px;
-    padding-inline: 25px;
-    width: 100%;
-}
-
-.navbar {
-    border-radius: 25px !important;
-    background-color: var(--blue-opaco);
-    backdrop-filter: blur(3px);
-}
-
-.navbar-nav a {
-    color: #ffffff;
-}
-
-.navbar-nav a:hover {
-    background-color: rgba(255, 255, 255, 0) !important;
-    color: var(--yellow);
-}
-
-.header-link-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.jumping-foto2 {
-    position: absolute;
-    top: 0;
-    display: flex;
-    opacity: 0;
-    transition: opacity 0.2s ease-in, transform 0.2s ease-in;
-    width: 40px;
-    height: 20px;
-}
-
-.header-link-container:hover .jumping-foto2 {
-    opacity: 1;
-    transform: translateY(-10px);
-}
-
-
 /****************************** Dropdown Menu ******************************/
 
 .dropdown-nav-container {
@@ -189,7 +184,6 @@ body {
     }
 }
 
-
 .dropdown-separator {
     width: 70%;
     height: 1px;
@@ -199,6 +193,10 @@ body {
 }
 
 /****************************** Search Bar ******************************/
+
+#search-btn.show {
+    visibility: hidden;
+}
 
 .dropdown-search-container {
     position: absolute;
@@ -249,10 +247,6 @@ body {
 .fa-search:hover {
     color: var(--yellow);
     cursor: pointer;
-}
-
-#search-btn.show {
-    visibility: hidden;
 }
 
 /****************************** Search Bar Game Input ******************************/

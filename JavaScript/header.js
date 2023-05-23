@@ -24,7 +24,28 @@ $(window).on('resize', function () {
     if ($(window).innerWidth() > 991) {
         $('.fa-search').removeClass('open');
         $('.dropdown-nav-container').removeClass('show');
+        $('.animated-togglebutton').removeClass('open');
     }
+});
+
+$('#search-btn2, #search-btn').on('click', function () {
+    $('.dropdown-search-container').toggleClass('show');
+    $(".animated-togglebutton, .animated-togglebutton span").css('transition', '0s');
+    $("header").css('visibility', 'hidden');
+    $('.video-container').css('margin-top', '0');
+    get_game('');
+});
+
+$('.search-input').on('input', function () {
+    get_game($(this).val());
+});
+
+$('.close-search').on('click', function () {
+    $('.dropdown-search-container').removeClass('show');
+    $(".animated-togglebutton").css('transition', '0.5s');
+    $(".animated-togglebutton span").css('transition', '0.25s');
+    $("header").css('visibility', 'visible');
+    $('.video-container').css('margin-top', '80');
 });
 
 function get_game(input_data) {
@@ -38,7 +59,7 @@ function get_game(input_data) {
                     return input_data === '' || value.title.toLowerCase().startsWith(input_data.toLowerCase());
                 })
             );
-            var html = data 
+            var html = data
                 .filter(function (value) {
                     return input_data === '' || value.title.toLowerCase().startsWith(input_data.toLowerCase());
                 })
@@ -65,23 +86,3 @@ function get_game(input_data) {
         }
     });
 }
-
-$('#search-btn2, #search-btn').on('click', function () {
-    $('.dropdown-search-container').toggleClass('show');
-    $(".animated-togglebutton, .animated-togglebutton span").css('transition', '0s');
-    $("header").css('visibility', 'hidden');
-    $('.video-container').css('margin-top', '0');
-    get_game('');
-});
-
-$('.search-input').on('input', function () {
-    get_game($(this).val());
-});
-
-$('.close-search').on('click', function () {
-    $('.dropdown-search-container').removeClass('show');
-    $(".animated-togglebutton").css('transition', '0.5s');
-    $(".animated-togglebutton span").css('transition', '0.25s');
-    $("header").css('visibility', 'visible');
-    $('.video-container').css('margin-top', '80');
-});
