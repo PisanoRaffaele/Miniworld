@@ -94,11 +94,11 @@ table {
 
 th {
 	padding: 10px;
-    font-size: clamp(10px, 3vw , 20px);
+    font-size: clamp(10px, 2vw , 20px);
 }
 
 td {
-    font-size: clamp(10px, 3vw , 20px);
+    font-size: clamp(10px, 2vw , 20px);
 }
 
 .grid {
@@ -109,10 +109,10 @@ td {
 }
 
 .box-classifica {
-    padding-inline: clamp(6px, 10vh, 200px);
+    padding-inline: clamp(100px, 7vw, 180px);
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1280px) {
 
     .grid {
         grid-template-columns: 1fr;

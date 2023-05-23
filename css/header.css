@@ -408,7 +408,6 @@ body {
 
 @media screen and (max-width: 301px) {
 
-
     .search-game-link {
         flex-direction: column;
     }
