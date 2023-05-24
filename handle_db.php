@@ -86,7 +86,6 @@ function richiedi_classifica($dbconn)
     // Restituzione dei risultati in formato JSON
     header('Content-Type: application/json');
     echo json_encode($classifica);
-
 }
 
 function aggiorna_classifica($dbconn)

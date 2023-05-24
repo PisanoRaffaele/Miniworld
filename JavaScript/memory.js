@@ -9,20 +9,18 @@ const images = [
 	'../assets/memory/8.png',
 ];
 
-// Variabili globali per gestire il gioco 
-let firstCard = null; // prima carta cliccata
-let secondCard = null; // seconda carta cliccata
-let cardsMatched = 0; // numero di carte abbinate
-let generatedNumbers = []; // array contenente i numeri generati per le carte 
-let time = 0.0; // tempo di gioco
-let countdown; // timer
-let gameStarted = false; // indica se il gioco è iniziato o meno
+let firstCard = null; 
+let secondCard = null; 
+let cardsMatched = 0;
+let generatedNumbers = []; 
+let time = 0.0; 
+let countdown; 
+let gameStarted = false;
 
-const gridItems = $('.grid-item'); // array contenente le carte del gioco
+const gridItems = $('.grid-item');
 
-// Funzione per generare un numero casuale da 0 a 8 (inclusi) che non sia già stato generato in precedenza 
 function generateRandomNumber() {
-	let randomNumber = 0; // numero casuale da generare 
+	let randomNumber = 0;
 
 	if (generatedNumbers.length === 16) {
 		console.log("Errore: non ci sono più numeri da generare");
@@ -30,10 +28,9 @@ function generateRandomNumber() {
 	}
 
 	do {
-		randomNumber = Math.floor(Math.random() * 8); // genera un numero casuale da 0 a 8 (inclusi)
-	} while (generatedNumbers.filter(n => n === randomNumber).length >= 2); // controlla che il numero non sia già stato generato in precedenza 
+		randomNumber = Math.floor(Math.random() * 8); 
+	} while (generatedNumbers.filter(n => n === randomNumber).length >= 2); 
 
-	// aggiungi il numero generato all'array
 	generatedNumbers.push(randomNumber); 
 
 	return randomNumber;
@@ -41,11 +38,9 @@ function generateRandomNumber() {
 
 // Funzione per mescolare le carte
 function shuffle(array) {
-	// algoritmo di Fisher-Yates per mescolare un array 
 	let currentIndex = array.length;
 	let temporaryValue, randomIndex;
 
-	// finché ci sono elementi da mescolare 
 	while (currentIndex !== 0) {
 		randomIndex = Math.floor(Math.random() * currentIndex);
 		currentIndex--;

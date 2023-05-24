@@ -1,4 +1,3 @@
-// Array of words to choose from
 var words = [
 	"banana",
 	"chocolate",
@@ -9,6 +8,7 @@ var words = [
 	"watermelon",
 	"ao"
 ];
+
 var word;
 var letters;
 var underscores;
@@ -22,7 +22,6 @@ var Started = false;
 function initGame() {
 	$('#reset-btn').text('Reset');
 
-	//remove class unvisible
 	$('#guess-btn').removeClass('unvisible');
 
 
@@ -53,7 +52,6 @@ $("#guess-btn").on("click", function () {
 	if (Started) {
 		var letter = $("#letter").val().toLowerCase();
 		if (letter && /^[a-z]$/.test(letter)) {
-			// Check if the letter is in the word
 			var found = false;
 			for (var i = 0; i < letters.length; i++) {
 				if (letters[i] === letter) {
@@ -61,17 +59,13 @@ $("#guess-btn").on("click", function () {
 					found = true;
 				}
 			}
-			// If the letter was not found, decrement the number of guesses remaining
 			if (!found) {
 				guessesRemaining--;
 				$("#guesses").text("Tentativi rimasti: " + guessesRemaining);
 			}
-			// Display the updated word on the page
 			$("#word").text(underscores.join(" "));
-			// Check if the user has won or lost
 			if (underscores.indexOf("_") === -1) {
 				aggiornaClassifica()
-				//stop the timer
 				clearInterval(countdown);
 				$('#guess-btn').addClass('unvisible');
 			} else if (guessesRemaining === 0) {
@@ -79,7 +73,6 @@ $("#guess-btn").on("click", function () {
 				clearInterval(countdown);
 				$('#guess-btn').addClass('unvisible');
 			}
-			// Clear the input field
 			$("#letter").val("");
 		}
 	}

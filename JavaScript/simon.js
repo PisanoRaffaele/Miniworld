@@ -1,4 +1,3 @@
-// var colors = ["red", "blue", "green", "yellow"];
 var colors = ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "white"];
 var sequence = [];
 var playing = false;
@@ -59,12 +58,9 @@ $(".color").on("click", function () {
     if (playing) {
         var color = $(this).attr("class").split(" ")[1];
         highlight(color);
-        // confrontiamo il colore corrente con la sequenza
         if (color === sequence[0]) {
             sequence.shift();
             if (sequence.length === 0) {
-                // la sequenza è stata completata con successo
-                // salva il livello raggiunto
                 playing = false;
                 level++;
                 $("#start-btn").text("Next Level");
