@@ -1,3 +1,4 @@
+// se l'utente non è loggato, viene impossibilitato ad accedere alla pagina profilo e viene reindirizzato alla pagina home
 $(function () {
 	$('body').hide();
 	if (localStorage.getItem('isLoggedIn') === 'false' || localStorage.getItem('isLoggedIn') === 'null') {
@@ -6,6 +7,7 @@ $(function () {
 	$('body').show();
 });
 
+// prende in localStorage i dati dell'utente e li mostra nella pagina profilo 
 $(function () {
     var username = localStorage.getItem('username');
     var email = localStorage.getItem('email');
@@ -14,6 +16,8 @@ $(function () {
     $('#email-profile').text(email);
 });
 
+// quando perde il focus, controlla che le 2 password coincidano, senno mostra un messaggio di errore
+// quando prende il focus, rimuove lo stile di errore
 $("#rePassword").on({
 	"blur": function () {
 		var firstPassword = $("#newPassword").val();
@@ -30,6 +34,7 @@ $("#rePassword").on({
 	}
 });
 
+// al submit del form, controlla che la password sia valida e in caso positivo, la cambia
 $('#reset-pass-form').submit(function (event) {
     event.preventDefault();
 
@@ -101,6 +106,7 @@ $('#reset-pass-form').submit(function (event) {
     });
 });
 
+// al click del bottone logout, rimuove i dati dell'utente dal localStorage e lo reindirizza alla pagina home
 $('#logout').click(function () {
     localStorage.setItem('isLoggedIn', null);
     localStorage.removeItem('username');

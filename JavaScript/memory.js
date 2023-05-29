@@ -19,6 +19,7 @@ let gameStarted = false;
 
 const gridItems = $('.grid-item');
 
+// Funzione per generare un numero casuale
 function generateRandomNumber() {
 	let randomNumber = 0;
 
@@ -105,7 +106,6 @@ function handleCardClick(event) {
 			secondCard = null; 
 			if (cardsMatched === 16) vittoria();
 		}
-		// Le due carte non sono uguali
 		else {
 			setTimeout(() => {
 				hideCard(firstCard); 
@@ -117,6 +117,7 @@ function handleCardClick(event) {
 	}
 }
 
+// Funzione per inizializzare il gioco
 function initGame() {
 	gridItems.each(function (i) {
 		const card = $(this);
@@ -129,6 +130,7 @@ function initGame() {
 	shuffle(images);
 }
 
+// Funzione per resettare il gioco
 function resetGame() {
 	firstCard = null;
 	secondCard = null;
@@ -145,6 +147,7 @@ function resetGame() {
 	initGame();
 }
 
+// Funzione chiamata a fine partita per aggiornare la classifica
 function vittoria() {
 	gameStarted = false;
 	clearInterval(countdown);
@@ -157,11 +160,13 @@ $(function () {
 	get_classifica();
 	initGame();
 	$('#reset-btn').on('click', resetGame);
+	console.log(generatedNumbers);
 });
 
 
 /****************************** Gestione Classifica ******************************/
 
+// ottiene la classifica dal database, crea una tabella html e l'aggiunge all'oggetto con id specificato
 function get_classifica() {
 	$.ajax({
 		type: "POST",
@@ -183,6 +188,7 @@ function get_classifica() {
 	});
 };
 
+// aggiorna la classifica nel database
 function aggiornaClassifica() {
 	var logged = localStorage.getItem('isLoggedIn');
 	if (logged == "null" || logged === "false")

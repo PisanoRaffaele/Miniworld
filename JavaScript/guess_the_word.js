@@ -18,7 +18,7 @@ var countdown;
 var Started = false;
 
 
-
+// fa partire il gioco e il tempo trascorso, sceglie una parola random da words e la mostra come underscores
 function initGame() {
 	$('#reset-btn').text('Reset');
 
@@ -47,7 +47,8 @@ function initGame() {
 
 
 
-// Handle the form submission when the user guesses a letter
+// verifica la lettera inserita è contenuta nella parola, se è contenuta la mostra al posto degli underscores
+// se il numero di tentativi rimasti è 0 o se non ci sono più underscores, il gioco finisce
 $("#guess-btn").on("click", function () {
 	if (Started) {
 		var letter = $("#letter").val().toLowerCase();
@@ -79,7 +80,7 @@ $("#guess-btn").on("click", function () {
 });
 
 
-// use the reset button to reset the game
+// resetta il gioco e le variabili di gioco
 $("#reset-btn").on("click", function () {
 	if (Started) {
 		$('#reset-btn').text('Start');
@@ -95,6 +96,7 @@ $("#reset-btn").on("click", function () {
 });
 
 
+// ottiene la classifica dal database e la aggiunge alla pagina
 $(() => {
 	get_classifica();
 });
@@ -102,6 +104,7 @@ $(() => {
 
 /****************************** Gestione Classifica ******************************/
 
+// ottiene la classifica dal database, crea una tabella html e l'aggiunge all'oggetto con id specificato
 function get_classifica() {
 	$.ajax({
 		type: "POST",
@@ -123,6 +126,7 @@ function get_classifica() {
 	});
 };
 
+// aggiorna la classifica nel database
 function aggiornaClassifica() {
 	var logged = localStorage.getItem('isLoggedIn');
 	if (logged == "null" || logged === "false")

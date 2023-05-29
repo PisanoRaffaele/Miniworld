@@ -1,3 +1,4 @@
+// ottiene la classifica dei giochi dal database, crea una tabella html e l'aggiunge all'oggetto con id specificato
 function get_classifica(id, revers, game) {
 	$.ajax({
 		type: "POST",
@@ -19,6 +20,7 @@ function get_classifica(id, revers, game) {
 	});
 };
 
+// chiama la funzione get_classifica per ogni gioco
 $(() => {
 	get_classifica('#classifica1', 'reverse', 'MEMORY');
 	get_classifica('#classifica2', 'notReverse', 'DOT');

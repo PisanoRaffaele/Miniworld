@@ -4,6 +4,8 @@ $(() => {
 	var countdown;
 	var gameStarted = false;
 
+	// fa partire il gioco, gestisce il punteggio. Usando la fuzione setInterval e setTimeout viene gestito 
+	// il conto alla rovescia e il tempo di attesa prima di aggiornare la classifica
 	function startGame() {
 		gameStarted = true;
 		score++;
@@ -29,6 +31,7 @@ $(() => {
 		}, 1000);
 	}
 
+	// resetta il gioco e le variabili di gioco
 	$('#reset-btn').click(function () {
 		score = 0;
 		time = 10;
@@ -44,18 +47,21 @@ $(() => {
 		});
 	});
 
+	// fa partire il gioco
 	$('#dot').click(function () {
 		if (!gameStarted) {
 			startGame();
 		}
 	});
 
+	// ottiene la classifica dal database e la aggiunge alla pagina
 	$(function () {
 		get_classifica();
 	});
 
 	/****************************** Gestione Classifica ******************************/
 
+	// ottiene la classifica dal database, crea una tabella html e l'aggiunge all'oggetto con id specificato
 	function get_classifica() {
 		$.ajax({
 			type: "POST",
@@ -77,6 +83,7 @@ $(() => {
 		});
 	};
 
+	// aggiorna la classifica nel database
 	function aggiornaClassifica() {
 		var logged = localStorage.getItem('isLoggedIn');
 		if (logged == "null" || logged === "false")

@@ -1,3 +1,6 @@
+// applica stile css al menu hamburger e al menu dropdown quando si clicca sull'icona del menu
+// setta la variabile isLoggedIn a true se l'utente è loggato, altrimenti a false
+// aggiorna il testo e l'href del link al profilo se l'utente è loggato
 $(() => {
     $('#hamburger').on('click', function () {
         $('.animated-togglebutton').toggleClass('open');
@@ -20,6 +23,8 @@ $(() => {
     });
 });
 
+// al ridimensionamento della pagina, se la larghezza è maggiore di 991px, rimuove le classi open e show
+// per far scomparire il menu hamburger e il menu dropdown
 $(window).on('resize', function () {
     if ($(window).innerWidth() > 991) {
         $('.fa-search').removeClass('open');
@@ -28,6 +33,7 @@ $(window).on('resize', function () {
     }
 });
 
+// fa apparire il search dropdown quando si clicca sull'icona della ricerca e nasconde l'header e il menu hamburger 
 $('#search-btn2, #search-btn').on('click', function () {
     $('.dropdown-search-container').toggleClass('show');
     $("header").css('visibility', 'hidden');
@@ -36,10 +42,12 @@ $('#search-btn2, #search-btn').on('click', function () {
     get_game('');
 });
 
+// all input nella barra di ricerca, chiama la funzione get_game() che ottiene i giochi dal database
 $('.search-input').on('input', function () {
     get_game($(this).val());
 });
 
+// al click del bottone chiudi, nasconde il search dropdown e fa riapparire l'header e il menu hamburger
 $('.close-search').on('click', function () {
     $('.dropdown-search-container').removeClass('show');
     $("header").css('visibility', 'visible');
@@ -48,6 +56,8 @@ $('.close-search').on('click', function () {
     $('.video-container').css('margin-top', '80');
 });
 
+// ottiene i giochi dal database e li aggiunge al search dropdown in base all'input dell'utente 
+// crea dinamicamente gli elementi html per ogni gioco trovato e li aggiunge al search dropdown
 function get_game(input_data) {
     $.ajax({
         type: 'POST',

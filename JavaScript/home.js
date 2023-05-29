@@ -1,3 +1,4 @@
+// crea dinamicamente gli elementi html per ogni gioco trovato e li aggiunge alla pagina home 
 $(function () {
     $.ajax({
         url: "fetch.php",

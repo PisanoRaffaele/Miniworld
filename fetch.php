@@ -12,6 +12,6 @@ $elementi = array(
 );
 
 header('Content-Type: application/json'); // specifica il tipo di risposta come JSON
-echo json_encode($elementi); // restituisce l'array di risposta come JSON
+echo json_encode($elementi); 
 
 ?>

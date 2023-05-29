@@ -1,3 +1,4 @@
+// se l'utente è loggato, viene impossibilitato ad accedere alla pagina registrazione e viene reindirizzato alla pagina home
 $(function () {
 	$('body').hide();
 	if (localStorage.getItem('isLoggedIn') === 'true') {
@@ -6,6 +7,7 @@ $(function () {
 	$('body').show();
 });
 
+// funzione per mostrare/nascondere la password
 $(".toggle-password").click(function () {
 	$(this).find('i').toggleClass("fa-eye-slash fa-eye");
 	var input = $($(this).attr("toggle"));
@@ -16,6 +18,7 @@ $(".toggle-password").click(function () {
 	}
 });
 
+// funzione per mostrare/nascondere la repeat password
 $(".toggle-re_password").click(function () {
 	$(this).find('i').toggleClass("fa-eye-slash fa-eye");
 	var input = $($(this).attr("toggle"));
@@ -26,6 +29,7 @@ $(".toggle-re_password").click(function () {
 	}
 });
 
+// applica stili css in caso di errore
 function already_exist() {
 	$('#email').addClass('error');
 	$('#email').next('small').addClass('error');
@@ -35,6 +39,7 @@ function already_exist() {
 	$('#username').next('small').text('');
 }
 
+// controlla se l'username è già in uso e applica stili css in caso di errore o successo 
 $('#username').on('input', function () {
 	var username = $(this).val();
 	if (!username) {
@@ -64,6 +69,7 @@ $('#username').on('input', function () {
 	});
 });
 
+// rimuove stili css alla pressione di un tasto
 $('#email').on('input', function () {
 	var email = $(this).val();
 	if (email === '') {
@@ -73,6 +79,7 @@ $('#email').on('input', function () {
 	}
 });
 
+// verifica che la password sia lunga almeno 8 caratteri e applica stili css in caso di errore e li rimuove al focus
 $("#password").on({
 	"blur": function () {
 		var password = $(this).val();
@@ -89,6 +96,7 @@ $("#password").on({
 	}
 });
 
+// verifica che la password contenga almeno un carattere maiuscolo e un numero e applica stili css in caso di errore e li rimuove al focus
 $("#re_password").on({
 	"blur": function () {
 		var firstPassword = $("#password").val();
@@ -105,6 +113,7 @@ $("#re_password").on({
 	}
 });
 
+// al submit del form, controlla che l'utente non esista già nel database e che la password sia valida e in caso positivo, lo registra
 $('#registration_form').submit(function (event) {
 	event.preventDefault();
 

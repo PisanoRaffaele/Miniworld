@@ -1,4 +1,5 @@
 <?php
+// se il metodo di richiesta non è POST reindirizza alla home, altrimenti connettiti al database e chiama la funzione main
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location:index.php?p=home");
 } else {
@@ -6,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     $host = "localhost";
     $port = "5432";
     $user = "postgres";
-    $password = "ciao";
+    $password = "erfede0106";
 
     $dbconn = pg_connect("dbname=$dbname host=$host port=$port user=$user password=$password") or die("Could not connect:" . pg_last_error());
 
@@ -15,6 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 ?>
 
 <?php
+// registra un nuovo utente nel database e restituisce 1 se l'operazione è andata a buon fine, 0 altrimenti 
+// prende i dati dal form di registrazione tramite variabili POST e applica la funzione password_hash() per criptare la password
 function registration($dbconn)
 {
     $username = $_POST["username"];
@@ -31,6 +34,8 @@ function registration($dbconn)
         echo 0;
 }
 
+// logga un utente nel database se le credenziali sono corrette tramite la funzione password_verify()
+// restituisce un json con i dati dell'utente se l'operazione è andata a buon fine, 0 altrimenti
 function login($dbconn)
 {
     $username = $_POST["email_username"];
@@ -51,6 +56,7 @@ function login($dbconn)
     }
 }
 
+// check se l'username è già presente nel database e restituisce 1 se è già presente, 0 altrimenti
 function check_username($dbconn)
 {
     $username = $_POST["username"];
@@ -65,6 +71,8 @@ function check_username($dbconn)
         echo 1;
 }
 
+// richiede la classifica di un gioco dal database. In base alla variabile order decide se deve ordinare in modo crescente o decrescente
+// e restituisce un json con i dati della classifica
 function richiedi_classifica($dbconn)
 {
     $gioco = $_POST["gioco"];
@@ -88,6 +96,7 @@ function richiedi_classifica($dbconn)
     echo json_encode($classifica);
 }
 
+// aggiorna la classifica di un gioco nel database se il punteggio è maggiore di quello già presente
 function aggiorna_classifica($dbconn)
 {
     $email = $_POST["email"];
@@ -111,6 +120,7 @@ function aggiorna_classifica($dbconn)
 
 }
 
+// resetta la password di un utente nel database se le credenziali sono corrette tramite la funzione password_verify()
 function reset_password($dbconn)
 {
     $email = $_POST["email"];
@@ -143,6 +153,7 @@ function reset_password($dbconn)
 
 <?php
 
+// main chiama la funzione corretta in base al parametro funzione passato tramite POST dalla chiamata ajax
 function main($dbconn)
 {
     $funzione = $_POST['funzione'];

@@ -82,6 +82,7 @@ $(function () {
 
 /****************************** Gestione Classifica ******************************/
 
+// ottiene la classifica dal database, crea una tabella html e l'aggiunge all'oggetto con id specificato
 function get_classifica() {
     $.ajax({
         type: "POST",
@@ -103,6 +104,7 @@ function get_classifica() {
     });
 };
 
+// aggiorna la classifica nel database
 function aggiornaClassifica() {
     var logged = localStorage.getItem('isLoggedIn');
     if (logged == "null" || logged === "false")
